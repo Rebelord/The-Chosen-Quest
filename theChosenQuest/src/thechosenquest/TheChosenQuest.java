@@ -5,6 +5,7 @@
  */
 package thechosenquest;
 
+import byui.cit260.theChosenQuest.model.CharacterSheet;
 import byui.cit260.theChosenQuest.model.Player;
 
 /**
@@ -20,10 +21,21 @@ public class TheChosenQuest {
         Player playerOne = new Player();
         
         playerOne.setName("Frank Castle");
-        playerOne.setCharacterSheet((int) 7.00);
+        playerOne.setCharacterSheet(7);
         
         String playerInfo = playerOne.toString();
-        System.out.println(playerInfo);    
+        System.out.println(playerInfo);
+        
+        CharacterSheet characterSheet = new CharacterSheet();
+        
+        characterSheet.setStats(20);
+        characterSheet.setSpells("Magic Missle");
+        characterSheet.setEquipment("Chestplate");
+        characterSheet.setInventory("Bag of Holding");
+        
+        String characterSheetInfo = characterSheet.toString();
+        System.out.println(characterSheetInfo);
+        
     }
     
 }
