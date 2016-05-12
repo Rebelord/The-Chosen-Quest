@@ -7,6 +7,7 @@ package thechosenquest;
 
 import byui.cit260.theChosenQuest.model.CharacterSheet;
 import byui.cit260.theChosenQuest.model.Player;
+import byui.cit260.theChosenQuest.model.Stats;
 
 /**
  *
@@ -36,6 +37,18 @@ public class TheChosenQuest {
         String characterSheetInfo = characterSheet.toString();
         System.out.println(characterSheetInfo);
         
+        Stats playerStats = new Stats();
+        
+        playerStats.setCharisma(10);
+        playerStats.setConstitution(20);
+        playerStats.setDexterity(5);
+        playerStats.setStrength(20);
+        
+        String playerStatsInfo = playerStats.toString();
+        System.out.println(playerStatsInfo);
+        
+        
+        System.out.println("Hello World");
     }
     
 }
