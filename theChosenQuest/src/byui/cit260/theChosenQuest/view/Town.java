@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.theChosenQuest.model;
+package byui.cit260.theChosenQuest.view;
 
 /**
  *
  * @author Zack Durbin
  */
-public class items {
+public class Town {
     
 }

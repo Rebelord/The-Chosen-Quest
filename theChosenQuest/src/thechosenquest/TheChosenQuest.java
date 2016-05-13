@@ -5,6 +5,7 @@
  */
 package thechosenquest;
 
+import byui.cit260.theChosenQuest.control.DiceFaces;
 import byui.cit260.theChosenQuest.control.RandomRoll;
 import byui.cit260.theChosenQuest.model.CharacterSheet;
 import byui.cit260.theChosenQuest.model.Player;
@@ -81,6 +82,17 @@ public class TheChosenQuest {
         
         String playerDiceRoll = playerDice.toString();
         System.out.println(playerDiceRoll);
+        
+        // Dice Face Class
+        DiceFaces playerDieChoice = new DiceFaces();
+        
+        playerDieChoice.setSixSided(6);
+        playerDieChoice.setEightSided(8);
+        playerDieChoice.setTenSided(10);
+        playerDieChoice.setTwentySided(20);
+        
+        String playerDieUse = playerDieChoice.toString();
+        System.out.println(playerDieChoice);
     }
     
 }

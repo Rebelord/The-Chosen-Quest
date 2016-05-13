@@ -3,19 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication2;
+package byui.cit260.theChosenQuest.model;
 
 /**
  *
  * @author Zack Durbin
  */
-public class JavaApplication2 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class Equipment {
     
 }

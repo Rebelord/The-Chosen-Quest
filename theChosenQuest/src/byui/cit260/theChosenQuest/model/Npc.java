@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.theChosenQuest.control;
+package byui.cit260.theChosenQuest.model;
 
 /**
  *
  * @author Zack Durbin
  */
-public class combat {
+public class Npc {
     
 }

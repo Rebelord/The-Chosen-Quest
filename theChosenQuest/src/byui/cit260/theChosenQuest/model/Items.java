@@ -9,6 +9,6 @@ package byui.cit260.theChosenQuest.model;
  *
  * @author Zack Durbin
  */
-public class NPC {
+public class Items {
     
 }
