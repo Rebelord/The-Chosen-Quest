@@ -10,6 +10,7 @@ import byui.cit260.theChosenQuest.control.DiceFaces;
 import byui.cit260.theChosenQuest.control.RandomRoll;
 import byui.cit260.theChosenQuest.model.CharacterClass;
 import byui.cit260.theChosenQuest.model.CharacterSheet;
+import byui.cit260.theChosenQuest.model.Creatures;
 import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.model.Spells;
 import byui.cit260.theChosenQuest.model.Stats;
@@ -122,7 +123,7 @@ public class TheChosenQuest {
         String playerTownInfo = playerTown.toString();
         System.out.println(playerTownInfo);
         
-               // Character Class
+        // Character Class
         CharacterClass playerClass = new CharacterClass();
         
         playerClass.setFighter("Fighter");
@@ -134,7 +135,6 @@ public class TheChosenQuest {
         System.out.println(playerClassInfo);
         
          //Combat Areas
-        
         CombatAreas playerArea = new CombatAreas();
         
         playerArea.setCreatures ("Goblin");
@@ -144,7 +144,16 @@ public class TheChosenQuest {
         String playerAreaInfo = playerArea.toString();
         System.out.println(playerAreaInfo);
         
+        // Creatures Class
+        Creatures creatures = new Creatures();
         
+       creatures.setName("Gelatenious Cube");
+       creatures.setAttack(0);
+       creatures.setDefense(20);
+       creatures.setHp(10);
+       
+       String creatureInfo = creatures.toString();
+        System.out.println(creatureInfo);
 }
     
 }
