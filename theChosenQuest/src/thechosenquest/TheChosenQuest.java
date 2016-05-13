@@ -5,6 +5,7 @@
  */
 package thechosenquest;
 
+import byui.cit260.theChosenQuest.control.Combat;
 import byui.cit260.theChosenQuest.control.DiceFaces;
 import byui.cit260.theChosenQuest.control.RandomRoll;
 import byui.cit260.theChosenQuest.model.CharacterSheet;
@@ -93,6 +94,18 @@ public class TheChosenQuest {
         
         String playerDieUse = playerDieChoice.toString();
         System.out.println(playerDieChoice);
+        
+        // Combat Class
+        Combat playerCombat = new Combat();
+        
+        playerCombat.setAttackPower(30);
+        playerCombat.setAttackRoll(20);
+        playerCombat.setDefensePower(5);
+        playerCombat.setDefenseRoll(2);
+        playerCombat.setFleeRoll(10);
+        
+        String playerCombatInfo = playerCombat.toString();
+        System.out.println(playerCombatInfo);
     }
     
 }
