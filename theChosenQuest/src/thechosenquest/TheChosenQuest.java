@@ -198,7 +198,7 @@ public class TheChosenQuest {
         
         playerItem.setType("Potion");
         playerItem.setDescription("Blue Mana Potion");
-        playerItem.setQuantity("10");
+        playerItem.setQuantity(10);
         
         String playerItemInfo = playerItem.toString();
         System.out.println(playerItemInfo);
