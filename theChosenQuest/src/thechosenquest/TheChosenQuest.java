@@ -13,6 +13,7 @@ import byui.cit260.theChosenQuest.model.CharacterSheet;
 import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.model.Spells;
 import byui.cit260.theChosenQuest.model.Stats;
+import byui.cit260.theChosenQuest.view.CombatAreas;
 import byui.cit260.theChosenQuest.view.Map;
 import byui.cit260.theChosenQuest.view.Town;
 
@@ -121,7 +122,7 @@ public class TheChosenQuest {
         String playerTownInfo = playerTown.toString();
         System.out.println(playerTownInfo);
         
-        // Character Class
+               // Character Class
         CharacterClass playerClass = new CharacterClass();
         
         playerClass.setFighter("Fighter");
@@ -131,6 +132,19 @@ public class TheChosenQuest {
         
         String playerClassInfo = playerClass.toString();
         System.out.println(playerClassInfo);
-    }
+        
+         //Combat Areas
+        
+        CombatAreas playerArea = new CombatAreas();
+        
+        playerArea.setCreatures ("Goblin");
+        playerArea.setItems("Spell Book");
+        playerArea.setTraps("Spike Trap");
+        
+        String playerAreaInfo = playerArea.toString();
+        System.out.println(playerAreaInfo);
+        
+        
+}
     
 }
