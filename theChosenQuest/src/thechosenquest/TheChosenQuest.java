@@ -8,6 +8,7 @@ package thechosenquest;
 import byui.cit260.theChosenQuest.control.Combat;
 import byui.cit260.theChosenQuest.control.DiceFaces;
 import byui.cit260.theChosenQuest.control.RandomRoll;
+import byui.cit260.theChosenQuest.model.CharacterClass;
 import byui.cit260.theChosenQuest.model.CharacterSheet;
 import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.model.Spells;
@@ -119,6 +120,17 @@ public class TheChosenQuest {
         
         String playerTownInfo = playerTown.toString();
         System.out.println(playerTownInfo);
+        
+        // Character Class
+        CharacterClass playerClass = new CharacterClass();
+        
+        playerClass.setFighter("Fighter");
+        playerClass.setHunter("Hunter");
+        playerClass.setMage("Mage");
+        playerClass.setRogue("Rogue");
+        
+        String playerClassInfo = playerClass.toString();
+        System.out.println(playerClassInfo);
     }
     
 }
