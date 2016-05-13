@@ -13,6 +13,7 @@ import byui.cit260.theChosenQuest.model.CharacterSheet;
 import byui.cit260.theChosenQuest.model.Creatures;
 import byui.cit260.theChosenQuest.model.Npc;
 import byui.cit260.theChosenQuest.model.Equipment;
+import byui.cit260.theChosenQuest.model.Items;
 import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.model.Race;
 import byui.cit260.theChosenQuest.model.Spells;
@@ -191,6 +192,16 @@ public class TheChosenQuest {
         
         String playerRaceInfo = playerRace.toString();
         System.out.println(playerRaceInfo);
-}
+        
+        // Items Class
+        Items playerItem = new Items();
+        
+        playerItem.setType("Potion");
+        playerItem.setDescription("Blue Mana Potion");
+        playerItem.setQuantity("10");
+        
+        String playerItemInfo = playerItem.toString();
+        System.out.println(playerItemInfo);
+    }
     
 }
