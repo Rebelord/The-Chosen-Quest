@@ -14,6 +14,7 @@ import byui.cit260.theChosenQuest.model.Creatures;
 import byui.cit260.theChosenQuest.model.Npc;
 import byui.cit260.theChosenQuest.model.Equipment;
 import byui.cit260.theChosenQuest.model.Player;
+import byui.cit260.theChosenQuest.model.Race;
 import byui.cit260.theChosenQuest.model.Spells;
 import byui.cit260.theChosenQuest.model.Stats;
 import byui.cit260.theChosenQuest.view.CombatAreas;
@@ -180,6 +181,16 @@ public class TheChosenQuest {
         String equipmentInfo = equipment.toString();
         System.out.println(equipmentInfo);
 
+        // Race Class
+        Race playerRace = new Race();
+        
+        playerRace.setDwarf("Dwarf");
+        playerRace.setElf("Elf");
+        playerRace.setHalfling("Halfling");
+        playerRace.setHuman("Human");
+        
+        String playerRaceInfo = playerRace.toString();
+        System.out.println(playerRaceInfo);
 }
     
 }
