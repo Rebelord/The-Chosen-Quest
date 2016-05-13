@@ -11,6 +11,7 @@ import byui.cit260.theChosenQuest.control.RandomRoll;
 import byui.cit260.theChosenQuest.model.CharacterClass;
 import byui.cit260.theChosenQuest.model.CharacterSheet;
 import byui.cit260.theChosenQuest.model.Creatures;
+import byui.cit260.theChosenQuest.model.Equipment;
 import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.model.Spells;
 import byui.cit260.theChosenQuest.model.Stats;
@@ -147,13 +148,25 @@ public class TheChosenQuest {
         // Creatures Class
         Creatures creatures = new Creatures();
         
-       creatures.setName("Gelatenious Cube");
-       creatures.setAttack(0);
-       creatures.setDefense(20);
-       creatures.setHp(10);
-       
-       String creatureInfo = creatures.toString();
+        creatures.setName("Gelatenious Cube");
+        creatures.setAttack(0);
+        creatures.setDefense(20);
+        creatures.setHp(10);
+
+        String creatureInfo = creatures.toString();
         System.out.println(creatureInfo);
+
+        // Equipment Class
+        Equipment equipment = new Equipment();
+        
+        equipment.setType("Sword");
+        equipment.setDescription("Sword of a Thousand Truths");
+        equipment.setAttack(90);
+        equipment.setDefense(90);
+        equipment.setQuality(10);
+        
+        String equipmentInfo = equipment.toString();
+        System.out.println(equipmentInfo);
 }
     
 }
