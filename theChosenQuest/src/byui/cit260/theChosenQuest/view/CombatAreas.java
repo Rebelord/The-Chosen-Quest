@@ -78,7 +78,8 @@ public class CombatAreas implements Serializable{
         }
         return true;
     }
-
+//grrrrrrrrr
+    
     @Override
     public String toString() {
         return "CombatAreas{" + "creatures=" + creatures + ", traps=" + traps + ", items=" + items + '}';
