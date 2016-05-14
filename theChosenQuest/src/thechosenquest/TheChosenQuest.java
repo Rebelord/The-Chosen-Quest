@@ -11,11 +11,8 @@ import byui.cit260.theChosenQuest.control.RandomRoll;
 import byui.cit260.theChosenQuest.model.CharacterClass;
 import byui.cit260.theChosenQuest.model.CharacterSheet;
 import byui.cit260.theChosenQuest.model.Creatures;
-<<<<<<< HEAD
 import byui.cit260.theChosenQuest.model.Npc;
-=======
 import byui.cit260.theChosenQuest.model.Equipment;
->>>>>>> e1d040c4c7bfa1b1e983f782f8ce05d7327c2cc0
 import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.model.Spells;
 import byui.cit260.theChosenQuest.model.Stats;
@@ -170,9 +167,6 @@ public class TheChosenQuest {
         
         String playerNpcInfo = playerNpc.toString();
         System.out.println(playerNpcInfo);
-        
-        
-=======
 
         // Equipment Class
         Equipment equipment = new Equipment();
@@ -185,7 +179,7 @@ public class TheChosenQuest {
         
         String equipmentInfo = equipment.toString();
         System.out.println(equipmentInfo);
->>>>>>> e1d040c4c7bfa1b1e983f782f8ce05d7327c2cc0
+
 }
     
 }

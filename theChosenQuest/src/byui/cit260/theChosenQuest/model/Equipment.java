@@ -104,7 +104,7 @@ public class Equipment implements Serializable{
         }
         return true;
     }
-
+//killl ittttt goood
     @Override
     public String toString() {
         return "Equipment{" + "defense=" + defense + ", attack=" + attack + ", quality=" + quality + ", type=" + type + ", description=" + description + '}';
