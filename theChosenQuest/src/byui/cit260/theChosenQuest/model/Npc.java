@@ -95,6 +95,8 @@ public class Npc implements Serializable{
     @Override
     public String toString() {
         return "Npc{" + "name=" + name + ", location=" + location + ", conversation=" + conversation + ", occupation=" + occupation + '}';
+    // Bloody Hell
+    
     }
     
     
