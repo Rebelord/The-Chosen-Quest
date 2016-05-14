@@ -11,6 +11,7 @@ import byui.cit260.theChosenQuest.control.RandomRoll;
 import byui.cit260.theChosenQuest.model.CharacterClass;
 import byui.cit260.theChosenQuest.model.CharacterSheet;
 import byui.cit260.theChosenQuest.model.Creatures;
+import byui.cit260.theChosenQuest.model.Npc;
 import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.model.Spells;
 import byui.cit260.theChosenQuest.model.Stats;
@@ -154,6 +155,19 @@ public class TheChosenQuest {
        
        String creatureInfo = creatures.toString();
         System.out.println(creatureInfo);
+        
+        // Npc Class
+        Npc playerNpc = new Npc();
+        
+        playerNpc.setName("Fred");
+        playerNpc.setLocation("Tavern");
+        playerNpc.setOccupation("Bar Keeper");
+        playerNpc.setConversation("Welcome");
+        
+        String playerNpcInfo = playerNpc.toString();
+        System.out.println(playerNpcInfo);
+        
+        
 }
     
 }
