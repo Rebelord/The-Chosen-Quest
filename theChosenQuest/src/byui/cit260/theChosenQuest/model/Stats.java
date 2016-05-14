@@ -18,12 +18,21 @@ public class Stats implements Serializable{
     private int dexterity;
     private int charisma;
     private int constitution;
+    private int magic;
 
     public Stats() {
     }
 
     public int getStrength() {
         return strength;
+    }
+
+    public int getMagic() {
+        return magic;
+    }
+
+    public void setMagic(int magic) {
+        this.magic = magic;
     }
 
     public int getDexterity() {
@@ -56,11 +65,12 @@ public class Stats implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 29 * hash + this.strength;
-        hash = 29 * hash + this.dexterity;
-        hash = 29 * hash + this.charisma;
-        hash = 29 * hash + this.constitution;
+        int hash = 7;
+        hash = 41 * hash + this.strength;
+        hash = 41 * hash + this.dexterity;
+        hash = 41 * hash + this.charisma;
+        hash = 41 * hash + this.constitution;
+        hash = 41 * hash + this.magic;
         return hash;
     }
 
@@ -88,14 +98,17 @@ public class Stats implements Serializable{
         if (this.constitution != other.constitution) {
             return false;
         }
+        if (this.magic != other.magic) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Stats{" + "strength=" + strength + ", dexterity=" + dexterity + ", charisma=" + charisma + ", constitution=" + constitution + '}';
+        return "Stats{" + "strength=" + strength + ", dexterity=" + dexterity + ", charisma=" + charisma + ", constitution=" + constitution + ", magic=" + magic + '}';
     }
-    
+
     
     
 }
