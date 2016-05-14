@@ -13,6 +13,7 @@ import byui.cit260.theChosenQuest.model.CharacterSheet;
 import byui.cit260.theChosenQuest.model.Creatures;
 import byui.cit260.theChosenQuest.model.Npc;
 import byui.cit260.theChosenQuest.model.Equipment;
+import byui.cit260.theChosenQuest.model.Inventory;
 import byui.cit260.theChosenQuest.model.Items;
 import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.model.Race;
@@ -202,6 +203,19 @@ public class TheChosenQuest {
         
         String playerItemInfo = playerItem.toString();
         System.out.println(playerItemInfo);
+        
+        // Inventory Class
+        
+        Inventory playerInventory = new Inventory ();
+        
+        playerInventory.setEquipment("Blessed shield");
+        playerInventory.setItems("Healing Potion");
+        playerInventory.setGold(1);
+        
+        String playerInventoryInfo = playerInventory.toString();
+        System.out.println(playerInventoryInfo);
+        //grrr
+        
     }
     
 }
