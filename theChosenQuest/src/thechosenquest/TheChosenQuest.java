@@ -13,6 +13,7 @@ import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.model.Spells;
 import byui.cit260.theChosenQuest.model.Stats;
 import byui.cit260.theChosenQuest.view.Map;
+import byui.cit260.theChosenQuest.view.Town;
 
 /**
  *
@@ -106,6 +107,18 @@ public class TheChosenQuest {
         
         String playerCombatInfo = playerCombat.toString();
         System.out.println(playerCombatInfo);
+        
+        //Town Class
+        
+        Town playerTown = new Town();
+        
+        playerTown.setInn("Hometown");
+        playerTown.setNpc("Bob");
+        playerTown.setShop("weapons Galor");
+        playerTown.setTavern("The Green Dragon");
+        
+        String playerTownInfo = playerTown.toString();
+        System.out.println(playerTownInfo);
     }
     
 }
