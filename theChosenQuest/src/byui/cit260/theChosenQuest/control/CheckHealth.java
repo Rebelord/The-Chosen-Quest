@@ -9,6 +9,8 @@ package byui.cit260.theChosenQuest.control;
  *
  * @author Zack Durbin
  */
-public class movementController {
+public class CheckHealth {
     
 }
+//This controller will inform the user of their health after attacks have been done. If hp <= 0 Game is over.
+
