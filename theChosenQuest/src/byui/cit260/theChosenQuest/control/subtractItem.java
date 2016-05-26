@@ -10,5 +10,12 @@ package byui.cit260.theChosenQuest.control;
  * @author Zack Durbin
  */
 class subtractItem {
-    
+    if (subtractItem = true) {
+            int newWeight = bagWeight-itemWeight;
+                if (newWeight<0) { 
+                    return = -1;
+                } else {
+                    return = (bagWeight = newWeight);
+                }
+            }
 }
