@@ -38,12 +38,12 @@ public class InventoryControllerTest {
     }
 
     /**
-     * Test of inventoryController method, of class InventoryController.
+     * Test of subtractInventory method, of class InventoryController.
      */
     @Test
     public void testInventoryController() {
-        // test 1 
-        System.out.println("inventoryController");
+        // Test Case 1 Requires variables to be declared as well. 
+        System.out.println("InventoryController Test Case #1");
         int addItem = 0;
         boolean subtractItem = true;
         int itemWeight = 10;
@@ -54,7 +54,15 @@ public class InventoryControllerTest {
         int expResult = 10;
         int result = instance.subtractInventory (subtractItem, itemWeight, bagWeight, bagSize);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
+        // Test Case 2
+        System.out.println("InventoryController Test Case #2");
+        subtractItem = true;
+        itemWeight = 10;
+        bagWeight = 2;
+        bagSize = 50;
+        expResult = -1;
+        result = instance.subtractInventory (subtractItem, itemWeight, bagWeight, bagSize);
+        assertEquals(expResult, result);
      
     }
     
