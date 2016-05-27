@@ -20,16 +20,18 @@ public class InventoryController {
      // Controller gets item weight from itemList
      // Controller gets bag size itemList
      // Controller gets playerMaxWeight from CharacterSheet
-    public int subtractInventory (boolean subtractItem, int itemWeight, int bagWeight, int bagSize) {
+    public int subtractInventory (boolean subtractItem, int itemWeight, int bagWeight, int bagSize, boolean addItem) {
         int newWeight = 0;
-        if (subtractItem = true) {
-            newWeight = bagWeight - itemWeight;
-                if (newWeight < 0) { 
-                    newWeight = -1;
-                } else {
-                    return (bagWeight = newWeight);
-                }
-            }
+        if ((subtractItem = false) & (addItem = false)){
+            newWeight = bagWeight;
+        } else if (subtractItem = true) {
+                newWeight = bagWeight - itemWeight;
+                   if (newWeight < 0) { 
+                       newWeight = -1;
+                    } else {
+                        return (bagWeight = newWeight);
+                    }
+               }
         return newWeight;
     }
        /*boolean addItem = false;
@@ -39,13 +41,15 @@ public class InventoryController {
             int newWeight = bagWeight + itemWeight;
             int bagRoom = 0;
             bagRoom++;
-            if ((playerMaxWeight > newWeight) | (bagRoom <= bagSize)) {
-                bagWeight = newWeight;
-            } else if (playerMaxWeight < newWeight){
-                bagWeight = -1;       
-            }else if (bagRoom > bagSize) {
-                bagWeight = -2;
-            }
+            if (itemWeight < 0) {
+                bagWeight = -3;
+                }else if ((playerMaxWeight > newWeight) | (bagRoom <= bagSize)) {
+                    bagWeight = newWeight;
+                } else if (playerMaxWeight < newWeight){
+                    bagWeight = -1;       
+                } else if (bagRoom > bagSize) {
+                    bagWeight = -2;
+                }
        }
        return bagWeight;
     }

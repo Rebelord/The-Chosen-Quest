@@ -43,7 +43,7 @@ public class InventoryControllerTest {
     @Test
     public void testInventoryController() {
         // Test Case 1 Requires variables to be declared as well. 
-        System.out.println("InventoryController Test Case #1A");
+        System.out.println("InventoryController Test Case #1");
         boolean addItem = true;
         boolean subtractItem = true;
         int itemWeightA = 10;
@@ -54,95 +54,68 @@ public class InventoryControllerTest {
         InventoryController instance = new InventoryController();
         int expResultA = 10;
         int expResultB = 0;
-        int result = instance.subtractInventory (subtractItem, itemWeightA, bagWeight, bagSize);
+        int result = instance.subtractInventory (subtractItem, itemWeightA, bagWeight, bagSize, addItem);
         assertEquals(expResultA, result);
-        System.out.println("InventoryController Test Case #1B");
-        result = instance.addInventory (addItem, itemWeightB, bagWeight, bagSize, playerMaxWeight);
-        assertEquals(expResultB, result);
+
         // Test Case 2
-        System.out.println("InventoryController Test Case #2A");
+        System.out.println("InventoryController Test Case #2");
         addItem = false;
         subtractItem = true;
         itemWeightA = 10;
-        itemWeightB = 0;
         bagSize = 50;
         bagWeight = 2;
         playerMaxWeight = 150;
         expResultA = -1;
-        expResultB = 0;
-        result = instance.subtractInventory (subtractItem, itemWeightA, bagWeight, bagSize);
+        result = instance.subtractInventory (subtractItem, itemWeightA, bagWeight, bagSize, addItem);
         assertEquals(expResultA, result);
-        System.out.println("InventoryController Test Case #2B");
-        result = instance.addInventory (addItem, itemWeightB, bagWeight, bagSize, playerMaxWeight);
-        assertEquals(expResultB, result);
+        
         // Test Case 3
-        System.out.println("InventoryController Test Case #3A");
-        addItem = false;
+        System.out.println("InventoryController Test Case #3");
+        addItem = true;
         subtractItem = false;
-        itemWeightA = 0;
-        itemWeightB = 0;
-        bagSize = 0;
-        bagWeight = 0;
-        playerMaxWeight = 0;
-        expResultA = 0;
-        expResultB = 0;
-        result = instance.subtractInventory (subtractItem, itemWeightA, bagWeight, bagSize);
+        itemWeightA = -10;
+        bagSize = 10;
+        bagWeight = 8;
+        playerMaxWeight = 100;
+        expResultA = -3;
+        result = instance.addInventory (addItem, itemWeightA, bagWeight, bagSize, playerMaxWeight);
         assertEquals(expResultA, result);
-        System.out.println("InventoryController Test Case #3B");
-        result = instance.addInventory (addItem, itemWeightB, bagWeight, bagSize, playerMaxWeight);
-        assertEquals(expResultB, result);
         
         // Test Case 4
-        System.out.println("InventoryController Test Case #4A");
+        System.out.println("InventoryController Test Case #4");
         addItem = false;
-        subtractItem = false;
-        itemWeightA = 0;
-        itemWeightB = 0;
-        bagSize = 0;
-        bagWeight = 0;
-        playerMaxWeight = 0;
-        expResultA = 0;
-        expResultB = 0;
-        result = instance.subtractInventory (subtractItem, itemWeightA, bagWeight, bagSize);
+        subtractItem = true;
+        itemWeightA = 5;
+        bagSize = 20;
+        bagWeight = 15;
+        playerMaxWeight = 75;
+        expResultA = 10;
+        result = instance.subtractInventory (subtractItem, itemWeightA, bagWeight, bagSize, addItem);
         assertEquals(expResultA, result);
-        System.out.println("InventoryController Test Case #4B");
-        result = instance.addInventory (addItem, itemWeightB, bagWeight, bagSize, playerMaxWeight);
-        assertEquals(expResultB, result);
         
         // Test Case 5
-        System.out.println("InventoryController Test Case #5A");
-        addItem = false;
+        System.out.println("InventoryController Test Case #5");
+        addItem = true;
         subtractItem = false;
-        itemWeightA = 0;
-        itemWeightB = 0;
-        bagSize = 0;
-        bagWeight = 0;
-        playerMaxWeight = 0;
-        expResultA = 0;
-        expResultB = 0;
-        result = instance.subtractInventory (subtractItem, itemWeightA, bagWeight, bagSize);
+        itemWeightA = 10;
+        bagSize = 5;
+        bagWeight = 5;
+        playerMaxWeight = 90;
+        expResultA = -1;
+        result = instance.subtractInventory (subtractItem, itemWeightA, bagWeight, bagSize, addItem);
         assertEquals(expResultA, result);
-        System.out.println("InventoryController Test Case #5B");
-        result = instance.addInventory (addItem, itemWeightB, bagWeight, bagSize, playerMaxWeight);
-        assertEquals(expResultB, result);
      
         // Test Case 6
-        System.out.println("InventoryController Test Case #6A");
+        System.out.println("InventoryController Test Case #6");
         addItem = false;
         subtractItem = false;
-        itemWeightA = 0;
-        itemWeightB = 0;
-        bagSize = 0;
-        bagWeight = 0;
-        playerMaxWeight = 0;
-        expResultA = 0;
-        expResultB = 0;
-        result = instance.subtractInventory (subtractItem, itemWeightA, bagWeight, bagSize);
+        itemWeightA = 5;
+        bagSize = 15;
+        bagWeight = 10;
+        playerMaxWeight = 125;
+        expResultA = 10;
+        result = instance.subtractInventory (subtractItem, itemWeightA, bagWeight, bagSize, addItem);
         assertEquals(expResultA, result);
-        System.out.println("InventoryController Test Case #6B");
-        result = instance.addInventory (addItem, itemWeightB, bagWeight, bagSize, playerMaxWeight);
-        assertEquals(expResultB, result);
-     
     }
     
 }
