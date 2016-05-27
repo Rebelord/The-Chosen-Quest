@@ -50,7 +50,7 @@ public class InventoryControllerTest {
         int playerMaxWeight = 0;
         InventoryController instance = new InventoryController();
         int expResult = 0;
-        int result = instance.inventoryController(<error>, <error>_2, <error>_3, <error>_4, <error>_5);
+        int result = instance.InventoryController(addItem, subtractItem, itemWeight, bagSize, playerMaxWeight);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
