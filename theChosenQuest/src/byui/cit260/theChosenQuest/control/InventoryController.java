@@ -22,9 +22,9 @@ public class InventoryController {
      // Controller gets playerMaxWeight from CharacterSheet
     public int subtractInventory (boolean subtractItem, int itemWeight, int bagWeight, int bagSize, boolean addItem) {
         int newWeight = 0;
-        if ((subtractItem = false) & (addItem = false)){
+        if ((subtractItem == false) & (addItem == false)){
             newWeight = bagWeight;
-        } else if (subtractItem = true) {
+        } else if (subtractItem == true) {
                 newWeight = bagWeight - itemWeight;
                    if (newWeight < 0) { 
                        newWeight = -1;
@@ -37,7 +37,7 @@ public class InventoryController {
        /*boolean addItem = false;
        int playerMaxWeight = 0;*/
     public int addInventory (boolean addItem, int itemWeight, int bagWeight, int bagSize, int playerMaxWeight) {
-        if (addItem = true){
+        if (addItem == true){
             int newWeight = bagWeight + itemWeight;
             int bagRoom = 0;
             bagRoom++;
