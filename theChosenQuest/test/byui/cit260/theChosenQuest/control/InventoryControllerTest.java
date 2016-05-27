@@ -43,11 +43,11 @@ public class InventoryControllerTest {
     @Test
     public void testInventoryController() {
         System.out.println("inventoryController");
-        addItem = null;
-        subtractItem <error>_2 = null;
-        itemWeight <error>_3 = null;
-        bagSize <error>_4 = null;
-        playerMaxWeight <error>_5 = null;
+        int addItem = 0;
+        int subtractItem = 0;
+        int itemWeight = 0;
+        int bagSize = 0;
+        int playerMaxWeight = 0;
         InventoryController instance = new InventoryController();
         int expResult = 0;
         int result = instance.inventoryController(<error>, <error>_2, <error>_3, <error>_4, <error>_5);
