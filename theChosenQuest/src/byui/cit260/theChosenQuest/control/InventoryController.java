@@ -12,7 +12,7 @@ package byui.cit260.theChosenQuest.control;
 public class InventoryController {
     public int inventoryController (boolean addItem, boolean subtractItem, int itemWeight, int bagSize, int playerMaxWeight, int bagWeight){
        int newWeight = 0;
-        if ((subtractItem == false) & (addItem == false)){
+        if ((subtractItem == false) && (addItem == false)){
             newWeight = -1;
         } else if (subtractItem == true) {
                 newWeight = bagWeight - itemWeight;
@@ -43,7 +43,7 @@ public class InventoryController {
      // Controller gets playerMaxWeight from CharacterSheet
     public int subtractInventory (boolean subtractItem, int itemWeight, int bagWeight, int bagSize, boolean addItem) {
         int newWeight = 0;
-        if ((subtractItem == false) & (addItem == false)){
+        if ((subtractItem == false) && (addItem == false)){
             newWeight = -1;
         } else if (subtractItem == true) {
                 newWeight = bagWeight - itemWeight;
