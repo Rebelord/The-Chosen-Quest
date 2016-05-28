@@ -10,30 +10,31 @@ package byui.cit260.theChosenQuest.control;
  * @author Zack Durbin
  */
 public class InventoryController {
-    public int inventoryController (boolean addItem, boolean subtractItem, int itemWeight, int bagSize, int playerMaxWeight, int bagWeight){
-       int newWeight = 0;
+    public int inventoryController (boolean addItem, boolean subtractItem, int itemWeight, int playerMaxWeight, int bagWeight){
+        int newWeight = 0;
+        
+        // Sanity Check
         if ((subtractItem == false) && (addItem == false)){
-            newWeight = -1;
-        } else if (subtractItem == true) {
+            return -1;
+        }
+        
+        
+        if (subtractItem == true) {
                 newWeight = bagWeight - itemWeight;
                    if (newWeight < 0) { 
-                       newWeight = -1;
+                       return -1;
                     } else {
-                        return (bagWeight = newWeight);
+                        return newWeight;
                     }
                }
         if (addItem == true){
             newWeight = bagWeight + itemWeight;
-            int bagRoom = 0;
-            bagRoom++;
             if (itemWeight < 0) {
-                newWeight = -3;
-                }else if ((playerMaxWeight > newWeight) | (bagRoom <= bagSize)) {
-                    bagWeight = newWeight;
+                return -3;
+                }else if (playerMaxWeight > newWeight) {
+                    return newWeight;
                 } else if (playerMaxWeight < newWeight){
-                    bagWeight = -1;       
-                } else if (bagRoom > bagSize) {
-                    bagWeight = -2;
+                    return -1;       
                 }
        }
         return newWeight;
@@ -44,16 +45,16 @@ public class InventoryController {
     public int subtractInventory (boolean subtractItem, int itemWeight, int bagWeight, int bagSize, boolean addItem) {
         int newWeight = 0;
         if ((subtractItem == false) && (addItem == false)){
-            newWeight = -1;
+            return -1;
         } else if (subtractItem == true) {
                 newWeight = bagWeight - itemWeight;
                    if (newWeight < 0) { 
                        newWeight = -1;
                     } else {
-                        return (bagWeight = newWeight);
+                        return newWeight;
                     }
                }
-        return newWeight;
+        return -1;
     }
        /*boolean addItem = false;
        int playerMaxWeight = 0;*/
@@ -73,11 +74,6 @@ public class InventoryController {
                 }
        }
        return bagWeight;
-    }
-     
-
-    private void subtractItem(boolean subtractItem, int bagWeight, int bagSize) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
 

@@ -47,13 +47,12 @@ public class InventoryControllerTest {
         boolean addItem = true;
         boolean subtractItem = true;
         int itemWeight = 10;
-        int bagSize = 50;
         int bagWeight = 20;
         int playerMaxWeight = 0;
         InventoryController instance = new InventoryController();
         int expResultA = 10;
         int expResultB = 0;
-        int result = instance.inventoryController (addItem, subtractItem, itemWeight, bagSize, playerMaxWeight, bagWeight);
+        int result = instance.inventoryController (addItem, subtractItem, itemWeight, playerMaxWeight, bagWeight);
         assertEquals(expResultA, result);
 
         // Test Case 2
@@ -61,11 +60,10 @@ public class InventoryControllerTest {
         addItem = false;
         subtractItem = true;
         itemWeight = 10;
-        bagSize = 50;
         bagWeight = 2;
         playerMaxWeight = 150;
         expResultA = -1;
-        result = instance.inventoryController (addItem, subtractItem, itemWeight, bagSize, playerMaxWeight, bagWeight);
+        result = instance.inventoryController (addItem, subtractItem, itemWeight, playerMaxWeight, bagWeight);
         assertEquals(expResultA, result);
         
         // Test Case 3
@@ -73,11 +71,10 @@ public class InventoryControllerTest {
         addItem = true;
         subtractItem = false;
         itemWeight = -10;
-        bagSize = 10;
         bagWeight = 8;
         playerMaxWeight = 100;
         expResultA = -3;
-        result = instance.inventoryController (addItem, subtractItem, itemWeight, bagSize, playerMaxWeight, bagWeight);
+        result = instance.inventoryController (addItem, subtractItem, itemWeight, playerMaxWeight, bagWeight);
         assertEquals(expResultA, result);
         
         // Test Case 4
@@ -85,11 +82,10 @@ public class InventoryControllerTest {
         addItem = false;
         subtractItem = true;
         itemWeight = 5;
-        bagSize = 20;
         bagWeight = 15;
         playerMaxWeight = 75;
         expResultA = 10;
-        result = instance.inventoryController (addItem, subtractItem, itemWeight, bagSize, playerMaxWeight, bagWeight);
+        result = instance.inventoryController (addItem, subtractItem, itemWeight, playerMaxWeight, bagWeight);
         assertEquals(expResultA, result);
         
         // Test Case 5
@@ -97,11 +93,10 @@ public class InventoryControllerTest {
         addItem = true;
         subtractItem = false;
         itemWeight = 10;
-        bagSize = 5;
         bagWeight = 5;
         playerMaxWeight = 90;
-        expResultA = -1;
-        result = instance.inventoryController (addItem, subtractItem, itemWeight, bagSize, playerMaxWeight, bagWeight);
+        expResultA = 15;
+        result = instance.inventoryController (addItem, subtractItem, itemWeight, playerMaxWeight, bagWeight);
         assertEquals(expResultA, result);
      
         // Test Case 6
@@ -109,11 +104,10 @@ public class InventoryControllerTest {
         addItem = false;
         subtractItem = false;
         itemWeight = 5;
-        bagSize = 15;
         bagWeight = 10;
         playerMaxWeight = 125;
-        expResultA = 10;
-        result = instance.inventoryController (addItem, subtractItem, itemWeight, bagSize, playerMaxWeight, bagWeight);
+        expResultA = -1;
+        result = instance.inventoryController (addItem, subtractItem, itemWeight, playerMaxWeight, bagWeight);
         assertEquals(expResultA, result);
     }
     
