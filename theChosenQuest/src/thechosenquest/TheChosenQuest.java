@@ -96,10 +96,10 @@ public class TheChosenQuest {
         // Dice Face Class
         DiceFaces playerDieChoice = new DiceFaces();
         
-        playerDieChoice.setSixSided(6);
-        playerDieChoice.setEightSided(8);
-        playerDieChoice.setTenSided(10);
-        playerDieChoice.setTwentySided(20);
+        playerDieChoice.rollTheDice(6);
+        playerDieChoice.rollTheDice(8);
+        playerDieChoice.rollTheDice(10);
+        playerDieChoice.rollTheDice(20);
         
         String playerDieUse = playerDieChoice.toString();
         System.out.println(playerDieChoice);
