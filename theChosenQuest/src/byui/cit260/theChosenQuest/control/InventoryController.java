@@ -11,19 +11,40 @@ package byui.cit260.theChosenQuest.control;
  */
 public class InventoryController {
     public int inventoryController (boolean addItem, boolean subtractItem, int itemWeight, int bagSize, int playerMaxWeight, int bagWeight){
-    return -1;
-    }   /*int bagWeight = 0;
-       int itemWeight = 0;
-       boolean subtractItem = true;
-       int bagSize = 0;*/
-      
+       int newWeight = 0;
+        if ((subtractItem == false) & (addItem == false)){
+            newWeight = -1;
+        } else if (subtractItem == true) {
+                newWeight = bagWeight - itemWeight;
+                   if (newWeight < 0) { 
+                       newWeight = -1;
+                    } else {
+                        return (bagWeight = newWeight);
+                    }
+               }
+        if (addItem == true){
+            newWeight = bagWeight + itemWeight;
+            int bagRoom = 0;
+            bagRoom++;
+            if (itemWeight < 0) {
+                newWeight = -3;
+                }else if ((playerMaxWeight > newWeight) | (bagRoom <= bagSize)) {
+                    bagWeight = newWeight;
+                } else if (playerMaxWeight < newWeight){
+                    bagWeight = -1;       
+                } else if (bagRoom > bagSize) {
+                    bagWeight = -2;
+                }
+       }
+        return newWeight;
+    }
      // Controller gets item weight from itemList
      // Controller gets bag size itemList
      // Controller gets playerMaxWeight from CharacterSheet
     public int subtractInventory (boolean subtractItem, int itemWeight, int bagWeight, int bagSize, boolean addItem) {
         int newWeight = 0;
         if ((subtractItem == false) & (addItem == false)){
-            newWeight = bagWeight;
+            newWeight = -1;
         } else if (subtractItem == true) {
                 newWeight = bagWeight - itemWeight;
                    if (newWeight < 0) { 
