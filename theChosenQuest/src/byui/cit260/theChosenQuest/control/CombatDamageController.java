@@ -10,7 +10,7 @@ package byui.cit260.theChosenQuest.control;
  * @author Zack Durbin
  */
 public class CombatDamageController {
-    public int combatDamageController(int diceChoice, int playerAttackBonus, int playerDefense, int DiceFaces, int creatureAttackBonus, int creatureDefense){
+    public int combatDamageController(int playerAttackBonus, int playerDefense, int creatureAttackBonus, int creatureDefense){
     return -1;
     }
     public int playerAttackroll (int diceChoice, int playerAttackBonus, int creatureDefense) {
@@ -20,7 +20,7 @@ public class CombatDamageController {
 
         int playerAttack = 0;
         int playerAttackRoll;
-        playerAttackRoll = playerAttackBonus + diceRoll.rollTheDice(diceChoice);
+        playerAttackRoll = playerAttackBonus + diceRoll.rollTheDice(20);
         int playerCombatSuccess;
         playerCombatSuccess = playerAttackRoll - creatureDefense;
             if(playerCombatSuccess <= 0){
@@ -32,13 +32,13 @@ public class CombatDamageController {
 
         }
 
-    public int creatureAttack (int diceChoice, int creatureAttackBonus, int playerDefense) {
+    public int creatureAttack (int creatureAttackBonus, int playerDefense) {
         
         // Intializing the Dice Random.
         DiceFaces diceRoll = new DiceFaces();
 
         int creatureAttackRoll;
-            creatureAttackRoll = creatureAttackBonus + diceRoll.rollTheDice(diceChoice);
+            creatureAttackRoll = creatureAttackBonus + diceRoll.rollTheDice(20);
         int creatureCombatSuccess = creatureAttackRoll- playerDefense;
 
             if(creatureCombatSuccess > 0){

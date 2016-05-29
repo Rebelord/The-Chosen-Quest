@@ -35,73 +35,63 @@ public class CombatDamageControllerTest {
         System.out.println("combatDamageController test 1");
         int playerAttackBonus = 2;
         int playerDefense = 0;
-        int DiceFaces = 20;
-        int diceChoice = 20;
         int creatureAttackBonus = 0;
         int creatureDefense = 10;
         CombatDamageController instance = new CombatDamageController();
         int expResult = -1;
-        int result = instance.combatDamageController(diceChoice, playerAttackBonus, playerDefense, DiceFaces, creatureAttackBonus, creatureDefense);
+        int result = instance.combatDamageController(playerAttackBonus, playerDefense, creatureAttackBonus, creatureDefense);
         assertEquals(expResult, result);
         
         //test 2
         System.out.println("combatDamageController test 2");
          playerAttackBonus = 1;
          playerDefense = 0;
-         DiceFaces = 0;
-         diceChoice = 2;
          creatureAttackBonus = 0;
          creatureDefense = 7;
          expResult = -1;
-         result = instance.combatDamageController(diceChoice, playerAttackBonus, playerDefense, DiceFaces, creatureAttackBonus, creatureDefense);
+         result = instance.combatDamageController(playerAttackBonus, playerDefense, creatureAttackBonus, creatureDefense);
         assertEquals(expResult, result);
         
         //test 3
         System.out.println("combatDamageController test 3");
          playerAttackBonus = 0;
          playerDefense = 0;
-         DiceFaces = 0;
-         diceChoice = 0;
          creatureAttackBonus = 0;
          creatureDefense = 0;
-         expResult = 0;
-         result = instance.combatDamageController(diceChoice, playerAttackBonus, playerDefense, DiceFaces, creatureAttackBonus, creatureDefense);
+         expResult = -1;
+         result = instance.combatDamageController(playerAttackBonus, playerDefense, creatureAttackBonus, creatureDefense);
         assertEquals(expResult, result);
         
         //test 4
         System.out.println("combatDamageController test 4");
-         playerAttackBonus = 0;
+         playerAttackBonus = 3;
          playerDefense = 0;
-         DiceFaces = 0;
-         diceChoice = 0;
          creatureAttackBonus = 0;
          creatureDefense = 0;
-         expResult = 0;
-         result = instance.combatDamageController(diceChoice, playerAttackBonus, playerDefense, DiceFaces, creatureAttackBonus, creatureDefense);
+         expResult = -1;
+         result = instance.combatDamageController(playerAttackBonus, playerDefense, creatureAttackBonus, creatureDefense);
         assertEquals(expResult, result);
         
         //test 5
         System.out.println("combatDamageController test 5");
          playerAttackBonus = 0;
          playerDefense = 0;
-         DiceFaces = 0;
-         diceChoice = 0;
+         
+         
          creatureAttackBonus = 0;
          creatureDefense = 0;
-         expResult = 0;
-         result = instance.combatDamageController(diceChoice, playerAttackBonus, playerDefense, DiceFaces, creatureAttackBonus, creatureDefense);
+         expResult = -1;
+         result = instance.combatDamageController(playerAttackBonus, playerDefense, creatureAttackBonus, creatureDefense);
         assertEquals(expResult, result);
         
         //test 6
         System.out.println("combatDamageController test 6");
          playerAttackBonus = 0;
          playerDefense = 0;
-         DiceFaces = 0;
-         diceChoice = 0;
          creatureAttackBonus = 0;
          creatureDefense = 0;
-         expResult = 0;
-         result = instance.combatDamageController(diceChoice, playerAttackBonus, playerDefense, DiceFaces, creatureAttackBonus, creatureDefense);
+         expResult = -1;
+         result = instance.combatDamageController(playerAttackBonus, playerDefense, creatureAttackBonus, creatureDefense);
         assertEquals(expResult, result);
         
         
