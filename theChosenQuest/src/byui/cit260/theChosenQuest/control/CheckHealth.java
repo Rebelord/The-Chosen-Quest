@@ -10,26 +10,27 @@ package byui.cit260.theChosenQuest.control;
  * @author Zack Durbin
  */
 public class CheckHealth {
-    public int checkhealth (int health, boolean battle, int attack, boolean rest) {
+    public int checkHealth (int health, int poison, boolean rest, int charMaxHealth) {
         
         // Perform Sanity Checks
-        if ((battle == false) && (rest == false)) {
+        if ((poison <= 0) && (rest == false)) {
+            return -1;
+        }
+        if (health <= 0) {
             return -1;
         }
         
-        if ((battle == true)&& (rest == true)) {
-            return -1;
-        }
-        
-        if (battle == true) {
-            if (attack >= 0) {
-            health -= attack;
-        }
-        }
+        // Lets make some changes to your health.
         if (rest == true) {
-            health = 100;
+            return charMaxHealth;
         }
-        
+        if (poison > 0) {
+            health -= poison;
+            if (health <= 0) {
+                return 0;
+            }
+        }
+        // If it got here without doing something, then there's an error.
         return -1;
     }
 }
