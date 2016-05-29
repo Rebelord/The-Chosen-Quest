@@ -23,12 +23,13 @@ public class CombatDamageController {
         playerAttackRoll = playerAttackBonus + diceRoll.rollTheDice(diceChoice);
         int playerCombatSuccess;
         playerCombatSuccess = playerAttackRoll - creatureDefense;
-            if(playerCombatSuccess > 0);{
+            if(playerCombatSuccess <= 0){
                 return playerCombatSuccess;
-            } /* This is bugging for an "else if" statement.*/ else {
+            } else {
                 return -1;
             }
-            /* Requires a fallback return here, change it to what you need */ return -1;
+            /* Requires a fallback return here, change it to what you need */
+
         }
 
     public int creatureAttack (int diceChoice, int creatureAttackBonus, int playerDefense) {
