@@ -10,10 +10,38 @@ package byui.cit260.theChosenQuest.control;
  * @author Zack Durbin
  */
 public class CombatDamageController {
-    public int combatDamageController(int playerAttackBonus, int playerDefense, int creatureAttackBonus, int creatureDefense){
-    return -1;
+    public boolean[] combatDamageController(boolean[] attackSuccess, int playerAttackBonus, int playerDefense, int creatureAttackBonus, int creatureDefense){
+        // Intializing the Dice Random.
+        DiceFaces diceRoll = new DiceFaces();
+        
+        int playerAttack = 0;
+        int playerAttackRoll;
+        int playerCombatSuccess;
+        int creatureAttackRoll;
+        
+        playerAttackRoll = playerAttackBonus + diceRoll.rollTheDice(20);
+        playerCombatSuccess = playerAttackRoll - creatureDefense;
+        if(playerCombatSuccess > 0){
+            attackSuccess[0] = true;
+        } else {
+            attackSuccess[0] = false;
+        }
+        /* Requires a fallback return here, change it to what you need */
+
+
+        
+            creatureAttackRoll = creatureAttackBonus + diceRoll.rollTheDice(20);
+        int creatureCombatSuccess = creatureAttackRoll - playerDefense;
+
+            if(creatureCombatSuccess > 0){
+                attackSuccess[1] = true;
+            } else {
+                attackSuccess[1] = false;
+        }
+        // Got past everything without doing it's job.
+        return attackSuccess;
     }
-    public int playerAttackroll (int diceChoice, int playerAttackBonus, int creatureDefense) {
+    /*public int playerAttackroll (int diceChoice, int playerAttackBonus, int creatureDefense) {
             
         // Intializing the Dice Random.
         DiceFaces diceRoll = new DiceFaces();
@@ -30,9 +58,9 @@ public class CombatDamageController {
             }
             /* Requires a fallback return here, change it to what you need */
 
-        }
+        //}
 
-    public int creatureAttack (int creatureAttackBonus, int playerDefense) {
+    /*public int creatureAttack (int creatureAttackBonus, int playerDefense) {
         
         // Intializing the Dice Random.
         DiceFaces diceRoll = new DiceFaces();
@@ -45,6 +73,6 @@ public class CombatDamageController {
                 return creatureCombatSuccess;
             } else {
                 return -1;}
-        }
+        }*/
 }
 
