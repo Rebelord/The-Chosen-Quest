@@ -31,7 +31,7 @@ public class CheckHealth {
             }
         }
         // If it got here without doing something, then there's an error.
-        return -1;
+        return health;
     }
 }
 //This controller will inform the user of their health after attacks have been done. If hp <= 0 Game is over.

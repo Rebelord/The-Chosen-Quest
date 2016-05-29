@@ -27,7 +27,7 @@ public class CheckHealthTest {
         boolean rest = false;
         int charMaxHealth = 0;
         CheckHealth instance = new CheckHealth();
-        int expResult = 0;
+        int expResult = -1;
         int result = instance.checkHealth(health, poison, rest, charMaxHealth);
         
         System.out.println("checkHealth Test Case #1");
@@ -53,7 +53,7 @@ public class CheckHealthTest {
         poison = 0;
         rest = false;
         charMaxHealth = 0;
-        expResult = 0;
+        expResult = -1;
         result = instance.checkHealth(health, poison, rest, charMaxHealth);
         assertEquals(expResult, result);
         
@@ -62,7 +62,7 @@ public class CheckHealthTest {
         poison = 0;
         rest = false;
         charMaxHealth = 0;
-        expResult = 15;
+        expResult = -1;
         result = instance.checkHealth(health, poison, rest, charMaxHealth);
         assertEquals(expResult, result);
         
@@ -77,10 +77,10 @@ public class CheckHealthTest {
         
         System.out.println("checkHealth Test Case #6");
         health = 10;
-        poison = 0;
+        poison = 5;
         rest = false;
         charMaxHealth = 100;
-        expResult = 10;
+        expResult = 5;
         result = instance.checkHealth(health, poison, rest, charMaxHealth);
         assertEquals(expResult, result);
     }
