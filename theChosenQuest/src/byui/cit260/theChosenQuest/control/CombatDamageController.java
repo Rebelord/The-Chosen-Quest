@@ -23,7 +23,7 @@ public class CombatDamageController {
         playerAttackRoll = playerAttackBonus + diceRoll.rollTheDice(20);
         int playerCombatSuccess;
         playerCombatSuccess = playerAttackRoll - creatureDefense;
-            if(playerCombatSuccess <= 0){
+            if(playerCombatSuccess > 0){
                 return playerCombatSuccess;
             } else {
                 return -1;

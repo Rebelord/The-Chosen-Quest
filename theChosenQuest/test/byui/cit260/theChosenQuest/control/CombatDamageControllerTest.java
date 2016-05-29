@@ -68,7 +68,7 @@ public class CombatDamageControllerTest {
          playerDefense = 0;
          creatureAttackBonus = 0;
          creatureDefense = 0;
-         expResult = -1;
+         expResult = 3;
          result = instance.combatDamageController(playerAttackBonus, playerDefense, creatureAttackBonus, creatureDefense);
         assertEquals(expResult, result);
         
