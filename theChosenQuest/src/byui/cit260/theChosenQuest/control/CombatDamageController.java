@@ -10,45 +10,40 @@ package byui.cit260.theChosenQuest.control;
  * @author Zack Durbin
  */
 public class CombatDamageController {
-    public int combatDamageController(int playerAttackBonus, int playerDefense, int DiceFaces, int creatureAttackBonus, int creatureDefense){
+    public int combatDamageController(int diceChoice, int playerAttackBonus, int playerDefense, int DiceFaces, int creatureAttackBonus, int creatureDefense){
     return -1;
-    
-    playerAttackroll (playerAttackBonus, DiceFaces, creatureDefense) {
+    }
+    public int playerAttackroll (int diceChoice, int playerAttackBonus, int creatureDefense) {
+            
+        // Intializing the Dice Random.
+        DiceFaces diceRoll = new DiceFaces();
+
         int playerAttack = 0;
         int playerAttackRoll;
-        playerAttackRoll = playerAttackBonus + DiceFaces;
+        playerAttackRoll = playerAttackBonus + diceRoll.rollTheDice(diceChoice);
         int playerCombatSuccess;
         playerCombatSuccess = playerAttackRoll - creatureDefense;
             if(playerCombatSuccess > 0);{
                 return playerCombatSuccess;
-            } else {
-                return -1;}
-    
-    }
-    
-    creatureAttack (creatureAttackBonus, DiceFaces, playerDefense){
-        int creatureAttackRoll;
-            creatureAttackRoll = creatureAttackBonus + DiceFaces;
-        int creatureCombatSuccess = creatureAttackRoll- playerDefense;
+            } /* This is bugging for an "else if" statement.*/ else {
+                return -1;
+            }
+            /* Requires a fallback return here, change it to what you need */ return -1;
+        }
+
+    public int creatureAttack (int diceChoice, int creatureAttackBonus, int playerDefense) {
         
+        // Intializing the Dice Random.
+        DiceFaces diceRoll = new DiceFaces();
+
+        int creatureAttackRoll;
+            creatureAttackRoll = creatureAttackBonus + diceRoll.rollTheDice(diceChoice);
+        int creatureCombatSuccess = creatureAttackRoll- playerDefense;
+
             if(creatureCombatSuccess > 0){
                 return creatureCombatSuccess;
             } else {
                 return -1;}
-            }
-                
-    }
-
-    private void creatureAttack(int creatureAttackBonus, int DiceFaces, int playerDefense) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void playerAttackroll(int playerAttackBonus, int DiceFaces, int creatureDefense) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
-                
-        
+        }
 }
 
