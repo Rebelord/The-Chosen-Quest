@@ -52,7 +52,7 @@ public class CombatDamageControllerTest {
         //test 2
        
         System.out.println("combatDamageController test 1");
-        playerAttackBonus = 2;
+        playerAttackBonus = 1;
         playerDefense = 0;
         creatureAttackBonus = 0;
         creatureDefense = 10;
@@ -66,10 +66,10 @@ public class CombatDamageControllerTest {
         
         //test 3
         System.out.println("combatDamageController test 1");
-        playerAttackBonus = 2;
+        playerAttackBonus = 3;
         playerDefense = 0;
         creatureAttackBonus = 0;
-        creatureDefense = 10;
+        creatureDefense = 12;
         attackSuccess = new boolean[2];
         expResult = new boolean[2];
         expResult[0] = true;
@@ -80,10 +80,10 @@ public class CombatDamageControllerTest {
         
         //test 4
         System.out.println("combatDamageController test 1");
-        playerAttackBonus = 2;
+        playerAttackBonus = -15;
         playerDefense = 0;
         creatureAttackBonus = 0;
-        creatureDefense = 10;
+        creatureDefense = 11;
         attackSuccess = new boolean[2];
         expResult = new boolean[2];
         expResult[0] = true;
@@ -108,10 +108,10 @@ public class CombatDamageControllerTest {
         
         //test 6
         System.out.println("combatDamageController test 1");
-        playerAttackBonus = 2;
+        playerAttackBonus = -3;
         playerDefense = 0;
         creatureAttackBonus = 0;
-        creatureDefense = 10;
+        creatureDefense = 20;
         attackSuccess = new boolean[2];
         expResult = new boolean[2];
         expResult[0] = true;
