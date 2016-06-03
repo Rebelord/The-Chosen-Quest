@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.theChosenQuest.view;
+package byui.cit260.theChosenQuest.control;
 
 import byui.cit260.theChosenQuest.model.Player;
 import thechosenquest.TheChosenQuest;
@@ -12,7 +12,7 @@ import thechosenquest.TheChosenQuest;
  *
  * @author Zack Durbin
  */
-class GameControl {
+public class GameControl {
 
   public static Player createPlayer(String playersName) {
        

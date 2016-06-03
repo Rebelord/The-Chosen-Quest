@@ -5,6 +5,7 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import byui.cit260.theChosenQuest.control.GameControl;
 import byui.cit260.theChosenQuest.model.Player;
 import java.util.Scanner;
 
@@ -109,9 +110,9 @@ public class StartProgramView {
     private void displayNextView(Player player) {
         // display a custom welcome message
         System.out.println("\n================================================="
-                          + "\n Welcome to Elspeth " + player.getName()
-                          + "\n May you succeed where others have failed."
-                          + "\n================================================"
+                         + "\n   Welcome to Elspeth " + player.getName()
+                         + "\n   May you succeed where others have failed."
+                         + "\n================================================"
                           );
         // create MainMenuView object
         MainMenuView mainMenuView = new MainMenuView();
