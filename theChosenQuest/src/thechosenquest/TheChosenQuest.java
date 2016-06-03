@@ -32,6 +32,22 @@ public class TheChosenQuest {
     
     private static Game currentGame = null;
     private static Player player = null;
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        TheChosenQuest.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        TheChosenQuest.player = player;
+    }
     
     /**
      * @param args the command line arguments

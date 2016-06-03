@@ -107,6 +107,16 @@ public class StartProgramView {
     }
 
     private void displayNextView(Player player) {
-        System.out.println("\n *** displayNextView() called ***");
+        // display a custom welcome message
+        System.out.println("\n================================================="
+                          + "\n Welcome to Elspeth " + player.getName()
+                          + "\n May you succeed where others have failed."
+                          + "\n================================================"
+                          );
+        // create MainMenuView object
+        MainMenuView mainMenuView = new MainMenuView();
+        
+        //display the main menu view
+        mainMenuView.displayMainMenuView();        
     }    
 }
