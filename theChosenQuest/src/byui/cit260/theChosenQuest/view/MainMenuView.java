@@ -5,6 +5,8 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Zack Durbin
@@ -26,8 +28,45 @@ public class MainMenuView {
                   + "\n--------------------------------------------------------";
     }
 
-    void displayMainMenuView() {
-    System.out.println("\n*** displayMenu() fuction called ***");
+    public void displayMainMenuView() {
+    
+        boolean done = false; // set flag to not done
+        do {
+            String menuOption = this.getMenuOption();
+            if (menuOption.toUpperCase().equals("Q"))// user wants to quit
+                return; // exit the game
+            
+            //do the requested action and display the next view
+            done = this.doAction(menuOption);
+        } while (!done);
+    }
+
+    private String getMenuOption() {
+        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard.
+        String value = ""; // Value to be returned.
+        boolean valid = false; // Set flag to not done.
+        
+        while (!valid) { // Loop while an invalid value is enter.
+            System.out.println("\n" + this.promptMessage);
+            
+            value = keyboard.nextLine(); // Get the next line typed on the keyboard.
+            value = value.trim(); // Trim off the blanks.
+            
+            if (value.length() < 1){
+               System.out.println("\nInvalid value: Value can not be blank");
+               continue;
+            }
+            
+            break; // end the loop
+        }
+            
+    return value; // return the value entered      
+    }
+    
+
+    private boolean doAction(String menuOption) {
+        System.out.println("\n*** doAction() function called ***");
+        return true;
     }
     
 }
