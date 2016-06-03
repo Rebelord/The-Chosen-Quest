@@ -29,7 +29,10 @@ import byui.cit260.theChosenQuest.view.Town;
  * @author ryandanielwebb
  */
 public class TheChosenQuest {
-
+    
+    private static Game currentGame = null;
+    private static Player player = null;
+    
     /**
      * @param args the command line arguments
      */

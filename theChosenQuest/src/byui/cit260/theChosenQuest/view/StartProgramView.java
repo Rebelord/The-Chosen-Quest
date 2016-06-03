@@ -5,6 +5,9 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import byui.cit260.theChosenQuest.model.Player;
+import java.util.Scanner;
+
 /**
  *
  * @author ryandanielwebb
@@ -28,7 +31,7 @@ public class StartProgramView {
           + "\n* little town sent out a call to all heroes to help with *"
           + "\n* the string of troubles that they have recently         *"
           + "\n* incurred. This call brought you here seeking fame and  *"
-          + "\n* glory. Only your actions can decide this. Will you     *"
+          + "\n* glory. Only your actions can bring peace. Will you     *"
           + "\n* succeed or will this be your last adventure?           *"
           + "\n*                                                        *"
           + "\n**********************************************************"
@@ -57,7 +60,6 @@ public class StartProgramView {
         
         Scanner keyboard = new Scanner(System.in); // Get infile for keyboard.
         String value = ""; // Value to be returned.
-        
         boolean valid = false; // Set flag to not done.
         
         while (!valid) { // Loop while an invalid value is enter.
@@ -66,11 +68,45 @@ public class StartProgramView {
             value = keyboard.nextLine(); // Get the next line typed on the keyboard.
             value = value.trim(); // Trim off the blanks.
             
+            if (value.length() < 1){
+               System.out.println("\nInvalid value: Value can not be blank");
+               continue;
+            }
             
+            break; // end the look
         }
+            
+    return value; // return the value entered      
+    }
 
     private boolean doAction(String playersName) {
-        System.out.println("\n*** doAction() called ***");
-        return true;
+        // if the length of the playersName < 2 then
+        // display "Invalid name: The name must be > 1 character
+        // return false        
+        if (playersName.length() < 2) {
+            System.out.println("\nInvalid players name: " 
+                + "The name must be greater than one character in length" );
+            return false;
+        }
+        // create player with specified name
+        // if unsuccessful then
+            // display "Invalid name: The name is too short
+            // return false
+        // call createPlayer() control function
+        Player player = GameControl.createPlayer(playersName);
+        
+        if (player == null){ // if unsuccessful
+            System.out.println("\nError creating the player.");
+            return false;
+        }
+        // display customized welcome message
+        // display mainMenuView
+        // return true
+        this.displayNextView(player);
+        return true; // success!
     }
+
+    private void displayNextView(Player player) {
+        System.out.println("\n *** displayNextView() called ***");
+    }    
 }
