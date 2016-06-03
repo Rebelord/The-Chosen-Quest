@@ -15,6 +15,7 @@ public class MainMenuView {
     
     private String menu;
     
+    
     public MainMenuView() {
         this.menu = "\n"
                   + "\n--------------------------------------------------------"
@@ -47,7 +48,7 @@ public class MainMenuView {
         boolean valid = false; // Set flag to not done.
         
         while (!valid) { // Loop while an invalid value is enter.
-            System.out.println("\n" + this.promptMessage);
+            System.out.println("\n" + this.menu);
             
             value = keyboard.nextLine(); // Get the next line typed on the keyboard.
             value = value.trim(); // Trim off the blanks.
@@ -57,12 +58,11 @@ public class MainMenuView {
                continue;
             }
             
-            break; // end the loop
+            break; // end the look
         }
             
     return value; // return the value entered      
     }
-    
 
     private boolean doAction(String menuOption) {
         System.out.println("\n*** doAction() function called ***");
