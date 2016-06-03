@@ -85,7 +85,7 @@ public class StartProgramView {
         // display "Invalid name: The name must be > 1 character
         // return false        
         if (playersName.length() < 2) {
-            System.out.println("\nInvalid players name: " 
+            System.out.println("\n Invalid players name: " 
                 + "The name must be greater than one character in length" );
             return false;
         }

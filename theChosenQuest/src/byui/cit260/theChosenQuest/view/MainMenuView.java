@@ -5,7 +5,9 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import byui.cit260.theChosenQuest.control.GameControl;
 import java.util.Scanner;
+import thechosenquest.TheChosenQuest;
 
 /**
  *
@@ -21,11 +23,11 @@ public class MainMenuView {
                   + "\n--------------------------------------------------------"
                   + "\n|                      Main Menu                       |"
                   + "\n--------------------------------------------------------"
-                  + "\nN - Start a new Game"
-                  + "\nG - Get and start saved game"
-                  + "\nH - Get help on how to play the game"
-                  + "\nS - Save Game"
-                  + "\nQ - Quit Game"
+                  + "\n| N - Start a new Game                                 |"
+                  + "\n| G - Get and start saved game                         |"
+                  + "\n| H - Get help on how to play the game                 |"
+                  + "\n| S - Save Game                                        |"
+                  + "\n| Q - Quit Game                                        |"
                   + "\n--------------------------------------------------------";
     }
 
@@ -65,8 +67,50 @@ public class MainMenuView {
     }
 
     private boolean doAction(String menuOption) {
-        System.out.println("\n*** doAction() function called ***");
-        return true;
+        menuOption = menuOption.toUpperCase(); // COnvert choice to Uppercase.
+    
+        switch (menuOption) {
+            case "N": // Create and Start a new game.
+                this.startNewGame();
+                break;
+            case "G": // Load up a saved game
+                this.startLoadGame();
+                break;
+            case "H": // Display the help menu.
+                this.displayHelpMenu();
+                break;
+            case "S": // Save the current game.
+                this.saveGame();
+                break;
+            default:
+                System.out.println("\n*** Fat Finger Error *** Please try again!");
+                break;
+        }
+        
+        return false;
+    }
+
+    /** Create a New Game **/
+    
+    private void startNewGame() {
+        // Call method from the GameControl function.
+        GameControl.createNewGame(TheChosenQuest.getPlayer());
+        
+        // Display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+    }
+
+    private void startLoadGame() {
+        System.out.println("\n*** startLoadGame function called ***");
+    }
+
+    private void displayHelpMenu() {
+        System.out.println("\n*** displayHelpMenu function called ***");
+    }
+
+    private void saveGame() {
+        System.out.println("\n*** saveGame function called ***");
     }
     
 }
