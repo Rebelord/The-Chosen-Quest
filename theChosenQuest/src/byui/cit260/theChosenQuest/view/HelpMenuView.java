@@ -95,23 +95,23 @@ public class HelpMenuView {
     }
 
     private void loadGoalInfo() {
-        System.out.println("\n*** startLoadGame function called ***");
+        System.out.println("\n*** loadGoalInfo function called ***");
     }
 
     private void loadMovementInfo() {
-        System.out.println("\n*** startLoadGame function called ***");
+        System.out.println("\n*** loadMovementInfo function called ***");
     }
 
     private void loadCombatInfo() {
-        System.out.println("\n*** startLoadGame function called ***");
+        System.out.println("\n*** loadCombatInfo function called ***");
     }
 
     private void loadNpcInfo() {
-        System.out.println("\n*** startLoadGame function called ***");
+        System.out.println("\n*** loadNpcInfo function called ***");
     }
 
     private void loadInventoryInfo() {
-        System.out.println("\n*** startLoadGame function called ***");
+        System.out.println("\n*** loadInventoryInfo function called ***");
     }
 
 }
