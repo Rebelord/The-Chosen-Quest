@@ -95,23 +95,39 @@ public class HelpMenuView {
     }
 
     private void loadGoalInfo() {
-        System.out.println("\n*** loadGoalInfo function called ***");
+        System.out.println("\n*** Your quest, should you chose to accept it is"
+                         +  "\n to transverse the wilds around Elspeth to" +
+                            "\n find the cause of all the troubles that have" +
+                            "\n befallen the poor towns people. Can you survive" +
+                            "\n the hordes of monsters and bring peace back to" +
+                            "\n the land?***");
     }
 
     private void loadMovementInfo() {
-        System.out.println("\n*** loadMovementInfo function called ***");
+        System.out.println("\n*** This option will explain how to move your feet"+
+                            "\n so that you can get from one area to the next." +
+                            "\n At this time it is not set yet but more than" +
+                            "\n likely it will be N to move north, S to move" +
+                            "\n south, E for east and W for west.***");
     }
 
     private void loadCombatInfo() {
-        System.out.println("\n*** loadCombatInfo function called ***");
+        System.out.println("\n*** This option will display an explination of"+
+                "\n how to attack, defend, or run away. Default options will" +
+                "\n more than likely be A, D, R respectively. It may also contain" +
+                "\n how attack success is determined.***");
     }
 
     private void loadNpcInfo() {
-        System.out.println("\n*** loadNpcInfo function called ***");
+        System.out.println("\n*** This will have information on how to interact" +
+                "\n with the NPCs of the game. This would include shops, POI's," +
+                "\n and the like. Such interactions of talking, selling, buying," +
+                "\n and if truly evil attacking NPCs.***");
     }
 
     private void loadInventoryInfo() {
-        System.out.println("\n*** loadInventoryInfo function called ***");
+        System.out.println("\n*** This will explain how to equip items you find"+
+                "\n look at items, and a brief description of the different items***");
     }
 
 }
