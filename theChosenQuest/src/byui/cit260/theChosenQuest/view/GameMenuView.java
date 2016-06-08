@@ -7,7 +7,7 @@ package byui.cit260.theChosenQuest.view;
 
 /**
  *
- * @author Dewy
+ * @author ryandanielwebb
  */
 public class GameMenuView {
 
