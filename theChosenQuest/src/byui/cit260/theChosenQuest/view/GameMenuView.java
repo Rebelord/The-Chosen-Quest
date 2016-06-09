@@ -23,6 +23,11 @@ public class GameMenuView {
 //        System.out.println("\n\n*** Testing out the NpcView ***");
 //        MovementView moveMe = new MovementView();
 //        moveMe.displayMovementView();
+
+            //Testing out the MovementView (Uncomment to test)
+            System.out.println("\n\n*** Testing out the CharacterCreation ***");
+            CharacterCreation charCreation = new CharacterCreation();
+            charCreation.displayCharacterCreation();
     }
     void characterCreation() {
     
