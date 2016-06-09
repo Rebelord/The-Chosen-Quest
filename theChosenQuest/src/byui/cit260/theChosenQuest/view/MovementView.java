@@ -35,7 +35,7 @@ public class MovementView {
             if (movementOption.toLowerCase().equals("none")) // User wants to not travel.
                 return; // exit the movement menu
                 
-            // DO the requested action and displat the next view.
+            // Do the requested action and display the next view.
             done = this.doAction(movementOption);
         } while (!done);
     }
