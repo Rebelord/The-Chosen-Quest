@@ -13,6 +13,11 @@ public class GameMenuView {
 
     void display() {
         System.out.println("\n*** displayMenu stub function called ***");
+        
+        // Testing out the MovementView
+        System.out.println("\n\n*** Testing out the MovementView ***");
+        MovementView movementView = new MovementView();
+        movementView.displayMovementView();
     }
     
 }
