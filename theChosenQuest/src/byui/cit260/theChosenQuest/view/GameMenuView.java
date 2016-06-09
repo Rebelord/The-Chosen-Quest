@@ -14,5 +14,7 @@ public class GameMenuView {
     void display() {
         System.out.println("\n*** displayMenu stub function called ***");
     }
+    void characterCreation() {
     
+    }
 }

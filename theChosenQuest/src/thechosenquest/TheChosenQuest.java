@@ -19,6 +19,7 @@ import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.model.Race;
 import byui.cit260.theChosenQuest.model.Spells;
 import byui.cit260.theChosenQuest.model.Stats;
+import byui.cit260.theChosenQuest.view.CharacterCreation;
 import byui.cit260.theChosenQuest.view.CombatAreas;
 import byui.cit260.theChosenQuest.view.Map;
 import byui.cit260.theChosenQuest.view.StartProgramView;
@@ -48,7 +49,10 @@ public class TheChosenQuest {
     public static void setPlayer(Player player) {
         TheChosenQuest.player = player;
     }
-    
+    public static void CharacterCreation(){
+        CharacterCreation characterCreation = new CharacterCreation();
+        characterCreation.displayCharacterCreation();
+    }
     /**
      * @param args the command line arguments
      */
