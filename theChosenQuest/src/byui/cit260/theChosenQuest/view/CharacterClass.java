@@ -9,27 +9,25 @@ import java.util.Scanner;
 
 /**
  *
- * @author ryandanielwebb
+ * @author Zack Durbin
  */
-public class CharacterCreation {
-   
-    
+public class CharacterClass {
     private String menu;
     
-    public CharacterCreation() {
+    public CharacterClass() {
         this.menu = "\n"
                 +"\n-----------------------------------------------------------"
                 +"\n|                  Race Selection                         |"
                 +"\n-----------------------------------------------------------"
-                +"\n| D - Dwarf                                                "
-                +"\n| H - Human                                                "
-                +"\n| L - Halfling                                             "
-                +"\n| E - Elf                                                  "
+                +"\n| F - Fighter                                              "
+                +"\n| M - Mage                                                 "
+                +"\n| R - Rouge                                                "
+                +"\n| H - Hunter                                                 "
                 +"\n| Q - Quit                                                 "
                 +"\n-----------------------------------------------------------";
     }
     
-    public void displayCharacterCreation() {
+    public void displayCharacterClass() {
     
         boolean done = false; // set flag to not done
         do {
@@ -69,17 +67,17 @@ public class CharacterCreation {
         menuOption = menuOption.toUpperCase(); // COnvert choice to Uppercase.
     
         switch (menuOption) {
-            case "D": // Create and Start a new Dwarf Hero.
-                this.dwarf();
+            case "F": // Choose to play as a fighter.
+                this.fighter();
                 break;
-            case "H": // Create and Start a new Human Hero.
-                this.human();
+            case "M": // Choose to play as a Mage.
+                this.mage();
                 break;
-            case "L": // Create and Start a new Halfling Hero.
-                this.halfling();
+            case "R": // Chose to play as a Rouge.
+                this.rouge();
                 break;
-            case "E": // Create and Start a new Elf Hero.
-                this.elf();
+            case "H": //  Choose to play as a Hunter.
+                this.hunter();
                 break;
             default:
                 System.out.println("\n*** Fat Finger Error *** Please try again!");
@@ -88,22 +86,24 @@ public class CharacterCreation {
         
         return false;
     }
+
+    private void fighter() {
+        System.out.println("You have chosen the way of the Sword. You are the epitome of bladed fury. You are the mighty fighter.");
+    }
+
+    private void mage() {
+        System.out.println("You have chosen the way of the Mind. Wielder of the sacred arts. You are the brilliant mage.");
+    }
+
+    private void rouge() {
+        System.out.println("You have chosen the way of the shadows. You strike your enemies weak points. You are the crafty rouge.");
+    }
+
+    private void hunter() {
+        System.out.println("You have chosen the way of the Bow. Your arrows fly unerring with deadly accuracy. You are the nimble hunter.");
+    }
     
     
 
-    private void dwarf() {
-       System.out.println ("Create a new dwarf hero fuction is called");
-    }
-
-    private void human() {
-        System.out.println ("Create a new Human hero fuction is called");
-    }
-
-    private void halfling() {
-        System.out.println ("Create a new Halfling hero fuction is called");
-    }
-
-    private void elf() {
-        System.out.println ("Create a new Elf hero fuction is called");
-    }
+   
 }
