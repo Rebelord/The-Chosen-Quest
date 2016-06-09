@@ -23,6 +23,11 @@ public class GameMenuView {
        System.out.println("\n testing the class selection.");
         CharacterClass charClass = new CharacterClass();
         charClass.displayCharacterClass();
+        
+        // testing the combat view
+        System.out.println("\n testing the combat selection");
+        CombatView combatOption = new CombatView();
+        combatOption.displayCombatOption();
                 
             
        
