@@ -17,7 +17,7 @@ public class CharacterClass {
     public CharacterClass() {
         this.menu = "\n"
                 +"\n-----------------------------------------------------------"
-                +"\n|                  Race Selection                         |"
+                +"\n|                  Class Selection                         |"
                 +"\n-----------------------------------------------------------"
                 +"\n| F - Fighter                                              "
                 +"\n| M - Mage                                                 "

@@ -49,10 +49,6 @@ public class TheChosenQuest {
     public static void setPlayer(Player player) {
         TheChosenQuest.player = player;
     }
-    public static void CharacterCreation(){
-        CharacterRace characterCreation = new CharacterRace();
-        characterCreation.displayCharacterCreation();
-    }
     /**
      * @param args the command line arguments
      */
