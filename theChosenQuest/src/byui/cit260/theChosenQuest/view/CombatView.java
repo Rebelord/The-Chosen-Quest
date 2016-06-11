@@ -32,9 +32,10 @@ public class CombatView {
         boolean done = false;
         do {
             String combatOption = this.getCombatOption();
-            if (combatOption.toUpperCase().equals("R")) // User wants to not travel.
+            if (combatOption.toUpperCase().equals("R")) {// User wants to not travel.
+                System.out.println("RUNNNNNNNN AWWWWAAAAAAYYYY!!!!!!!!!! It's going to eat ME!!!!!!!!");
                 return; // exit the movement menu
-                
+            }    
             // Do the requested action and display the next view.
             done = this.doAction(combatOption);
         } while (!done);

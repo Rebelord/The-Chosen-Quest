@@ -96,11 +96,11 @@ public class CharacterClass {
     }
 
     private void rouge() {
-        System.out.println("You have chosen the way of the shadows. You strike your enemies weak points. You are the crafty rouge.");
+        System.out.println("You have chosen the way of the Shadows. You strike your enemies weak points. You are the crafty rogue.");
     }
 
     private void hunter() {
-        System.out.println("You have chosen the way of the Bow. Your arrows fly unerring with deadly accuracy. You are the nimble hunter.");
+        System.out.println("You have chosen the way of the Bow. Your arrows fly unerringly with deadly accuracy. You are the nimble hunter.");
     }
     
     
