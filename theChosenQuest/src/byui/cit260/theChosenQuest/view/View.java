@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Zack Durbin
  */
-public abstract class View implements ViewInterface{
+public abstract class View implements ViewInterface {
     
     protected String displayMessage;
 
@@ -50,7 +50,7 @@ public View(String message) {
             value = keyboard.nextLine(); // Get the next line typed on the keyboard.
             value = value.trim(); // Trim off the blanks.
             
-            if (value.length() < 4 || value.length() > 5){
+            if (value.length() < 1) {
                System.out.println("\n Invalid input: please try again");
                continue;
             }

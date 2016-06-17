@@ -11,13 +11,11 @@ import java.util.Scanner;
  *
  * @author ryandanielwebb
  */
-public class NpcView {
-    
-    private String chatMenu;
+public class NpcView extends View {
     
     public NpcView() {
         
-        this.chatMenu = "\n   An old beggar stumbles into you clumsily smelling of"
+                  super("\n   An old beggar stumbles into you clumsily smelling of"
                       + "\n moonshine, and devilweed. After falling over, and giving"
                       + "\n a frightful paranoid look, he slowly extends a shaky"
                       + "\n boil encrusted hand."
@@ -28,44 +26,12 @@ public class NpcView {
                       + "\n   B. Throw a few measealy coins in his direction."
                       + "\n   C. Intiate combat for his insolence."
                       + "\n   D. Offer advice on breaking devilweed addiction."
-                      + "\n";
+                      + "\n   Q. Cross to the other side of the street."
+                      + "\n");
     }
     
-    public void displayNpcView() {
-        
-        boolean done = false;
-        do {
-            String chatOption = this.getChatOption();
-            if (chatOption.toUpperCase().equals("A")) // User wishes to ignore the NPC.
-                return; // Exit the NPC interaction.
-            
-            // Do the reqauested action, and display the next view.
-            done = this.doAction(chatOption);
-    } while (!done);
-}
-
-    private String getChatOption() {
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard.
-        String value = ""; // Value to be returned.
-        boolean valid = false; // Set flag to not done.
-        
-        while (!valid) { // Loop while an invalid value is enter.
-            System.out.println("\n" + this.chatMenu);
-            
-            value = keyboard.nextLine(); // Get the next line typed on the keyboard.
-            value = value.trim(); // Trim off the blanks.
-            
-            if (value.length() < 1){
-               System.out.println("\n Choose an input to deal with this beggar.");
-               continue;
-            }
-            
-            break; // end the look
-        }
-    return value; // return the value entered 
-    }
-
-    private boolean doAction(String chatOption) {
+    @Override
+    public boolean doAction(String chatOption) {
         chatOption = chatOption.toUpperCase(); // Convert choice to Lowercase.
         System.out.println(chatOption);
         switch (chatOption) {

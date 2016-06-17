@@ -12,57 +12,21 @@ import java.util.Scanner;
  *
  * @author ryandanielwebb
  */
-public class CombatView {
-    
-      private String menu;
+public class CombatView extends View{
     
     public CombatView() {
-        this.menu = "\n You are under attack. Please decide what you want to do."
+              super("\n You are under attack. Please decide what you want to do."
                   + "\n Please Select the approprate letter"
                   + "\n"
                   + "\n You may ..."
                   + "\n  A - Attack your opponent"
                   + "\n  D - Defend against your opponents attack"
                   + "\n  P - Drink a potion (if you have one)"
-                  + "\n  R - Run Away!";
-    }
-    
-    public void displayCombatOption() {
-        
-        boolean done = false;
-        do {
-            String combatOption = this.getCombatOption();
-            if (combatOption.toUpperCase().equals("R")) {// User wants to not travel.
-                System.out.println("RUNNNNNNNN AWWWWAAAAAAYYYY!!!!!!!!!! It's going to eat ME!!!!!!!!");
-                return; // exit the movement menu
-            }    
-            // Do the requested action and display the next view.
-            done = this.doAction(combatOption);
-        } while (!done);
+                  + "\n  R - Run Away!");
     }
 
-    private String getCombatOption() {
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard.
-        String value = ""; // Value to be returned.
-        boolean valid = false; // Set flag to not done.
-        
-        while (!valid) { // Loop while an invalid value is enter.
-            System.out.println("\n" + this.menu);
-            
-            value = keyboard.nextLine(); // Get the next line typed on the keyboard.
-            value = value.trim(); // Trim off the blanks.
-            
-            if (value.length() < 0){
-               System.out.println("\n Invalid input: Please select an action");
-               continue;
-            }
-            
-            break; // end the look
-        }
-    return value; // return the value entered 
-    }
-
-    private boolean doAction(String combatOption) {
+    @Override
+    public boolean doAction(String combatOption) {
         combatOption = combatOption.toUpperCase(); // Convert choice to Lowercase.
         System.out.println(combatOption);
         switch (combatOption) {

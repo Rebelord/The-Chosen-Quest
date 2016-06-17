@@ -17,29 +17,29 @@ public class GameMenuView {
        
       System.out.println("\n\n*** Testing out the CharacterCreation ***");
        CharacterRace charCreation = new CharacterRace();
-       charCreation.displayCharacterCreation();
+       charCreation.display();
        
        //testing class selection
        System.out.println("\n testing the class selection.");
         CharacterClass charClass = new CharacterClass();
-        charClass.displayCharacterClass();
+        charClass.display();
         
         // testing the combat view
         System.out.println("\n testing the combat selection");
         CombatView combatOption = new CombatView();
-        combatOption.displayCombatOption();
+        combatOption.display();
                 
             
        
        //Testing out the NpcView (Uncomment to test)
        System.out.println("\n\n*** Testing out the NpcView ***");
         NpcView npcChat = new NpcView();
-        npcChat.displayNpcView();
+        npcChat.display();
 
        //Testing out the MovementView (Uncomment to test)
        System.out.println("\n\n*** Testing out the NpcView ***");
        MovementView moveMe = new MovementView();
-        moveMe.displayMovementView();
+        moveMe.display();
 
             
     }

@@ -11,14 +11,11 @@ import java.util.Scanner;
  *
  * @author Zack Durbin
  */
-public class HelpMenuView {
-    
-    // Intialize string to display help menu options.
-    private String menu;
+public class HelpMenuView extends View{
     
     // Display the Help Menu
     public HelpMenuView() {
-        this.menu = "\n"
+              super("\n"
                   + "\n--------------------------------------------------------"
                   + "\n|                Divine Assitance Menu                 |"
                   + "\n--------------------------------------------------------"
@@ -28,47 +25,12 @@ public class HelpMenuView {
                   + "\n| N - Non-Sentient beings and their role.              |"
                   + "\n| I - Inventory, Finders Keepers rules apply.          |"
                   + "\n| Q - Quit, stop the divine assistance, please.        |"
-                  + "\n--------------------------------------------------------";
+                  + "\n--------------------------------------------------------");
     }
 
-    public void displayHelpMenuView() {
-        
-        boolean done = false; // set flag to not done.
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) // User wants to quit Help Menu.
-                return; // Exit the Help Menu.
-            
-            // Do the requested action and display the nexty view
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-
-    /*** Get input from user for Help Menu Option. ***/
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard.
-        String value = ""; // Value to be returned.
-        boolean valid = false; // Set flag to not done.
-        
-        while (!valid) { // Loop while an invalid value is enter.
-            System.out.println("\n" + this.menu);
-            
-            value = keyboard.nextLine(); // Get the next line typed on the keyboard.
-            value = value.trim(); // Trim off the blanks.
-            
-            if (value.length() < 1){
-               System.out.println("\nInvalid value: Value can not be blank");
-               continue;
-            }
-            
-            break; // end the look
-        }
-        
-        return value; // return the value entered
-    }
-
-    private boolean doAction(String menuOption) {
-    menuOption = menuOption.toUpperCase(); // COnvert choice to Uppercase.
+    @Override
+    public boolean doAction(String menuOption) {
+    menuOption = menuOption.toUpperCase(); // Convert choice to Uppercase.
     
         switch (menuOption) {
             case "G": // Show the Game Goal.
