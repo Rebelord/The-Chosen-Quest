@@ -7,11 +7,11 @@ package byui.cit260.theChosenQuest.view;
 
 /**
  *
- * @author ryandanielwebb
+ * @author Ryan D Webb
  */
-public class GameMenuView extends View {
-
-    public GameMenuView() {
+public class InGameMenuView extends View {
+    
+    public InGameMenuView() {
               super("\n"
                   + "\n--------------------------------------------------------"
                   + "\n|                     Game Menu                        |"
@@ -50,6 +50,7 @@ public class GameMenuView extends View {
 
     private void resumeGame() {
         System.out.println("\n*** Good Luck!");
+        return;
     }
 
     private void saveGame() {

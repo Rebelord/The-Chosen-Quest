@@ -6,6 +6,7 @@
 package byui.cit260.theChosenQuest.view;
 
 import java.util.Scanner;
+import thechosenquest.TheChosenQuest;
 
 /**
  *
@@ -18,11 +19,11 @@ public class CharacterRace extends View {
                 +"\n-----------------------------------------------------------"
                 +"\n|                  Race Selection                         |"
                 +"\n-----------------------------------------------------------"
-                +"\n| D - Dwarf                                                "
-                +"\n| H - Human                                                "
-                +"\n| L - Halfling                                             "
-                +"\n| E - Elf                                                  "
-                +"\n| Q - Quit                                                 "
+                +"\n| D - Dwarf                                               |"
+                +"\n| H - Human                                               |"
+                +"\n| L - Halfling                                            |"
+                +"\n| E - Elf                                                 |"
+                +"\n| Q - Return to Main Menu                                 |"
                 +"\n-----------------------------------------------------------");
     }
     
@@ -51,21 +52,27 @@ public class CharacterRace extends View {
         return false;
     }
     
-    
-
     private void dwarf() {
-       System.out.println ("Create a new dwarf hero fuction is called");
+        TheChosenQuest.player.setPlayerRace("Dwarf");
+        System.out.println ("Create a new dwarf hero fuction is called");
+        return;
     }
 
     private void human() {
+        TheChosenQuest.player.setPlayerRace("Human");
         System.out.println ("Create a new Human hero fuction is called");
+        return;
     }
 
     private void halfling() {
+        TheChosenQuest.player.setPlayerRace("Halfling");
         System.out.println ("Create a new Halfling hero fuction is called");
+        return;
     }
 
     private void elf() {
+        TheChosenQuest.player.setPlayerRace("Elf");
         System.out.println ("Create a new Elf hero fuction is called");
+        return;
     }
 }

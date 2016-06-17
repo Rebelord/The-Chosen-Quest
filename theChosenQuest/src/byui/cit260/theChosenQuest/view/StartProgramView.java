@@ -70,7 +70,7 @@ public class StartProgramView {
             value = value.trim(); // Trim off the blanks.
             
             if (value.length() < 1){
-               System.out.println("\nInvalid value: Value can not be blank");
+               System.out.println("\n Invalid value: Value can not be blank");
                continue;
             }
             
@@ -97,7 +97,7 @@ public class StartProgramView {
         Player player = GameControl.createPlayer(playersName);
         
         if (player == null){ // if unsuccessful
-            System.out.println("\nError creating the player.");
+            System.out.println("\n Error creating the player.");
             return false;
         }
         // display customized welcome message

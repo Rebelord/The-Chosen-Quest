@@ -32,7 +32,12 @@ public View(String message) {
              // prompt for and get players name
             String value =this.getInput();
             if (value.toUpperCase().equals("Q")){
-            return;
+                
+           // Need to add a condition to check the game status
+           // for proper Game Control and Flow
+           
+            InGameMenuView inGameMenu = new InGameMenuView();
+            inGameMenu.display();
             }
             done = this.doAction(value);
         } while (!done);

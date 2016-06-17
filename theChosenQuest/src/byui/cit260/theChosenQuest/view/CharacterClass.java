@@ -6,6 +6,8 @@
 package byui.cit260.theChosenQuest.view;
 
 import java.util.Scanner;
+import byui.cit260.theChosenQuest.model.Player;
+import thechosenquest.TheChosenQuest;
 
 /**
  *
@@ -18,11 +20,11 @@ public class CharacterClass extends View {
                 +"\n-----------------------------------------------------------"
                 +"\n|                  Class Selection                         |"
                 +"\n-----------------------------------------------------------"
-                +"\n| F - Fighter                                              "
-                +"\n| M - Mage                                                 "
-                +"\n| R - Rouge                                                "
-                +"\n| H - Hunter                                               "
-                +"\n| Q - Quit                                                 "
+                +"\n| F - Fighter                                              |"
+                +"\n| M - Mage                                                 |"
+                +"\n| R - Rouge                                                |"
+                +"\n| H - Hunter                                               |"
+                +"\n| Q - Return to Race Selectionds                           |"
                 +"\n-----------------------------------------------------------");
     }
     
@@ -52,19 +54,31 @@ public class CharacterClass extends View {
     }
 
     private void fighter() {
+        TheChosenQuest.player.setPlayerClass("Fighter");
         System.out.println("You have chosen the way of the Sword. You are the epitome of bladed fury. You are the mighty fighter.");
+        MovementView moveMe = new MovementView();
+        moveMe.display();
     }
 
     private void mage() {
+        TheChosenQuest.player.setPlayerClass("Mage");
         System.out.println("You have chosen the way of the Mind. Wielder of the sacred arts. You are the brilliant mage.");
+        MovementView moveMe = new MovementView();
+        moveMe.display();
     }
 
     private void rouge() {
+        TheChosenQuest.player.setPlayerClass("Rouge");
         System.out.println("You have chosen the way of the Shadows. You strike your enemies weak points. You are the crafty rogue.");
+        MovementView moveMe = new MovementView();
+        moveMe.display();
     }
 
     private void hunter() {
+        TheChosenQuest.player.setPlayerClass("Hunter");
         System.out.println("You have chosen the way of the Bow. Your arrows fly unerringly with deadly accuracy. You are the nimble hunter.");
+        MovementView moveMe = new MovementView();
+        moveMe.display();
     }
     
     

@@ -32,5 +32,3 @@ public class GameControl {
         System.out.println("\n*** createNewGame stub function called ***");
     }
 }
-    
-

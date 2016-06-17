@@ -27,7 +27,7 @@ public class MovementView extends View {
 
     @Override
     public boolean doAction(String movementOption) {
-        movementOption = movementOption.toLowerCase(); // Convert choice to Lowercase.
+        movementOption = movementOption.toUpperCase(); // Convert choice to Lowercase.
         System.out.println(movementOption);
         switch (movementOption) {
             case "N": // Select travel North.
@@ -51,19 +51,27 @@ public class MovementView extends View {
     }
 
     private void moveNorth() {
-        System.out.println("\n You wish to travel North!");
+        System.out.println("\n You begin to travel North!");
+        NpcView npcChat = new NpcView();
+        npcChat.display();
     }
 
     private void moveSouth() {
-        System.out.println("\n You wish to travel South!");
+        System.out.println("\n You begin to travel South!");
+        NpcView npcChat = new NpcView();
+        npcChat.display();
     }
 
     private void moveEast() {
-        System.out.println("\n You wish to travel East!");
+        System.out.println("\n You begin to travel East!");
+        NpcView npcChat = new NpcView();
+        npcChat.display();
     }
 
     private void moveWest() {
-        System.out.println("\n You wish to travel West!");
+        System.out.println("\n You begin to travel West!");
+        NpcView npcChat = new NpcView();
+        npcChat.display();
     }
 
 }

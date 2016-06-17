@@ -8,7 +8,6 @@ package thechosenquest;
 import byui.cit260.theChosenQuest.control.Combat;
 import byui.cit260.theChosenQuest.control.DiceFaces;
 import byui.cit260.theChosenQuest.control.RandomRoll;
-import byui.cit260.theChosenQuest.model.CharacterClass;
 import byui.cit260.theChosenQuest.model.CharacterSheet;
 import byui.cit260.theChosenQuest.model.Creatures;
 import byui.cit260.theChosenQuest.model.Npc;
@@ -32,7 +31,7 @@ import byui.cit260.theChosenQuest.view.Town;
 public class TheChosenQuest {
     
     private static Game currentGame = null;
-    private static Player player = null;
+    public static Player player = null;
 
     public static Game getCurrentGame() {
         return currentGame;
@@ -56,8 +55,7 @@ public class TheChosenQuest {
         
         // Create StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();
-        
+        startProgramView.displayStartProgramView();   
     }
     
 }

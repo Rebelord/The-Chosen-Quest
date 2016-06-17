@@ -17,8 +17,33 @@ public class Player implements Serializable{
     // class instance variables
     private String name;
     private int characterSheet;
+    private String playerRace;
+    private String playerClass;
 
     public Player() {
+    }
+
+    public void setPlayerRace(String playerRace) {
+        this.playerRace = playerRace;
+    }
+
+    public Player(String name, int characterSheet, String playerRace, String playerClass) {
+        this.name = name;
+        this.characterSheet = characterSheet;
+        this.playerRace = playerRace;
+        this.playerClass = playerClass;
+    }
+
+    public void setPlayerClass(String playerClass) {
+        this.playerClass = playerClass;
+    }
+
+    public String getPlayerRace() {
+        return playerRace;
+    }
+
+    public String getPlayerClass() {
+        return playerClass;
     }
 
     @Override

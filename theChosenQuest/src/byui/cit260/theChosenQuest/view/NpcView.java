@@ -35,6 +35,9 @@ public class NpcView extends View {
         chatOption = chatOption.toUpperCase(); // Convert choice to Lowercase.
         System.out.println(chatOption);
         switch (chatOption) {
+            case "A": // Select travel South.
+                this.optionA();
+                break;
             case "B": // Select travel South.
                 this.optionB();
                 break;
@@ -52,6 +55,9 @@ public class NpcView extends View {
         return false;
     }
 
+    private void optionA() {
+        System.out.println("\n The beggar farts in your general direction as you pass by him.");
+    }
     private void optionB() {
         System.out.println("\n The beggar blinded by flying coins laughed joyfully at the gift.");
     }
