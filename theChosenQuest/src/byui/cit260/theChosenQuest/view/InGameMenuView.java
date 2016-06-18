@@ -5,6 +5,8 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import byui.cit260.theChosenQuest.model.CharacterSheet;
+
 /**
  *
  * @author Ryan D Webb
@@ -17,8 +19,9 @@ public class InGameMenuView extends View {
                   + "\n|                     Game Menu                        |"
                   + "\n--------------------------------------------------------"
                   + "\n| R - Resume Game                                      |"
-                  + "\n| S - Save Game                                        |"
-                  + "\n| L - Load Game                                        |"
+                  + "\n| M - Main Menu                                        |"
+                  + "\n| C - Character Sheet                                  |"
+                  + "\n| I - Inventory                                        |"    
                   + "\n| Q - Quit Game                                        |"
                   + "\n--------------------------------------------------------");
     }
@@ -31,11 +34,14 @@ public class InGameMenuView extends View {
             case "R": // Create and Start a new game.
                 this.resumeGame();
                 break;
-            case "S": // Load up a saved game
-                this.saveGame();
+            case "M": // Load up the main menu
+                this.mainMenu();
                 break;
-            case "L": // Display the help menu.
-                this.loadGame();
+            case "C": // Display the Character Sheet
+                this.characterSheet();
+                break;
+            case "I":
+                this.inventory();
                 break;
             case "Q": // Save the current game.
                 this.quitGame();
@@ -50,19 +56,31 @@ public class InGameMenuView extends View {
 
     private void resumeGame() {
         System.out.println("\n*** Good Luck!");
-        return;
+        MovementView moveMe = new MovementView();
+        moveMe.display();
     }
 
-    private void saveGame() {
-        System.out.println("\n*** Maybe in the future, lol.");
+    private void mainMenu() {
+        System.out.println("\n*** Do you want to save?");
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.display();
     }
 
-    private void loadGame() {
-        System.out.println("\n*** Uh what, lol.");
+    private void characterSheet() {
+        System.out.println("\n*** What do I look like again?");
+        CharacterSheet charSheet = new CharacterSheet();
+        charSheet.display();
+    }
+    private void inventory() {
+        System.out.println("What do I have with me that will help?");
+        Inventory inventory = new Inventory();
+        inventory.display();
     }
 
     private void quitGame() {
-        Runtime.getRuntime().exit(0);
+        System.out.println("Quit the game");
     }
+
+    
     
 }

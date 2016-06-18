@@ -96,6 +96,10 @@ public class CharacterSheet implements Serializable{
     public String toString() {
         return "CharacterSheet{" + "stats=" + stats + ", equipment=" + equipment + ", spells=" + spells + ", inventory=" + inventory + '}';
     }
+
+    public void display() {
+        System.out.println("This is me");
+    }
     
     
 }

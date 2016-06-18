@@ -50,6 +50,8 @@ public class GameMenuView extends View {
 
     private void resumeGame() {
         System.out.println("\n*** Good Luck!");
+        MovementView moveMe = new MovementView();
+        moveMe.display();
     }
 
     private void saveGame() {
@@ -61,7 +63,8 @@ public class GameMenuView extends View {
     }
 
     private void quitGame() {
-        Runtime.getRuntime().exit(0);
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.display();
     }
     
 }
