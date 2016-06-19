@@ -24,7 +24,7 @@ public class MainMenuView extends View {
                   + "\n| G - Get and start saved game                         |"
                   + "\n| H - Get help on how to play the game                 |"
                   + "\n| S - Save Game                                        |"
-                  + "\n| Q - Quit Game                                        |"
+                  + "\n| E - Quit Game                                        |"
                   + "\n--------------------------------------------------------");
     }
 
@@ -45,6 +45,8 @@ public class MainMenuView extends View {
             case "S": // Save the current game.
                 this.saveGame();
                 break;
+            case "E":
+                System.exit(0);
             default:
                 System.out.println("\n*** Fat Finger Error *** Please try again!");
                 break;
@@ -60,8 +62,8 @@ public class MainMenuView extends View {
         GameControl.createNewGame(TheChosenQuest.getPlayer());
         
         // Display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+       CharacterRace charRace = new CharacterRace();
+       charRace.display();
     }
 
     private void startLoadGame() {

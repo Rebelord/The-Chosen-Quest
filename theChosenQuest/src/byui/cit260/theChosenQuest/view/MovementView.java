@@ -22,7 +22,7 @@ public class MovementView extends View {
                   + "\n     S - South"
                   + "\n     E - East"
                   + "\n     W - West"
-                  + "\n     Q - None");
+                  + "\n     M - Menu");
     }
 
     @Override
@@ -41,6 +41,9 @@ public class MovementView extends View {
                 break;
             case "W": // Select travel West.
                 this.moveWest();
+                break;
+            case "M":
+                this.gameMenu();
                 break;
             default:
                 System.out.println("\n Lets try this again, shall we.");
@@ -72,6 +75,11 @@ public class MovementView extends View {
         System.out.println("\n You begin to travel West!");
         NpcView npcChat = new NpcView();
         npcChat.display();
+    }
+
+    private void gameMenu() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();                        
     }
 
 }

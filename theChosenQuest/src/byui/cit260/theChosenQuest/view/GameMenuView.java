@@ -17,9 +17,11 @@ public class GameMenuView extends View {
                   + "\n|                     Game Menu                        |"
                   + "\n--------------------------------------------------------"
                   + "\n| R - Resume Game                                      |"
+                  + "\n| M - Menu Options                                     |"    
                   + "\n| S - Save Game                                        |"
                   + "\n| L - Load Game                                        |"
-                  + "\n| Q - Quit Game                                        |"
+                  + "\n| H - Help Menu                                        |"    
+                  + "\n| E - Exit Game                                        |"
                   + "\n--------------------------------------------------------");
     }
 
@@ -31,15 +33,20 @@ public class GameMenuView extends View {
             case "R": // Create and Start a new game.
                 this.resumeGame();
                 break;
+            case "M":
+                this.optionM();
+                break;
             case "S": // Load up a saved game
                 this.saveGame();
                 break;
             case "L": // Display the help menu.
                 this.loadGame();
                 break;
-            case "Q": // Save the current game.
-                this.quitGame();
+            case "H":
+                this.helpmenu();
                 break;
+            case "E":
+                System.exit(0);
             default:
                 System.out.println("\n*** Fat Finger Error *** Please try again!");
                 break;
@@ -55,16 +62,25 @@ public class GameMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("\n*** Maybe in the future, lol.");
+        System.out.println("\n*** Save Game fucntion called");
     }
 
     private void loadGame() {
-        System.out.println("\n*** Uh what, lol.");
+        System.out.println("\n*** Load game function called.");
     }
 
-    private void quitGame() {
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.display();
+    private void optionM() {
+        System.out.println("You have opened the game menu");
+       InGameMenuView gameView = new InGameMenuView();
+       gameView.display();
     }
+
+    private void helpmenu() {
+        System.out.println("Welcome to the Divine Assistance Menu");
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.display();
+    }
+
+   
     
 }

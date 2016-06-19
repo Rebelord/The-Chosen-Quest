@@ -43,9 +43,6 @@ public class InGameMenuView extends View {
             case "I":
                 this.inventory();
                 break;
-            case "Q": // Save the current game.
-                this.quitGame();
-                break;
             default:
                 System.out.println("\n*** Fat Finger Error *** Please try again!");
                 break;
@@ -77,9 +74,7 @@ public class InGameMenuView extends View {
         inventory.display();
     }
 
-    private void quitGame() {
-        System.out.println("Quit the game");
-    }
+    
 
     
     

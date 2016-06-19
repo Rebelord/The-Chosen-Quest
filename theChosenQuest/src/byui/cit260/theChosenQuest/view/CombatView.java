@@ -53,7 +53,7 @@ public class CombatView extends View{
     private void Attack() {
         // calls the Combat controller
         /*CombatDamageController combat = new CombatDamageController();
-        combat.CombatDamageController();*/
+        combat.combatDamageController();*/
         System.out.println("You strike out at your enemy!");
         
     }
@@ -78,6 +78,8 @@ public class CombatView extends View{
         combat.CombatDamageController();
         */
         System.out.println("RUNNNNNNNN AWWWWAAAAAAYYYY!!!!!!!!!! It's going to eat ME!!!!!!!!");
+        MovementView moveMe = new MovementView();
+        moveMe.display();
     }
 
     

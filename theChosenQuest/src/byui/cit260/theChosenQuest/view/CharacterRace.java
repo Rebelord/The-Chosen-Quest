@@ -55,24 +55,28 @@ public class CharacterRace extends View {
     private void dwarf() {
         TheChosenQuest.player.setPlayerRace("Dwarf");
         System.out.println ("Create a new dwarf hero fuction is called");
-        return;
+        CharacterClass charClass = new CharacterClass();
+        charClass.display();
     }
 
     private void human() {
         TheChosenQuest.player.setPlayerRace("Human");
         System.out.println ("Create a new Human hero fuction is called");
-        return;
+        CharacterClass charClass = new CharacterClass();
+        charClass.display();
     }
 
     private void halfling() {
         TheChosenQuest.player.setPlayerRace("Halfling");
         System.out.println ("Create a new Halfling hero fuction is called");
-        return;
+        CharacterClass charClass = new CharacterClass();
+        charClass.display();
     }
 
     private void elf() {
         TheChosenQuest.player.setPlayerRace("Elf");
         System.out.println ("Create a new Elf hero fuction is called");
-        return;
+        CharacterClass charClass = new CharacterClass();
+        charClass.display();
     }
 }
