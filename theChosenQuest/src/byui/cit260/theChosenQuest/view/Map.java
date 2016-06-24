@@ -5,36 +5,84 @@
  */
 package byui.cit260.theChosenQuest.view;
 
-
+import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
  * @author ryandanielwebb
  */
-public class Map {
+public class Map implements Serializable{
     
     // class instance variables
-    private static final int NUM_ROWS = 10;
-    private static final int NUM_COLS = 10;
-    
-    private Location [][] matrix;
-    
-   // private String location;
-   // private String move;
-   // private String legend;
+    private String location;
+    private String move;
+    private String legend;
 
     public Map() {
-        matrix = new Location [NUM_ROWS][NUM_COLS];
-        init();
     }
-    private void init() {
-       
-        for (int row = 0 < NUM_ROWS; row++)
-            for (int col = 0 < NUM_COLS; col++)
-                Location loc = new Location();
-        
-        loc.setType(LocationType.values()[(int) (Math.random() * LocationType.values().length)]);
-        
-    }     
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getMove() {
+        return move;
+    }
+
+    public void setMove(String move) {
+        this.move = move;
+    }
+
+    public String getLegend() {
+        return legend;
+    }
+
+    public void setLegend(String legend) {
+        this.legend = legend;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 97 * hash + Objects.hashCode(this.location);
+        hash = 97 * hash + Objects.hashCode(this.move);
+        hash = 97 * hash + Objects.hashCode(this.legend);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Map other = (Map) obj;
+        if (!Objects.equals(this.location, other.location)) {
+            return false;
+        }
+        if (!Objects.equals(this.move, other.move)) {
+            return false;
+        }
+        if (!Objects.equals(this.legend, other.legend)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Map{" + "location=" + location + ", move=" + move + ", legend=" + legend + '}';
+    }
+    
     
 }
