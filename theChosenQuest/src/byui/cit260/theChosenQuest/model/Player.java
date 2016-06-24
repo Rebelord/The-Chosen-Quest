@@ -16,6 +16,7 @@ public class Player implements Serializable{
     
     // class instance variables
     private String name;
+    private String inventory;
     private int characterSheet;
     private String playerRace;
     private String playerClass;
