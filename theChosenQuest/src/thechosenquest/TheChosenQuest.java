@@ -30,8 +30,8 @@ import byui.cit260.theChosenQuest.view.Town;
  */
 public class TheChosenQuest {
     
-    private static Game currentGame = null;
-    public static Player player = null;
+    private static Game currentGame;
+    public static Player player;
 
     public static Game getCurrentGame() {
         return currentGame;

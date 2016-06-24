@@ -6,6 +6,7 @@
 package byui.cit260.theChosenQuest.control;
 
 import byui.cit260.theChosenQuest.model.Player;
+import byui.cit260.theChosenQuest.view.Map;
 import thechosenquest.TheChosenQuest;
 
 /**
@@ -29,6 +30,17 @@ public class GameControl {
        }
 
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+        
+        Game g = new Game();
+        g.setPlayer(playersName);
+        
+        Map gameMap = new Map ();
+        g.setMap(gameMap);
+        
+        player.setLocation(gameMap.getLocation(0, 0));
+        
+        TheChosenQuest.setCurrentGame(g);
+              
+        
     }
 }
