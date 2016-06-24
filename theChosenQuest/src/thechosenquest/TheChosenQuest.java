@@ -20,9 +20,10 @@ import byui.cit260.theChosenQuest.model.Spells;
 import byui.cit260.theChosenQuest.model.Stats;
 import byui.cit260.theChosenQuest.view.CharacterRace;
 import byui.cit260.theChosenQuest.view.CombatAreas;
-import byui.cit260.theChosenQuest.view.Map;
+import byui.cit260.theChosenQuest.view.MapView;
 import byui.cit260.theChosenQuest.view.StartProgramView;
 import byui.cit260.theChosenQuest.view.Town;
+import byui.cit260.theChosenQuest.model.Game;
 
 /**
  *
@@ -55,6 +56,7 @@ public class TheChosenQuest {
         
         // Create StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
+        
         startProgramView.displayStartProgramView();   
     }
     

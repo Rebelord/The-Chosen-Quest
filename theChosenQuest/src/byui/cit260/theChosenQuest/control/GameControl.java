@@ -5,9 +5,13 @@
  */
 package byui.cit260.theChosenQuest.control;
 
+import byui.cit260.theChosenQuest.model.Equipment;
+import byui.cit260.theChosenQuest.model.Game;
 import byui.cit260.theChosenQuest.model.Player;
-import byui.cit260.theChosenQuest.view.Map;
+import byui.cit260.theChosenQuest.model.Map;
 import thechosenquest.TheChosenQuest;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -32,7 +36,7 @@ public class GameControl {
     public static void createNewGame(Player player) {
         
         Game g = new Game();
-        g.setPlayer(playersName);
+        g.setPlayer(player);
         
         Map gameMap = new Map ();
         g.setMap(gameMap);
@@ -40,7 +44,13 @@ public class GameControl {
         player.setLocation(gameMap.getLocation(0, 0));
         
         TheChosenQuest.setCurrentGame(g);
-              
+    }
+    
+    public static List<Equipment> createEquipList() {
+        
+        List<Equipment> equipList = new ArrayList<>();
+        
+        return equipList;
         
     }
 }

@@ -20,6 +20,7 @@ public class Player implements Serializable{
     private int characterSheet;
     private String playerRace;
     private String playerClass;
+    Location location;
 
     public Player() {
     }
@@ -45,6 +46,14 @@ public class Player implements Serializable{
 
     public String getPlayerClass() {
         return playerClass;
+    }
+    
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     @Override
