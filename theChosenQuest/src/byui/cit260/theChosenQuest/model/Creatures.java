@@ -15,35 +15,35 @@ import java.util.Objects;
 public class Creatures implements Serializable{
     
     // class instance variables
-    private int hp;
-    private int attack;
-    private int defense;
+    private double hp;
+    private double attack;
+    private double defense;
     private String name;
 
     public Creatures() {
     }
 
-    public int getHp() {
+    public double getHp() {
         return hp;
     }
 
-    public void setHp(int hp) {
+    public void setHp(double hp) {
         this.hp = hp;
     }
 
-    public int getAttack() {
+    public double getAttack() {
         return attack;
     }
 
-    public void setAttack(int attack) {
+    public void setAttack(double attack) {
         this.attack = attack;
     }
 
-    public int getDefense() {
+    public double getDefense() {
         return defense;
     }
 
-    public void setDefense(int defense) {
+    public void setDefense(double defense) {
         this.defense = defense;
     }
 
@@ -53,48 +53,6 @@ public class Creatures implements Serializable{
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + this.hp;
-        hash = 97 * hash + this.attack;
-        hash = 97 * hash + this.defense;
-        hash = 97 * hash + Objects.hashCode(this.name);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Creatures other = (Creatures) obj;
-        if (this.hp != other.hp) {
-            return false;
-        }
-        if (this.attack != other.attack) {
-            return false;
-        }
-        if (this.defense != other.defense) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Creatures{" + "hp=" + hp + ", attack=" + attack + ", defense=" + defense + ", name=" + name + '}';
     }
     
     

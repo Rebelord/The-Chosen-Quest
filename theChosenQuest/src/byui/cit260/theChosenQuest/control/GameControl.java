@@ -5,6 +5,7 @@
  */
 package byui.cit260.theChosenQuest.control;
 
+import byui.cit260.theChosenQuest.model.Creatures;
 import byui.cit260.theChosenQuest.model.Equipment;
 import byui.cit260.theChosenQuest.model.Game;
 import byui.cit260.theChosenQuest.model.Player;
@@ -41,18 +42,62 @@ public class GameControl {
         Map gameMap = new Map ();
         g.setMap(gameMap);
         
+        populateMapWithCreatures(gameMap);
+        
         player.setLocation(gameMap.getLocation(0, 0));
         
         TheChosenQuest.setCurrentGame(g);
     }
     
-    public static List<Equipment> createEquipList() {
+    public static void populateMapWithCreatures(Map map) {
         
-        List<Equipment> equipList = new ArrayList<>();
+        List<Creatures> creatures = createCreatureList();
+        boolean success = false;
         
+        for(Creatures c : creatures) {
+            
+            do {
+                int row = (int)(Math.random() * Map.NUM_ROWS);
+                int col = (int)(Math.random() * Map.NUM_COLS);
+            
+                 success = false;
+                
+                if(map.getLocation(row, col).getCreatures() == null) {
+                    map.getLocation(row, col).setCreatures(c);
+                    success = true;
+                }
+                
+            } while(success == false);
+            
+        }
+    }
+    
+    public static List<Creatures> createCreatureList() {
         
+        List<Creatures> creatureList = new ArrayList<>();
         
-        return equipList;
+        Creatures blob = new Creatures();
+        blob.setName("Ooze");
+        blob.setHp(10);
+        blob.setAttack(5);
+        blob.setDefense(3);
+        creatureList.add(blob);
+        
+        Creatures wolf = new Creatures();
+        blob.setName("Dire Wolf");
+        blob.setHp(10);
+        blob.setAttack(5);
+        blob.setDefense(4);
+        creatureList.add(wolf);
+        
+        Creatures goblin = new Creatures();
+        goblin.setName("Bob the Goblin");
+        goblin.setHp(5);
+        goblin.setAttack(3);
+        goblin.setDefense(2);
+        creatureList.add(goblin);
+        
+        return creatureList;
         
     }
 }

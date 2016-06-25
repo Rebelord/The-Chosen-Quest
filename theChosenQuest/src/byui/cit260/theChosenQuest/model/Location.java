@@ -17,7 +17,16 @@ public class Location implements Serializable {
     private String description;
     private int row;
     private int col;
+    private Creatures creatures;
     // Add more stuff
+
+    public Creatures getCreatures() {
+        return creatures;
+    }
+
+    public void setCreatures(Creatures creatures) {
+        this.creatures = creatures;
+    }
 
     public int getRow() {
         return row;
