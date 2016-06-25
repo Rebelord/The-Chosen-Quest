@@ -50,6 +50,8 @@ public class GameControl {
         
         List<Equipment> equipList = new ArrayList<>();
         
+        
+        
         return equipList;
         
     }
