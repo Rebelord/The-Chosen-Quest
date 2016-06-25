@@ -5,6 +5,9 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import static java.lang.System.console;
+import thechosenquest.TheChosenQuest;
+
 /**
  *
  * @author ryandanielwebb
@@ -17,7 +20,8 @@ public class GameMenuView extends View {
                   + "\n|                     Game Menu                        |"
                   + "\n--------------------------------------------------------"
                   + "\n| R - Resume Game                                      |"
-                  + "\n| M - Menu Options                                     |"    
+                  + "\n| M - View Map                                         |"  
+                  + "\n| O - Options                                          |"    
                   + "\n| S - Save Game                                        |"
                   + "\n| L - Load Game                                        |"
                   + "\n| H - Help Menu                                        |"    
@@ -33,8 +37,11 @@ public class GameMenuView extends View {
             case "R": // Create and Start a new game.
                 this.resumeGame();
                 break;
-            case "M":
+            case "O":
                 this.optionM();
+                break;
+            case "M":
+                this.viewMap();
                 break;
             case "S": // Load up a saved game
                 this.saveGame();
@@ -79,6 +86,10 @@ public class GameMenuView extends View {
         System.out.println("Welcome to the Divine Assistance Menu");
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.display();
+    }
+
+    private void viewMap() {
+        System.out.println(TheChosenQuest.getCurrentGame().getMap().getMapString());
     }
 
    
