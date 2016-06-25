@@ -55,26 +55,18 @@ public class MovementView extends View {
 
     private void moveNorth() {
         System.out.println("\n You begin to travel North!");
-        NpcView npcChat = new NpcView();
-        npcChat.display();
     }
 
     private void moveSouth() {
         System.out.println("\n You begin to travel South!");
-        NpcView npcChat = new NpcView();
-        npcChat.display();
     }
 
     private void moveEast() {
         System.out.println("\n You begin to travel East!");
-        NpcView npcChat = new NpcView();
-        npcChat.display();
     }
 
     private void moveWest() {
         System.out.println("\n You begin to travel West!");
-        NpcView npcChat = new NpcView();
-        npcChat.display();
     }
 
     private void gameMenu() {
