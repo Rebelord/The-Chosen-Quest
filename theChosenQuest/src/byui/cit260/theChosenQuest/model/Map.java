@@ -32,6 +32,8 @@ public class Map implements Serializable {
                     
                     // Create a random location type
                     loc.setType(LocationType.values()[(int) (Math.random() * LocationType.values().length)]);
+                    loc.setRow(row);
+                    loc.setCol(col);
                     
                     matrix[row][col] = loc;
                 }
@@ -46,6 +48,10 @@ public class Map implements Serializable {
         for (int col = 0; col < NUM_COLS; col++) {
             for (int row = 0; row < NUM_ROWS; row++) {
                 map += matrix[row][col].getType().name().charAt(0) + "\t";
+                
+                if(matrix[row][col].getCreatures() != null){
+                    map += matrix[row][col].getCreatures().getName().charAt(0);
+                }
             }
             
             map += "\n";

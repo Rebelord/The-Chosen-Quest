@@ -64,10 +64,10 @@ public class Location implements Serializable {
         this.description = description;
     }
 
-    public Location(LocationType type, String description) {
+   public Location(LocationType type, String description) {
         this.type = type;
-        this.description = description;
-    }
+       this.description = description;
+   }
     
     
 }

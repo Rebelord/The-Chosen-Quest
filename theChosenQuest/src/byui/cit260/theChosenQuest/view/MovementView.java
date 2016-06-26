@@ -5,7 +5,9 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import byui.cit260.theChosenQuest.control.MovementController;
 import java.util.Scanner;
+import thechosenquest.TheChosenQuest;
 
 /**
  *
@@ -53,29 +55,38 @@ public class MovementView extends View {
         return false;
     }
 
+    
     private void moveNorth() {
-        System.out.println("\n You begin to travel North!");
-        NpcView npcChat = new NpcView();
-        npcChat.display();
+        MovementController movePlayer = new MovementController();
+            if(movePlayer.moveNorth(TheChosenQuest.getCurrentGame()) == false) {
+            System.out.println("You cannot move there");
+            } 
     }
 
     private void moveSouth() {
-        System.out.println("\n You begin to travel South!");
-        NpcView npcChat = new NpcView();
-        npcChat.display();
-    }
+       MovementController movePlayer = new MovementController();
+        if(movePlayer.moveSouth(TheChosenQuest.getCurrentGame()) == false) {
+            System.out.println("You cannot move there");
+        }
+        }
+        
 
     private void moveEast() {
-        System.out.println("\n You begin to travel East!");
-        NpcView npcChat = new NpcView();
-        npcChat.display();
-    }
+       MovementController movePlayer = new MovementController();
+        if(movePlayer.moveEast(TheChosenQuest.getCurrentGame()) == false) {
+            System.out.println("You cannot move there");
+        }
+        }
+        
+        
+        
 
     private void moveWest() {
-        System.out.println("\n You begin to travel West!");
-        NpcView npcChat = new NpcView();
-        npcChat.display();
-    }
+        MovementController movePlayer = new MovementController();
+        if(movePlayer.moveWest(TheChosenQuest.getCurrentGame()) == false) {
+            System.out.println("You cannot move there");
+        }
+        }
 
     private void gameMenu() {
         GameMenuView gameMenu = new GameMenuView();
