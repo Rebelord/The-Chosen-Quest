@@ -57,6 +57,7 @@ public class MovementView extends View {
 
     
     private void moveNorth() {
+
         MovementController movePlayer = new MovementController();
             if(movePlayer.moveNorth(TheChosenQuest.getCurrentGame()) == false) {
             System.out.println("You cannot move there");
@@ -87,6 +88,7 @@ public class MovementView extends View {
             System.out.println("You cannot move there");
         }
         }
+
 
     private void gameMenu() {
         GameMenuView gameMenu = new GameMenuView();
