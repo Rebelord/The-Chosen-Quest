@@ -62,10 +62,10 @@ public class GameControl {
             
                  success = false;
                 
-                if(map.getLocation(row, col).getCreatures() == null) {
-                    map.getLocation(row, col).setCreatures(c);
-                    success = true;
-                }
+               if(map.getLocation(row, col).getCreatures() == null) {
+                   map.getLocation(row, col).setCreatures(c);
+                   success = true;
+              }
                 
             } while(success == false);
             

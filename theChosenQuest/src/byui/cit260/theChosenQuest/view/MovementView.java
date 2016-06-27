@@ -59,23 +59,27 @@ public class MovementView extends View {
     private void moveNorth() {
 
         MovementController movePlayer = new MovementController();
+        System.out.println("You move North one space");
             if(movePlayer.moveNorth(TheChosenQuest.getCurrentGame()) == false) {
-            System.out.println("You cannot move there");
+            System.out.println("But, you cannot move there");
+            
             } 
     }
 
     private void moveSouth() {
        MovementController movePlayer = new MovementController();
+       System.out.println("You move South one space");
         if(movePlayer.moveSouth(TheChosenQuest.getCurrentGame()) == false) {
-            System.out.println("You cannot move there");
+            System.out.println("But, you cannot move there");
         }
         }
         
 
     private void moveEast() {
        MovementController movePlayer = new MovementController();
+       System.out.println("You move East one space");
         if(movePlayer.moveEast(TheChosenQuest.getCurrentGame()) == false) {
-            System.out.println("You cannot move there");
+            System.out.println("But, you cannot move there");
         }
         }
         
@@ -84,8 +88,9 @@ public class MovementView extends View {
 
     private void moveWest() {
         MovementController movePlayer = new MovementController();
+        System.out.println("You move West one space");
         if(movePlayer.moveWest(TheChosenQuest.getCurrentGame()) == false) {
-            System.out.println("You cannot move there");
+            System.out.println("But, you cannot move there");
         }
         }
 
