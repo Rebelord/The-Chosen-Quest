@@ -24,6 +24,7 @@ public class MainMenuView extends View {
                   + "\n| G - Get and start saved game                         |"
                   + "\n| H - Get help on how to play the game                 |"
                   + "\n| S - Save Game                                        |"
+                  + "\n| R - Resume Current Game                              |"    
                   + "\n| E - Quit Game                                        |"
                   + "\n--------------------------------------------------------");
     }
@@ -47,6 +48,9 @@ public class MainMenuView extends View {
                 break;
             case "E":
                 System.exit(0);
+            case "R":
+                this.resumeGame();
+                break;                    
             default:
                 System.out.println("\n*** Fat Finger Error *** Please try again!");
                 break;
@@ -78,5 +82,9 @@ public class MainMenuView extends View {
     private void saveGame() {
         System.out.println("\n*** saveGame function called ***");
     }
-    
+    private void resumeGame() {
+        System.out.println("\n*** Good Luck!");
+        MovementView moveMe = new MovementView();
+        moveMe.display();
+    }
 }

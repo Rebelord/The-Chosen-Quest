@@ -6,7 +6,7 @@
 package byui.cit260.theChosenQuest.model;
 
 import java.io.Serializable;
-import java.util.Objects;
+
 
 /**
  *
@@ -19,6 +19,7 @@ public class Creatures implements Serializable{
     private double attack;
     private double defense;
     private String name;
+    private double goldDrop;
 
     public Creatures() {
     }
@@ -53,6 +54,14 @@ public class Creatures implements Serializable{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getGoldDrop() {
+        return goldDrop;
+    }
+
+    public void setGoldDrop(double goldDrop) {
+        this.goldDrop = goldDrop;
     }
     
     

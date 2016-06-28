@@ -49,10 +49,10 @@ public class Map implements Serializable {
             for (int row = 0; row < NUM_ROWS; row++) {
                 map += matrix[row][col].getType().name().charAt(0) + "\t";
                 
-                if(matrix[row][col].getCreatures() != null){
-                    map += matrix[row][col].getCreatures().getName().charAt(0);
-                }
-            }
+//                if(matrix[row][col].getCreatures() != null){
+//                    map += matrix[row][col].getCreatures().getName().charAt(0);
+//                }
+           }
             
             map += "\n";
         }

@@ -50,6 +50,9 @@ public class Inventory extends View {
             case "E": // Equip Item
                 this.loadEquipItem();
                 break;
+            case "Q":
+                this.GameMenuView();
+                break;
             default:
                 System.out.println("\n*** Butterfingers Error *** Please try again!");
                 break;
@@ -68,6 +71,11 @@ public class Inventory extends View {
 
     private void loadEquipItem() {
         System.out.println("\n*** Call EquipItem Stub ***");
+    }
+
+    private void GameMenuView() {
+        GameMenuView GameMenuView =  new GameMenuView();
+        GameMenuView.display();
     }
     
 }

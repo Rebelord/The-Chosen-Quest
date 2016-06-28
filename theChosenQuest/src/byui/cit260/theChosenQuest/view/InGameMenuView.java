@@ -16,7 +16,7 @@ public class InGameMenuView extends View {
     public InGameMenuView() {
               super("\n"
                   + "\n--------------------------------------------------------"
-                  + "\n|                     Game Menu                        |"
+                  + "\n|                   Option Menu                        |"
                   + "\n--------------------------------------------------------"
                   + "\n| R - Resume Game                                      |"
                   + "\n| M - Main Menu                                        |"
@@ -42,6 +42,9 @@ public class InGameMenuView extends View {
                 break;
             case "I":
                 this.inventory();
+                break;
+            case "Q":
+                this.GameMenuView();
                 break;
             default:
                 System.out.println("\n*** Fat Finger Error *** Please try again!");
@@ -74,7 +77,10 @@ public class InGameMenuView extends View {
         inventory.display();
     }
 
-    
+    private void GameMenuView() {
+        GameMenuView GameMenuView =  new GameMenuView();
+        GameMenuView.display();
+    }
 
     
     

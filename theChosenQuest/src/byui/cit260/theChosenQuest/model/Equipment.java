@@ -5,30 +5,50 @@
  */
 package byui.cit260.theChosenQuest.model;
 
+import java.io.Serializable;
+
 
 
 /**
  *
  * @author Zack Durbin
  */
-public enum Equipment {
-    ShortSword,
-    LongSword,
-    Mace,
-    Staff,
-    Dagger,
-    LongBow,
-    ShortBow,
-    Axe,
-    Shield,
-    ClothArmor,
-    LeatherArmor,
-    ChainMailArmor,
-    ScaleMailArmor,
-    PlateMailArmor;
-    
+public class Equipment implements Serializable{
    
-    
-   
-    
+    private String name;
+    private double attack;
+    private double defense;
+    private double cost;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getAttack() {
+        return attack;
+    }
+
+    public void setAttack(double attack) {
+        this.attack = attack;
+    }
+
+    public double getDefense() {
+        return defense;
+    }
+
+    public void setDefense(double defense) {
+        this.defense = defense;
+    }
+
+    public double getCost() {
+        return cost;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
 }
