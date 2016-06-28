@@ -107,6 +107,7 @@ public class ShopController {
         shield.setName("Shield");
         shield.setDefense(1);
         shield.setCost(5);
+        equipmentList.add(shield);
         
         
         return equipmentList;

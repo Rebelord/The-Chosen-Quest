@@ -6,7 +6,6 @@
 package byui.cit260.theChosenQuest.view;
 
 import byui.cit260.theChosenQuest.model.Location;
-import static java.lang.System.console;
 import thechosenquest.TheChosenQuest;
 
 /**

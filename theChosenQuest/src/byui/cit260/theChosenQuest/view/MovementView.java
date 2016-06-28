@@ -69,6 +69,7 @@ public class MovementView extends View {
             } else {
                 GameControl find = new GameControl();
                 find.findCreature(player);
+                find.findShop(player);
             }
     }
 
@@ -80,7 +81,8 @@ public class MovementView extends View {
         } else {
                 GameControl find = new GameControl();
                 find.findCreature(player);
-        }
+                find.findShop(player);
+        } 
     }
         
 
@@ -92,6 +94,7 @@ public class MovementView extends View {
         } else {
                 GameControl find = new GameControl();
                 find.findCreature(player);
+                find.findShop(player);
         }
     }
         
@@ -106,6 +109,7 @@ public class MovementView extends View {
         } else {
                 GameControl find = new GameControl();
                 find.findCreature(player);
+                find.findShop(player);
         }
     }
 

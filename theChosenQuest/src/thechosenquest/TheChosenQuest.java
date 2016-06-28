@@ -7,7 +7,6 @@ package thechosenquest;
 
 import byui.cit260.theChosenQuest.control.Combat;
 import byui.cit260.theChosenQuest.control.DiceFaces;
-import byui.cit260.theChosenQuest.control.RandomRoll;
 import byui.cit260.theChosenQuest.model.CharacterSheet;
 import byui.cit260.theChosenQuest.model.Creatures;
 import byui.cit260.theChosenQuest.model.Npc;
