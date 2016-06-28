@@ -6,6 +6,7 @@
 package byui.cit260.theChosenQuest.view;
 
 import byui.cit260.theChosenQuest.control.CombatDamageController;
+import byui.cit260.theChosenQuest.model.Player;
 import java.util.Scanner;
 
 /**
@@ -14,9 +15,9 @@ import java.util.Scanner;
  */
 public class CombatView extends View{
     
-    public CombatView() {
-              super("\n You are under attack. Please decide what you want to do."
-                  + "\n Please Select the approprate letter"
+    public CombatView(Player player) {
+              super("\n You are under attack by a " + player.getLocation().getCreatures().getName()
+                  + "\n Please decide what you want to do."
                   + "\n"
                   + "\n You may ..."
                   + "\n  A - Attack your opponent"
@@ -30,16 +31,16 @@ public class CombatView extends View{
         combatOption = combatOption.toUpperCase(); // Convert choice to Lowercase.
         System.out.println(combatOption);
         switch (combatOption) {
-            case "A": // Select travel North.
+            case "A": // Select Attack.
                 this.Attack();
                 break;
-            case "D": // Select travel South.
+            case "D": // Select Defend.
                 this.Defend();
                 break;
-            case "P": // Select travel East.
+            case "P": // Select Potion.
                 this.Potion();
                 break;
-            case "R": // Select travel West.
+            case "R": // Select Run.
                 this.Run();
                 break;
             default:

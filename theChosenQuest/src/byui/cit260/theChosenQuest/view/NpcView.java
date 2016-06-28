@@ -75,8 +75,8 @@ public class NpcView extends View {
 
     private void optionC() {
         System.out.println("\n Sure, beat up an old bum!");
-        CombatView combat = new CombatView();
-        combat.display();
+        //CombatView combat = new CombatView();
+        //combat.display();
     }
 
     private void optionD() {

@@ -5,9 +5,12 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import byui.cit260.theChosenQuest.control.GameControl;
 import byui.cit260.theChosenQuest.control.MovementController;
+import byui.cit260.theChosenQuest.model.Player;
 import java.util.Scanner;
 import thechosenquest.TheChosenQuest;
+import static thechosenquest.TheChosenQuest.player;
 
 /**
  *
@@ -63,7 +66,10 @@ public class MovementView extends View {
             if(movePlayer.moveNorth(TheChosenQuest.getCurrentGame()) == false) {
             System.out.println("But, you cannot move there");
             
-            } 
+            } else {
+                GameControl find = new GameControl();
+                find.findCreature(player);
+            }
     }
 
     private void moveSouth() {
@@ -71,8 +77,11 @@ public class MovementView extends View {
        System.out.println("You move South one space");
         if(movePlayer.moveSouth(TheChosenQuest.getCurrentGame()) == false) {
             System.out.println("But, you cannot move there");
+        } else {
+                GameControl find = new GameControl();
+                find.findCreature(player);
         }
-        }
+    }
         
 
     private void moveEast() {
@@ -80,8 +89,11 @@ public class MovementView extends View {
        System.out.println("You move East one space");
         if(movePlayer.moveEast(TheChosenQuest.getCurrentGame()) == false) {
             System.out.println("But, you cannot move there");
+        } else {
+                GameControl find = new GameControl();
+                find.findCreature(player);
         }
-        }
+    }
         
         
         
@@ -91,8 +103,11 @@ public class MovementView extends View {
         System.out.println("You move West one space");
         if(movePlayer.moveWest(TheChosenQuest.getCurrentGame()) == false) {
             System.out.println("But, you cannot move there");
+        } else {
+                GameControl find = new GameControl();
+                find.findCreature(player);
         }
-        }
+    }
 
 
     private void gameMenu() {

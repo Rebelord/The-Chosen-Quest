@@ -8,8 +8,10 @@ package byui.cit260.theChosenQuest.control;
 import byui.cit260.theChosenQuest.model.Creatures;
 import byui.cit260.theChosenQuest.model.Equipment;
 import byui.cit260.theChosenQuest.model.Game;
+import byui.cit260.theChosenQuest.model.Location;
 import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.model.Map;
+import byui.cit260.theChosenQuest.view.CombatView;
 import thechosenquest.TheChosenQuest;
 import java.util.ArrayList;
 import java.util.List;
@@ -104,5 +106,16 @@ public class GameControl {
         
     }
     
+    public boolean findCreature(Player player) {
+        Location location = player.getLocation();
+        if(location.getCreatures() != null) {
+            CombatView fight = new CombatView(player);
+            fight.display();
+            location.setCreatures(null);
+            return true;
+        }
+        
+        return false;
+    }
     
 }
