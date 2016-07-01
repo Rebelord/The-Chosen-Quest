@@ -76,6 +76,8 @@ public class MovementView extends View {
                 find.findShop(player);
             } catch (MovementException me) {
                 System.out.println("You cannot move North");
+            } finally {
+                System.out.println("Hello");
             }
     }
 
@@ -83,7 +85,7 @@ public class MovementView extends View {
         MovementController movePlayer = new MovementController();
        
         try {
-            movePlayer.moveNorth(TheChosenQuest.getCurrentGame());
+            movePlayer.moveSouth(TheChosenQuest.getCurrentGame());
             System.out.println("You move South");
             GameControl find = new GameControl();
             find.findCreature(player);
@@ -96,7 +98,7 @@ public class MovementView extends View {
     private void moveEast() {
         MovementController movePlayer = new MovementController();
         try {
-                movePlayer.moveNorth(TheChosenQuest.getCurrentGame());
+                movePlayer.moveEast(TheChosenQuest.getCurrentGame());
                 System.out.println("You move East");
                 GameControl find = new GameControl();
                 find.findCreature(player);
@@ -109,7 +111,7 @@ public class MovementView extends View {
     private void moveWest() {
         MovementController movePlayer = new MovementController();
         try {
-                movePlayer.moveNorth(TheChosenQuest.getCurrentGame());
+                movePlayer.moveWest(TheChosenQuest.getCurrentGame());
                 System.out.println("You move West");
                 GameControl find = new GameControl();
                 find.findCreature(player);
@@ -125,6 +127,22 @@ public class MovementView extends View {
     }
 
     private void viewMap() {
+        Scanner keyboard = new Scanner(System.in);
+        // Will move this later to an option to give a bum money.
+        String input = "";
+        try {
+            input = keyboard.nextLine();
+        } catch (Exception e) {
+            //buried
+        }
+        
+        int myNum = 0;
+        try {
+            myNum = Integer.parseInt(input);
+        } catch (NumberFormatException nfe) {
+            System.out.println("Bad number input.");
+        }
+        
         System.out.println(TheChosenQuest.getCurrentGame().getMap().getMapString());
         Location currentLocation = TheChosenQuest.getCurrentGame().getPlayer().getLocation();
         System.out.println("You are currently at: (" + currentLocation.getRow() + "," + currentLocation.getCol() +") Type: " + currentLocation.getType());
