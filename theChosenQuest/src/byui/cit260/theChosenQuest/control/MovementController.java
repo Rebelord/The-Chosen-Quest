@@ -9,6 +9,7 @@ import byui.cit260.theChosenQuest.model.Game;
 import byui.cit260.theChosenQuest.model.Location;
 import byui.cit260.theChosenQuest.model.Map;
 import byui.cit260.theChosenQuest.model.Player;
+import byui.cit260.theChosenQuest.exception.MovementException;
 
 /**
  *
@@ -16,14 +17,14 @@ import byui.cit260.theChosenQuest.model.Player;
  */
 public class MovementController {
     
-    public boolean moveNorth(Game game) {
+    public boolean moveNorth(Game game) throws MovementException {
         
         Player player = game.getPlayer();
         Location currentLocation = player.getLocation();
         Map map = game.getMap();
         
         if(currentLocation.getRow() == 0) {
-            return false;
+            throw new MovementException("You cannot move North");
         }
         
         int currentCol = currentLocation.getCol();
@@ -36,14 +37,14 @@ public class MovementController {
         return true;
     }
     
-    public boolean moveEast(Game game) {
+    public boolean moveEast(Game game) throws MovementException {
         
         Player player = game.getPlayer();
         Location currentLocation = player.getLocation();
         Map map = game.getMap();
         
         if(currentLocation.getCol() == Map.NUM_COLS - 1) {
-            return false;
+            throw new MovementException("You cannot move East");
         }
         
         player.setLocation(map.getLocation(currentLocation.getRow(), currentLocation.getCol() + 1));
@@ -51,14 +52,14 @@ public class MovementController {
         return true;
     }
     
-    public boolean moveSouth(Game game) {
+    public boolean moveSouth(Game game) throws MovementException {
         
         Player player = game.getPlayer();
         Location currentLocation = player.getLocation();
         Map map = game.getMap();
         
         if(currentLocation.getRow() == Map.NUM_ROWS - 1) {
-            return false;
+            throw new MovementException("You cannot move South");
         }
         
         player.setLocation(map.getLocation(currentLocation.getRow() + 1, currentLocation.getCol()));
@@ -66,14 +67,14 @@ public class MovementController {
         return true;
     }
     
-    public boolean moveWest(Game game) {
+    public boolean moveWest(Game game) throws MovementException {
         
         Player player = game.getPlayer();
         Location currentLocation = player.getLocation();
         Map map = game.getMap();
         
         if(currentLocation.getCol() == 0) {
-            return false;
+            throw new MovementException("You cannot move West");
         }
         
         player.setLocation(map.getLocation(currentLocation.getRow(), currentLocation.getCol() - 1));

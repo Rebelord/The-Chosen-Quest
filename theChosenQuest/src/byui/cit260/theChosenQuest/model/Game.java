@@ -5,7 +5,6 @@
  */
 package byui.cit260.theChosenQuest.model;
 
-import byui.cit260.theChosenQuest.control.ShopController;
 import java.io.Serializable;
 
 /**
@@ -17,15 +16,6 @@ public class Game implements Serializable {
     //Intialize Game Variables
     private Player player;
     private Map map;
-    private ShopController equipment;
-
-    public ShopController getEquipment() {
-        return equipment;
-    }
-
-    public void setEquipment(ShopController equipment) {
-        this.equipment = equipment;
-    }
 
     public Game() {
     }

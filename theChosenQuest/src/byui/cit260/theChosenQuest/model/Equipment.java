@@ -16,9 +16,9 @@ import java.io.Serializable;
 public class Equipment implements Serializable{
    
     private String name;
-    private double attack;
-    private double defense;
-    private double cost;
+    private int attack;
+    private int defense;
+    private int cost;
 
     public String getName() {
         return name;
@@ -28,27 +28,27 @@ public class Equipment implements Serializable{
         this.name = name;
     }
 
-    public double getAttack() {
+    public int getAttack() {
         return attack;
     }
 
-    public void setAttack(double attack) {
+    public void setAttack(int attack) {
         this.attack = attack;
     }
 
-    public double getDefense() {
+    public int getDefense() {
         return defense;
     }
 
-    public void setDefense(double defense) {
+    public void setDefense(int defense) {
         this.defense = defense;
     }
 
-    public double getCost() {
+    public int getCost() {
         return cost;
     }
 
-    public void setCost(double cost) {
+    public void setCost(int cost) {
         this.cost = cost;
     }
 }

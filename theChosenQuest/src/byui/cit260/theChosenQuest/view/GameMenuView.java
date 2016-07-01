@@ -19,10 +19,8 @@ public class GameMenuView extends View {
                   + "\n--------------------------------------------------------"
                   + "\n|                     Game Menu                        |"
                   + "\n--------------------------------------------------------"
-                  + "\n| R - Resume Game                                      |"
-                  + "\n| M - View Map                                         |"  
+                  + "\n| R - Resume Game                                      |" 
                   + "\n| O - Options                                          |"    
-                  + "\n| L - View Location                                    |"
                   + "\n| H - Help Menu                                        |"    
                   + "\n| E - Exit Game                                        |"
                   + "\n--------------------------------------------------------");
@@ -38,12 +36,6 @@ public class GameMenuView extends View {
                 break;
             case "O":
                 this.optionM();
-                break;
-            case "M":
-                this.viewMap();
-                break;
-            case "L": // Display the help menu.
-                this.viewCurrentLocation();
                 break;
             case "H":
                 this.helpmenu();
@@ -66,8 +58,8 @@ public class GameMenuView extends View {
 
     private void optionM() {
         System.out.println("You have opened the game menu");
-       InGameMenuView gameView = new InGameMenuView();
-       gameView.display();
+        InGameMenuView gameView = new InGameMenuView();
+        gameView.display();
     }
 
     private void helpmenu() {
@@ -75,16 +67,4 @@ public class GameMenuView extends View {
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.display();
     }
-
-    private void viewMap() {
-        System.out.println(TheChosenQuest.getCurrentGame().getMap().getMapString());
-    }
-
-    private void viewCurrentLocation() {
-        Location currentLocation = TheChosenQuest.getCurrentGame().getPlayer().getLocation();
-        System.out.println("You are currently at: (" + currentLocation.getRow() + "," + currentLocation.getCol() +")");
-    }
-
-   
-    
 }

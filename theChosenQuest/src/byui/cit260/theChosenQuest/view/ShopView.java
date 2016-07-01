@@ -5,7 +5,7 @@
  */
 package byui.cit260.theChosenQuest.view;
 
-import byui.cit260.theChosenQuest.control.ShopController;
+import static byui.cit260.theChosenQuest.control.GameControl.listShopInventory;
 import byui.cit260.theChosenQuest.model.Equipment;
 import byui.cit260.theChosenQuest.model.Game;
 import thechosenquest.TheChosenQuest;
@@ -55,7 +55,7 @@ public class ShopView extends View {
     private void EquipmentList() {
         System.out.println("Here is what I have to offer:");
         
-        System.out.println(getEquipmentList());
+        listShopInventory();
     }
 
     private void buyItem() {

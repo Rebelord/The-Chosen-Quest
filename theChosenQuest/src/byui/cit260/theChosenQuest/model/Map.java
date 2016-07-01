@@ -13,17 +13,17 @@ import java.io.Serializable;
  */
 public class Map implements Serializable {
     
-    public static final int NUM_ROWS = 10;
-    public static final int NUM_COLS = 10;
+    public static final int NUM_ROWS = 3;
+    public static final int NUM_COLS = 3;
     
     private Location[][] matrix;
     
     public Map() {
         matrix = new Location[NUM_ROWS][NUM_COLS];
-        init();
+        mapMaker();
     }
 
-    public void init() {
+    public void mapMaker() {
     
             // Loop for random map generation.
             for (int row = 0; row < NUM_ROWS; row++) {
@@ -45,15 +45,10 @@ public class Map implements Serializable {
         
         String map = "";
         
-        for (int col = 0; col < NUM_COLS; col++) {
-            for (int row = 0; row < NUM_ROWS; row++) {
+        for (int row = 0; row < NUM_ROWS; row++) {
+            for (int col = 0; col < NUM_COLS; col++) {
                 map += matrix[row][col].getType().name().charAt(0) + "\t";
-                
-//                if(matrix[row][col].getCreatures() != null){
-//                    map += matrix[row][col].getCreatures().getName().charAt(0);
-//                }
            }
-            
             map += "\n";
         }
         return map;
