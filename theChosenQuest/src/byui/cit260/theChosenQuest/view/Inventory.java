@@ -5,6 +5,7 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import byui.cit260.theChosenQuest.exception.InventoryError;
 import java.util.Scanner;
 
 /**
@@ -66,7 +67,11 @@ public class Inventory extends View {
     }
 
     private void loadDropItem() {
-        System.out.println("\n*** Call DropItem Stub ***");
+        try {
+        
+        }catch (InventoryError ie){
+            System.out.println("You must drop an item");
+        }
     }
 
     private void loadEquipItem() {

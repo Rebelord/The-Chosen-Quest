@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,6 +6,7 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import byui.cit260.theChosenQuest.exception.InputErrorException;
 import byui.cit260.theChosenQuest.model.Location;
 import thechosenquest.TheChosenQuest;
 
@@ -29,7 +31,7 @@ public class GameMenuView extends View {
     @Override
     public boolean doAction(String menuOption) {
         menuOption = menuOption.toUpperCase(); // COnvert choice to Uppercase.
-    
+        
         switch (menuOption) {
             case "R": // Create and Start a new game.
                 this.resumeGame();
@@ -42,9 +44,9 @@ public class GameMenuView extends View {
                 break;
             case "E":
                 System.exit(0);
-            default:
-                System.out.println("\n*** Fat Finger Error *** Please try again!");
-                break;
+          //  default:
+          //      System.out.println("\n*** Fat Finger Error *** Please try again!");
+           //     break;
         }
         
         return false;
@@ -53,8 +55,8 @@ public class GameMenuView extends View {
     private void resumeGame() {
         System.out.println("\n*** Good Luck!");
         MovementView moveMe = new MovementView();
-        moveMe.display();
-    }
+        moveMe.display();        
+        }
 
     private void optionM() {
         System.out.println("You have opened the game menu");

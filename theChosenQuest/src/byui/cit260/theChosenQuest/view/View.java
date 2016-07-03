@@ -5,7 +5,10 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import byui.cit260.theChosenQuest.exception.InputErrorException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -55,16 +58,27 @@ public View(String message) {
             value = keyboard.nextLine(); // Get the next line typed on the keyboard.
             value = value.trim(); // Trim off the blanks.
             
+                       
             if (value.length() < 1) {
                System.out.println("\n Invalid input: please try again");
                continue;
             }
+            if(!valid){
+            try {
+                throw new InputErrorException ("\n Invalid Input, please try again");
+            } catch (InputErrorException ex) {
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+            
+    
             
             break; // end the look
         }
     return value; // return the value entered 
     }
-}
+}    
+
 
 
 

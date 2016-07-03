@@ -9,24 +9,24 @@ package byui.cit260.theChosenQuest.exception;
  *
  * @author Zack Durbin
  */
-public class InputErrorException extends Exception {
+public class InventoryError extends Exception{
 
-    public InputErrorException() {
+    public InventoryError() {
     }
 
-    public InputErrorException(String message) {
+    public InventoryError(String message) {
         super(message);
     }
 
-    public InputErrorException(String message, Throwable cause) {
+    public InventoryError(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public InputErrorException(Throwable cause) {
+    public InventoryError(Throwable cause) {
         super(cause);
     }
 
-    public InputErrorException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    public InventoryError(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
     

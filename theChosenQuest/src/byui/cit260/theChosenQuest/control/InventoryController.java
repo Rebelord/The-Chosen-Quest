@@ -5,6 +5,8 @@
  */
 package byui.cit260.theChosenQuest.control;
 
+import byui.cit260.theChosenQuest.exception.InventoryError;
+
 /**
  *
  * @author Zack Durbin
@@ -14,10 +16,11 @@ public class InventoryController {
         int newWeight = 0;
         
         // Sanity Check
-        if ((subtractItem == false) && (addItem == false)){
-            return -1;
-        }
         
+        if ((subtractItem == false) && (addItem == false)){
+            throw new InventoryError("You must add or remove an item");
+        
+        }
         
         if (subtractItem == true) {
                 newWeight = bagWeight - itemWeight;
