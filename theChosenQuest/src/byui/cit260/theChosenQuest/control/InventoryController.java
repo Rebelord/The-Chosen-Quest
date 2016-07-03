@@ -12,14 +12,13 @@ import byui.cit260.theChosenQuest.exception.InventoryError;
  * @author Zack Durbin
  */
 public class InventoryController {
-    public int inventoryController (boolean addItem, boolean subtractItem, int itemWeight, int playerMaxWeight, int bagWeight){
+    public int inventoryController (boolean addItem, boolean subtractItem, int itemWeight, int playerMaxWeight, int bagWeight) throws InventoryError{
         int newWeight = 0;
         
         // Sanity Check
         
         if ((subtractItem == false) && (addItem == false)){
             throw new InventoryError("You must add or remove an item");
-        
         }
         
         if (subtractItem == true) {

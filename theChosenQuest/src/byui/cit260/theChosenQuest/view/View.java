@@ -63,13 +63,13 @@ public View(String message) {
                System.out.println("\n Invalid input: please try again");
                continue;
             }
-            if(!valid){
-            try {
-                throw new InputErrorException ("\n Invalid Input, please try again");
-            } catch (InputErrorException ex) {
-                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+//            if(!valid){
+//            try {
+//                throw new InputErrorException ("\n Invalid Input, please try again");
+//            } catch (InputErrorException ex) {
+//                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
             
     
             

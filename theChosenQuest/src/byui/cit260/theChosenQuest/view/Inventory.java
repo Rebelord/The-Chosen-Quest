@@ -5,6 +5,7 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import byui.cit260.theChosenQuest.control.InventoryController;
 import byui.cit260.theChosenQuest.exception.InventoryError;
 import java.util.Scanner;
 
@@ -68,8 +69,16 @@ public class Inventory extends View {
 
     private void loadDropItem() {
         try {
-        
-        }catch (InventoryError ie){
+            boolean addItem = false;
+            boolean subtractItem = false;
+            int itemWeight = 10;
+            int playerMaxWeight = 100;
+            int bagWeight = 50;
+            
+            // Add some real working variables.
+            InventoryController bagMule = new InventoryController();
+            bagMule.inventoryController(addItem, subtractItem, itemWeight, playerMaxWeight, bagWeight);
+        } catch (InventoryError ie) {
             System.out.println("You must drop an item");
         }
     }

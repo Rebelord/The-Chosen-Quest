@@ -5,8 +5,10 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import byui.cit260.theChosenQuest.control.CheckHealth;
 import byui.cit260.theChosenQuest.control.GameControl;
 import byui.cit260.theChosenQuest.control.MovementController;
+import byui.cit260.theChosenQuest.exception.LoseGameException;
 import byui.cit260.theChosenQuest.model.Location;
 import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.exception.MovementException;
@@ -76,8 +78,19 @@ public class MovementView extends View {
                 find.findShop(player);
             } catch (MovementException me) {
                 System.out.println("You cannot move North");
-            } finally {
-                System.out.println("Hello");
+            }
+            try {
+                // Hard code variables temporarly.
+                int health = 20;
+                int poison = 1;
+                boolean rest = false;
+                int charMaxHealth = 20;
+                
+                CheckHealth life = new CheckHealth();
+                life.checkHealth(health, poison, rest, charMaxHealth);
+            } catch (LoseGameException wipe){
+               // Yippee Ki Yay Mam
+               System.out.println("***** Wipe yourself off, you dead! *****");
             }
     }
 
