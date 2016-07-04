@@ -20,6 +20,9 @@ public class Player implements Serializable{
     private int characterSheet;
     private String playerRace;
     private String playerClass;
+    private int health;
+    private int poison;
+    private int maxHealth;
     Location location;
 
     public Player() {
@@ -27,13 +30,6 @@ public class Player implements Serializable{
 
     public void setPlayerRace(String playerRace) {
         this.playerRace = playerRace;
-    }
-
-    public Player(String name, int characterSheet, String playerRace, String playerClass) {
-        this.name = name;
-        this.characterSheet = characterSheet;
-        this.playerRace = playerRace;
-        this.playerClass = playerClass;
     }
 
     public void setPlayerClass(String playerClass) {
@@ -106,4 +102,50 @@ public class Player implements Serializable{
     public void setCharacterSheet(int characterSheet) {
         this.characterSheet = characterSheet;
     }
+
+    public String getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(String inventory) {
+        this.inventory = inventory;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getPoison() {
+        return poison;
+    }
+
+    public void setPoison(int poison) {
+        this.poison = poison;
+    }
+
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+
+    public void setMaxHealth(int maxHealth) {
+        this.maxHealth = maxHealth;
+    }
+
+    public Player(String name, String inventory, int characterSheet, String playerRace, String playerClass, int health, int poison, int maxHealth, Location location) {
+        this.name = name;
+        this.inventory = inventory;
+        this.characterSheet = characterSheet;
+        this.playerRace = playerRace;
+        this.playerClass = playerClass;
+        this.health = health;
+        this.poison = poison;
+        this.maxHealth = maxHealth;
+        this.location = location;
+    }
+    
+    
 }

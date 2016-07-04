@@ -10,7 +10,6 @@ import byui.cit260.theChosenQuest.control.GameControl;
 import byui.cit260.theChosenQuest.control.MovementController;
 import byui.cit260.theChosenQuest.exception.LoseGameException;
 import byui.cit260.theChosenQuest.model.Location;
-import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.exception.MovementException;
 import java.util.Scanner;
 import thechosenquest.TheChosenQuest;
@@ -21,18 +20,18 @@ import static thechosenquest.TheChosenQuest.player;
  * @author Dewy
  */
 public class MovementView extends View {
-    
+
     public MovementView() {
-              super("\n In which direction would thou wish to travel?"
-                  + "\n Please type your answer."
-                  + "\n"
-                  + "\n You may travel..."
-                  + "\n     N - North"
-                  + "\n     S - South"
-                  + "\n     E - East"
-                  + "\n     W - West"
-                  + "\n     L - View Location & Map"
-                  + "\n     M - Menu");
+        super("\n In which direction would thou wish to travel?"
+                + "\n Please type your answer."
+                + "\n"
+                + "\n You may travel..."
+                + "\n     N - North"
+                + "\n     S - South"
+                + "\n     E - East"
+                + "\n     W - West"
+                + "\n     L - View Location & Map"
+                + "\n     M - Menu");
     }
 
     @Override
@@ -52,6 +51,9 @@ public class MovementView extends View {
             case "W": // Select travel West.
                 this.moveWest();
                 break;
+            case "R": // Take time to rest.
+                this.takeNap();
+                break;
             case "L": // Bring up the Game Map & Location
                 this.viewMap();
                 break;
@@ -62,41 +64,37 @@ public class MovementView extends View {
                 System.out.println("\n Lets try this again, shall we.");
                 break;
         }
-        
+
         return false;
     }
 
     private void moveNorth() {
 
         MovementController movePlayer = new MovementController();
-        
-            try {
-                movePlayer.moveNorth(TheChosenQuest.getCurrentGame());
-                System.out.println("You move North");
-                GameControl find = new GameControl();
-                find.findCreature(player);
-                find.findShop(player);
-            } catch (MovementException me) {
-                System.out.println("You cannot move North");
-            }
-            try {
-                // Hard code variables temporarly.
-                int health = 20;
-                int poison = 1;
-                boolean rest = false;
-                int charMaxHealth = 20;
-                
-                CheckHealth life = new CheckHealth();
-                life.checkHealth(health, poison, rest, charMaxHealth);
-            } catch (LoseGameException wipe){
-               // Yippee Ki Yay Mam
-               System.out.println("***** Wipe yourself off, you dead! *****");
-            }
+
+        try {
+            movePlayer.moveNorth(TheChosenQuest.getCurrentGame());
+            System.out.println("You move North");
+            GameControl find = new GameControl();
+            find.findCreature(player);
+            find.findShop(player);
+        } catch (MovementException me) {
+            System.out.println("You cannot move North");
+        }
+        // Health check on movement for poisons.
+        try {
+            boolean rest = false;
+            CheckHealth life = new CheckHealth();
+            life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
+        } catch (LoseGameException wipe) {
+            // Yippee Ki Yay Mam
+            System.out.println("***** Wipe yourself off, you dead! *****");
+        }
     }
 
     private void moveSouth() {
         MovementController movePlayer = new MovementController();
-       
+
         try {
             movePlayer.moveSouth(TheChosenQuest.getCurrentGame());
             System.out.println("You move South");
@@ -106,37 +104,64 @@ public class MovementView extends View {
         } catch (MovementException me) {
             System.out.println("You cannot move South");
         }
+        // Health check on movement for poisons.
+        try {
+            boolean rest = false;
+            CheckHealth life = new CheckHealth();
+            life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
+        } catch (LoseGameException wipe) {
+            // Yippee Ki Yay Mam
+            System.out.println("***** Wipe yourself off, you dead! *****");
+        }
     }
 
     private void moveEast() {
         MovementController movePlayer = new MovementController();
         try {
-                movePlayer.moveEast(TheChosenQuest.getCurrentGame());
-                System.out.println("You move East");
-                GameControl find = new GameControl();
-                find.findCreature(player);
-                find.findShop(player);
-            } catch (MovementException me) {
-                System.out.println("You cannot move East");
-            }
+            movePlayer.moveEast(TheChosenQuest.getCurrentGame());
+            System.out.println("You move East");
+            GameControl find = new GameControl();
+            find.findCreature(player);
+            find.findShop(player);
+        } catch (MovementException me) {
+            System.out.println("You cannot move East");
+        }
+        // Health check on movement for poisons.
+        try {
+            boolean rest = false;
+            CheckHealth life = new CheckHealth();
+            life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
+        } catch (LoseGameException wipe) {
+            // Yippee Ki Yay Mam
+            System.out.println("***** Wipe yourself off, you dead! *****");
+        }
     }
 
     private void moveWest() {
         MovementController movePlayer = new MovementController();
         try {
-                movePlayer.moveWest(TheChosenQuest.getCurrentGame());
-                System.out.println("You move West");
-                GameControl find = new GameControl();
-                find.findCreature(player);
-                find.findShop(player);
-            } catch (MovementException me) {
-                System.out.println("You cannot move West");
-            }
+            movePlayer.moveWest(TheChosenQuest.getCurrentGame());
+            System.out.println("You move West");
+            GameControl find = new GameControl();
+            find.findCreature(player);
+            find.findShop(player);
+        } catch (MovementException me) {
+            System.out.println("You cannot move West");
+        }
+        // Health check on movement for poisons.
+        try {
+            boolean rest = false;
+            CheckHealth life = new CheckHealth();
+            life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
+        } catch (LoseGameException wipe) {
+            // Yippee Ki Yay Mam
+            System.out.println("***** Wipe yourself off, you dead! *****");
+        }
     }
 
     private void gameMenu() {
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();                        
+        gameMenu.display();
     }
 
     private void viewMap() {
@@ -148,17 +173,29 @@ public class MovementView extends View {
         } catch (Exception e) {
             //buried
         }
-        
+
         int myNum = 0;
         try {
             myNum = Integer.parseInt(input);
         } catch (NumberFormatException nfe) {
             System.out.println("Bad number input.");
         }
-        
+
         System.out.println(TheChosenQuest.getCurrentGame().getMap().getMapString());
         Location currentLocation = TheChosenQuest.getCurrentGame().getPlayer().getLocation();
-        System.out.println("You are currently at: (" + currentLocation.getRow() + "," + currentLocation.getCol() +") Type: " + currentLocation.getType());
+        System.out.println("You are currently at: (" + currentLocation.getRow() + "," + currentLocation.getCol() + ") Type: " + currentLocation.getType());
+    }
+
+    private void takeNap() {
+        // Health check on movement for poisons.
+        try {
+            boolean rest = true;
+            CheckHealth life = new CheckHealth();
+            life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
+        } catch (LoseGameException wipe) {
+            // Yippee Ki Yay Mam
+            System.out.println("***** Wipe yourself off, you dead! *****");
+        }
     }
 
 }
