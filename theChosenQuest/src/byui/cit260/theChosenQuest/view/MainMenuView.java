@@ -71,7 +71,15 @@ public class MainMenuView extends View {
     }
 
     private void startLoadGame() {
-        console.println("\n*** startLoadGame function called ***");
+        console.println("\nEnter the file name: ");
+        try {
+            String fileName = keyboard.readLine();
+            GameControl.loadGame(fileName);
+            GameMenuView gmv = new GameMenuView();
+            gmv.display();
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error on input!");
+        }
     }
 
     private void displayHelpMenu() {
@@ -80,7 +88,13 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        console.println("\n*** saveGame function called ***");
+        console.println("\nEnter the file name: ");
+        try {
+            String fileName = keyboard.readLine();
+            GameControl.saveGame(fileName);
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error on input!");
+        }
     }
     private void resumeGame() {
         console.println("\n*** Good Luck!");

@@ -72,13 +72,14 @@ public class TheChosenQuest {
     public static void main(String[] args) {
         
         // Create StartProgramViewOrig and display the start program view
-        StartProgramView startProgramView = new StartProgramView();
+        StartProgramView startProgramView = null;
         
         try {
             inFile = new BufferedReader (new InputStreamReader(System.in));
             outFile = new PrintWriter(System.out, true);
             String logPath = "log.txt";
             logFile = new PrintWriter(logPath);
+            startProgramView = new StartProgramView();
             
             startProgramView.displayStartProgramView();   
         } catch (Exception e) {

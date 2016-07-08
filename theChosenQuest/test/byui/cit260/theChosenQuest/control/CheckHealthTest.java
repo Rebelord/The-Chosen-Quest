@@ -30,7 +30,7 @@ public class CheckHealthTest {
         int expResult = -1;
         int result = instance.checkHealth(health, poison, rest, charMaxHealth);
         
-        console.println("checkHealth Test Case #1");
+        System.out.println("checkHealth Test Case #1");
         health = 30;
         poison = 20;
         rest = false;
@@ -39,7 +39,7 @@ public class CheckHealthTest {
         result = instance.checkHealth(health, poison, rest, charMaxHealth);
         assertEquals(expResult, result);
         
-        console.println("checkHealth Test Case #2");
+        System.out.println("checkHealth Test Case #2");
         health = 45;
         poison = 5;
         rest = false;
@@ -48,7 +48,7 @@ public class CheckHealthTest {
         result = instance.checkHealth(health, poison, rest, charMaxHealth);
         assertEquals(expResult, result);
         
-        console.println("checkHealth Test Case #3");
+        System.out.println("checkHealth Test Case #3");
         health = -20;
         poison = 0;
         rest = false;
@@ -57,7 +57,7 @@ public class CheckHealthTest {
         result = instance.checkHealth(health, poison, rest, charMaxHealth);
         assertEquals(expResult, result);
         
-        console.println("checkHealth Test Case #4");
+        System.out.println("checkHealth Test Case #4");
         health = 15;
         poison = 0;
         rest = false;
@@ -66,7 +66,7 @@ public class CheckHealthTest {
         result = instance.checkHealth(health, poison, rest, charMaxHealth);
         assertEquals(expResult, result);
         
-        console.println("checkHealth Test Case #5");
+        System.out.println("checkHealth Test Case #5");
         health = 6;
         poison = 0;
         rest = true;
@@ -75,7 +75,7 @@ public class CheckHealthTest {
         result = instance.checkHealth(health, poison, rest, charMaxHealth);
         assertEquals(expResult, result);
         
-        console.println("checkHealth Test Case #6");
+        System.out.println("checkHealth Test Case #6");
         health = 10;
         poison = 5;
         rest = false;

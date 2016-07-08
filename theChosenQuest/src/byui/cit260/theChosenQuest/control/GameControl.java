@@ -14,7 +14,12 @@ import static byui.cit260.theChosenQuest.model.LocationType.Shop;
 import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.model.Map;
 import byui.cit260.theChosenQuest.view.CombatView;
+import byui.cit260.theChosenQuest.view.ErrorView;
 import byui.cit260.theChosenQuest.view.ShopView;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import thechosenquest.TheChosenQuest;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +29,33 @@ import java.util.List;
  * @author Zack Durbin
  */
 public class GameControl {
+    
+    public static void saveGame(String filePath) {
+        try {
+            FileOutputStream fos = new FileOutputStream(filePath);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            
+            oos.writeObject(TheChosenQuest.getCurrentGame());
+        } catch (Exception e) {
+            ErrorView.display("GameControl", e.getMessage());
+        }
+    }
+    
+    public static void loadGame(String filePath) {
+        Game game = null;
+        
+        try {
+           FileInputStream fis = new FileInputStream(filePath);
+           ObjectInputStream ois = new ObjectInputStream(fis);
+            
+           game = (Game)ois.readObject();
+           
+           TheChosenQuest.setCurrentGame(game);
+           TheChosenQuest.setPlayer(game.getPlayer());
+        } catch (Exception e) {
+            ErrorView.display("GameControl", e.getMessage());
+        }
+    }
 
     public static Player createPlayer(String playersName) {
 
