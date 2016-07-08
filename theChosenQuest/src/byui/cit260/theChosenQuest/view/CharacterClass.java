@@ -80,8 +80,4 @@ public class CharacterClass extends View {
         MovementView moveMe = new MovementView();
         moveMe.display();
     }
-    
-    
-
-   
 }

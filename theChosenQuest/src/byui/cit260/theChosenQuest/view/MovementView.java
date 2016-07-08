@@ -56,9 +56,9 @@ public class MovementView extends View {
             case "R": // Take time to rest.
                 this.takeNap();
                 break;
-            case "D": // Drink poison to test poison tracking.
-                this.drinkPoison();
-                break;
+//            case "D": // Drink poison to test poison tracking.
+//                this.drinkPoison();
+//                break;
             case "L": // Bring up the Game Map & Location
                 this.viewMap();
                 break;
@@ -86,18 +86,18 @@ public class MovementView extends View {
         } catch (MovementException me) {
             System.out.println("You cannot move North");
         }
-        // Health check on movement for poisons.
-        try {
-            boolean rest = false;
-            CheckHealth life = new CheckHealth();
-            int health = life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
-            player.setHealth(health);
-        } catch (LoseGameException wipe) {
-            // Yippee Ki Yay Mam
-            System.out.println("\n***** Wipe yourself off, you dead! *****");
-        } finally {
-            System.out.println("\nHealth: " + player.getHealth());
-        }
+//        // Health check on movement for poisons.
+//        try {
+//            boolean rest = false;
+//            CheckHealth life = new CheckHealth();
+//            int health = life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
+//            player.setHealth(health);
+//        } catch (LoseGameException wipe) {
+//            // Yippee Ki Yay Mam
+//            System.out.println("\n***** Wipe yourself off, you dead! *****");
+//        } finally {
+//            System.out.println("\nHealth: " + player.getHealth());
+//        }
     }
 
     private void moveSouth() {
@@ -112,18 +112,18 @@ public class MovementView extends View {
         } catch (MovementException me) {
             System.out.println("You cannot move South");
         }
-        // Health check on movement for poisons.
-        try {
-            boolean rest = false;
-            CheckHealth life = new CheckHealth();
-            int health = life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
-            player.setHealth(health);
-        } catch (LoseGameException wipe) {
-            // Yippee Ki Yay Mam
-            System.out.println("\n***** Wipe yourself off, you dead! *****");
-        } finally {
-            System.out.println("\nHealth: " + player.getHealth());
-        }
+//        // Health check on movement for poisons.
+//        try {
+//            boolean rest = false;
+//            CheckHealth life = new CheckHealth();
+//            int health = life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
+//            player.setHealth(health);
+//        } catch (LoseGameException wipe) {
+//            // Yippee Ki Yay Mam
+//            System.out.println("\n***** Wipe yourself off, you dead! *****");
+//        } finally {
+//            System.out.println("\nHealth: " + player.getHealth());
+//        }
     }
     private void moveEast() {
         MovementController movePlayer = new MovementController();
@@ -136,18 +136,18 @@ public class MovementView extends View {
         } catch (MovementException me) {
             System.out.println("You cannot move East");
         }
-        // Health check on movement for poisons.
-        try {
-            boolean rest = false;
-            CheckHealth life = new CheckHealth();
-            int health = life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
-            player.setHealth(health);
-        } catch (LoseGameException wipe) {
-            // Yippee Ki Yay Mam
-            System.out.println("\n***** Wipe yourself off, you dead! *****");
-        } finally {
-            System.out.println("\nHealth: " + player.getHealth());
-        }
+//        // Health check on movement for poisons.
+//        try {
+//            boolean rest = false;
+//            CheckHealth life = new CheckHealth();
+//            int health = life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
+//            player.setHealth(health);
+//        } catch (LoseGameException wipe) {
+//            // Yippee Ki Yay Mam
+//            System.out.println("\n***** Wipe yourself off, you dead! *****");
+//        } finally {
+//            System.out.println("\nHealth: " + player.getHealth());
+//        }
     }
 
     private void moveWest() {
@@ -161,18 +161,18 @@ public class MovementView extends View {
         } catch (MovementException me) {
             System.out.println("You cannot move West");
         }
-        // Health check on movement for poisons.
-        try {
-            boolean rest = false;
-            CheckHealth life = new CheckHealth();
-            int health = life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
-            player.setHealth(health);
-        } catch (LoseGameException wipe) {
-            // Yippee Ki Yay Mam
-            System.out.println("\n***** Wipe yourself off, you dead! *****");
-        } finally {
-            System.out.println("\nHealth: " + player.getHealth());
-        }
+//        // Health check on movement for poisons.
+//        try {
+//            boolean rest = false;
+//            CheckHealth life = new CheckHealth();
+//            int health = life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
+//            player.setHealth(health);
+//        } catch (LoseGameException wipe) {
+//            // Yippee Ki Yay Mam
+//            System.out.println("\n***** Wipe yourself off, you dead! *****");
+//        } finally {
+//            System.out.println("\nHealth: " + player.getHealth());
+//        }
     }
 
     private void gameMenu() {
@@ -181,26 +181,9 @@ public class MovementView extends View {
     }
 
     private void viewMap() {
-        Scanner keyboard = new Scanner(System.in);
-        // Will move this later to an option to give a bum money.
-        String input = "";
-        try {
-            input = keyboard.nextLine();
-        } catch (Exception e) {
-            //buried
-        }
-
-        int myNum = 0;
-        try {
-            myNum = Integer.parseInt(input);
-        } catch (NumberFormatException nfe) {
-            System.out.println("Bad number input.");
-        }
-
         System.out.println(TheChosenQuest.getCurrentGame().getMap().getMapString());
         Location currentLocation = TheChosenQuest.getCurrentGame().getPlayer().getLocation();
         System.out.println("You are currently at: (" + currentLocation.getRow() + "," + currentLocation.getCol() + ") Type: " + currentLocation.getType());
-        System.out.println("\nHealth: " + player.getHealth());
     }
 
     private void takeNap() {
@@ -218,19 +201,19 @@ public class MovementView extends View {
         }
     }
 
-    private void drinkPoison() {
-        try {
-            boolean rest = false;
-            player.setPoison(5); // Muhahahaha!!!!!
-            CheckHealth life = new CheckHealth();
-            int health = life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
-            player.setHealth(health);
-        } catch (LoseGameException wipe) {
-            // Yippee Ki Yay Mam
-            System.out.println("\n***** Wipe yourself off, you dead! *****");
-        } finally {
-            System.out.println("\nHealth: " + player.getHealth());
-        }
-    }
+//    private void drinkPoison() {
+//        try {
+//            boolean rest = false;
+//            player.setPoison(5); // Muhahahaha!!!!!
+//            CheckHealth life = new CheckHealth();
+//            int health = life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
+//            player.setHealth(health);
+//        } catch (LoseGameException wipe) {
+//            // Yippee Ki Yay Mam
+//            System.out.println("\n***** Wipe yourself off, you dead! *****");
+//        } finally {
+//            System.out.println("\nHealth: " + player.getHealth());
+//        }
+//    }
 
 }

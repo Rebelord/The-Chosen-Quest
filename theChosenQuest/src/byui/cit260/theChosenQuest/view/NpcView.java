@@ -68,6 +68,23 @@ public class NpcView extends View {
         moveMe.display();
     }
     private void optionB() {
+        System.out.println("\nHow many coins would you like to throw?");
+        Scanner keyboard = new Scanner(System.in);
+        // Will move this later to an option to give a bum money.
+        String input = "";
+        try {
+            input = keyboard.nextLine();
+        } catch (Exception e) {
+            //buried
+        }
+
+        int myNum = 0;
+        try {
+            myNum = Integer.parseInt(input);
+        } catch (NumberFormatException nfe) {
+            System.out.println("Bad number input.");
+        }
+        
         System.out.println("\n The beggar blinded by flying coins laughed joyfully at the gift.");
         MovementView moveMe = new MovementView();
         moveMe.display();
