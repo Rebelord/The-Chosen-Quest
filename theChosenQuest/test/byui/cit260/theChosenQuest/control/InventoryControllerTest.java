@@ -43,7 +43,7 @@ public class InventoryControllerTest {
     @Test
     public void testInventoryController() {
         // Test Case 1 Requires variables to be declared as well. 
-        System.out.println("InventoryController Test Case #1");
+        console.println("InventoryController Test Case #1");
         boolean addItem = true;
         boolean subtractItem = true;
         int itemWeight = 10;
@@ -56,7 +56,7 @@ public class InventoryControllerTest {
         assertEquals(expResultA, result);
 
         // Test Case 2
-        System.out.println("InventoryController Test Case #2");
+        console.println("InventoryController Test Case #2");
         addItem = false;
         subtractItem = true;
         itemWeight = 10;
@@ -67,7 +67,7 @@ public class InventoryControllerTest {
         assertEquals(expResultA, result);
         
         // Test Case 3
-        System.out.println("InventoryController Test Case #3");
+        console.println("InventoryController Test Case #3");
         addItem = true;
         subtractItem = false;
         itemWeight = -10;
@@ -78,7 +78,7 @@ public class InventoryControllerTest {
         assertEquals(expResultA, result);
         
         // Test Case 4
-        System.out.println("InventoryController Test Case #4");
+        console.println("InventoryController Test Case #4");
         addItem = false;
         subtractItem = true;
         itemWeight = 5;
@@ -89,7 +89,7 @@ public class InventoryControllerTest {
         assertEquals(expResultA, result);
         
         // Test Case 5
-        System.out.println("InventoryController Test Case #5");
+        console.println("InventoryController Test Case #5");
         addItem = true;
         subtractItem = false;
         itemWeight = 10;
@@ -100,7 +100,7 @@ public class InventoryControllerTest {
         assertEquals(expResultA, result);
      
         // Test Case 6
-        System.out.println("InventoryController Test Case #6");
+        console.println("InventoryController Test Case #6");
         addItem = false;
         subtractItem = false;
         itemWeight = 5;

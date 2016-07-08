@@ -47,7 +47,7 @@ public class InGameMenuView extends View {
                 this.GameMenuView();
                 break;
             default:
-                System.out.println("\n*** Fat Finger Error *** Please try again!");
+                console.println("\n*** Fat Finger Error *** Please try again!");
                 break;
         }
         
@@ -55,24 +55,24 @@ public class InGameMenuView extends View {
     }
 
     private void resumeGame() {
-        System.out.println("\n*** Good Luck!");
+        console.println("\n*** Good Luck!");
         MovementView moveMe = new MovementView();
         moveMe.display();
     }
 
     private void mainMenu() {
-        System.out.println("\n*** Do you want to save?");
+        console.println("\n*** Do you want to save?");
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
     }
 
     private void characterSheet() {
-        System.out.println("\n*** What do I look like again?");
+        console.println("\n*** What do I look like again?");
         CharacterSheet charSheet = new CharacterSheet();
         charSheet.display();
     }
     private void inventory() {
-        System.out.println("What do I have with me that will help?");
+        console.println("What do I have with me that will help?");
         Inventory inventory = new Inventory();
         inventory.display();
     }

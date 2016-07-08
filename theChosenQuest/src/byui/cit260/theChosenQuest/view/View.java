@@ -6,9 +6,12 @@
 package byui.cit260.theChosenQuest.view;
 
 import byui.cit260.theChosenQuest.exception.InputErrorException;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import thechosenquest.TheChosenQuest;
 
 /**
  *
@@ -17,7 +20,8 @@ import java.util.logging.Logger;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
-
+    protected final PrintWriter console = TheChosenQuest.getOutFile();
+    protected final BufferedReader keyboard = TheChosenQuest.getInFile();
 
 public View() {
     
@@ -47,20 +51,24 @@ public View(String message) {
     
     }
     @Override
-    public String getInput(){
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard.
+    public String getInput() {
         String value = ""; // Value to be returned.
         boolean valid = false; // Set flag to not done.
         
         while (!valid) { // Loop while an invalid value is enter.
-            System.out.println("\n" + this.displayMessage);
+            console.println("\n" + this.displayMessage);
             
-            value = keyboard.nextLine(); // Get the next line typed on the keyboard.
+            try {
+                value = keyboard.readLine(); // Get the next line typed on the keyboard.
+            } catch (Exception e) {
+                throw new RuntimeException("Error reading input");
+            }
+            
             value = value.trim(); // Trim off the blanks.
             
                        
             if (value.length() < 1) {
-               System.out.println("\n Invalid input: please try again");
+               console.println("\n Invalid input: please try again");
                continue;
             }
 //            if(!valid){

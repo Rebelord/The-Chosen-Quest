@@ -7,7 +7,10 @@ package byui.cit260.theChosenQuest.view;
 
 import byui.cit260.theChosenQuest.control.GameControl;
 import byui.cit260.theChosenQuest.model.Player;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import thechosenquest.TheChosenQuest;
 
 /**
  *
@@ -17,6 +20,9 @@ public class StartProgramView {
     
     private String promptMessage;
     
+    protected final PrintWriter console = TheChosenQuest.getOutFile();
+    protected final BufferedReader keyboard = TheChosenQuest.getInFile();
+    
     public StartProgramView() {
         this.promptMessage = "\n Thou shalt enter thy name: ";
         // Display the banner when view is created.
@@ -24,7 +30,7 @@ public class StartProgramView {
     }
 
     private void displayBanner() {
-        System.out.println(
+        console.println(
             "\n**********************************************************"
           + "\n*                                                        *"
           + "\n*     Welcome to the quaint little town of Elspeth       *"
@@ -64,13 +70,13 @@ public class StartProgramView {
         boolean valid = false; // Set flag to not done.
         
         while (!valid) { // Loop while an invalid value is enter.
-            System.out.println("\n" + this.promptMessage);
+            console.println("\n" + this.promptMessage);
             
             value = keyboard.nextLine(); // Get the next line typed on the keyboard.
             value = value.trim(); // Trim off the blanks.
             
             if (value.length() < 1){
-               System.out.println("\n Invalid value: Value can not be blank");
+               console.println("\n Invalid value: Value can not be blank");
                continue;
             }
             
@@ -85,7 +91,7 @@ public class StartProgramView {
         // display "Invalid name: The name must be > 1 character
         // return false        
         if (playersName.length() < 2) {
-            System.out.println("\n Invalid players name: " 
+            console.println("\n Invalid players name: " 
                 + "The name must be greater than one character in length" );
             return false;
         }
@@ -97,7 +103,7 @@ public class StartProgramView {
         Player player = GameControl.createPlayer(playersName);
         
         if (player == null){ // if unsuccessful
-            System.out.println("\n Error creating the player.");
+            console.println("\n Error creating the player.");
             return false;
         }
         // display customized welcome message
@@ -109,7 +115,7 @@ public class StartProgramView {
 
     private void displayNextView(Player player) {
         // display a custom welcome message
-        System.out.println("\n================================================="
+        console.println("\n================================================="
                          + "\n   Welcome to Elspeth " + player.getName()
                          + "\n   May you succeed where others have failed."
                          + "\n================================================"

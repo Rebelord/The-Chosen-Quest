@@ -52,7 +52,7 @@ public class MainMenuView extends View {
                 this.resumeGame();
                 break;                    
             default:
-                System.out.println("\n*** Fat Finger Error *** Please try again!");
+                console.println("\n*** Fat Finger Error *** Please try again!");
                 break;
         }
         
@@ -71,7 +71,7 @@ public class MainMenuView extends View {
     }
 
     private void startLoadGame() {
-        System.out.println("\n*** startLoadGame function called ***");
+        console.println("\n*** startLoadGame function called ***");
     }
 
     private void displayHelpMenu() {
@@ -80,10 +80,10 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("\n*** saveGame function called ***");
+        console.println("\n*** saveGame function called ***");
     }
     private void resumeGame() {
-        System.out.println("\n*** Good Luck!");
+        console.println("\n*** Good Luck!");
         MovementView moveMe = new MovementView();
         moveMe.display();
     }

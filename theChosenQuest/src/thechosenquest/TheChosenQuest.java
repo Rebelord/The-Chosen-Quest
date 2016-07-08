@@ -8,6 +8,9 @@ package thechosenquest;
 import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.view.StartProgramView;
 import byui.cit260.theChosenQuest.model.Game;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 /**
  *
@@ -16,6 +19,12 @@ import byui.cit260.theChosenQuest.model.Game;
 public class TheChosenQuest {
     private static Game currentGame;
     public static Player player;
+    
+    private static PrintWriter outFile;
+    private static BufferedReader inFile;
+    
+    private static PrintWriter logFile;
+    
 
     public static Game getCurrentGame() {
         return currentGame;
@@ -32,6 +41,31 @@ public class TheChosenQuest {
     public static void setPlayer(Player player) {
         TheChosenQuest.player = player;
     }
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        TheChosenQuest.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        TheChosenQuest.inFile = inFile;
+    }
+
+    public static PrintWriter getLogfile() {
+        return logFile;
+    }
+
+    public static void setLogfile(PrintWriter logFile) {
+        TheChosenQuest.logFile = logFile;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -40,7 +74,34 @@ public class TheChosenQuest {
         // Create StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
         
-        startProgramView.displayStartProgramView();   
+        try {
+            inFile = new BufferedReader (new InputStreamReader(System.in));
+            outFile = new PrintWriter(System.out, true);
+            String logPath = "log.txt";
+            logFile = new PrintWriter(logPath);
+            
+            startProgramView.displayStartProgramView();   
+        } catch (Exception e) {
+            e.printStackTrace();
+            startProgramView.displayStartProgramView();        
+        } finally {
+            try {
+                if (inFile != null) {
+                    inFile.close();
+                }
+                if (outFile != null) {
+                    outFile.close();
+                }
+                if (logFile != null) {
+                    logFile.close();
+                }
+            } catch (Exception ex) {
+                System.out.println("Error closing files");
+            }
+        }
     }
-    
+
+    public static PrintWriter getLogFile() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

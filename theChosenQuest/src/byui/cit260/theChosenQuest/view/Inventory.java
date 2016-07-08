@@ -56,7 +56,7 @@ public class Inventory extends View {
                 this.GameMenuView();
                 break;
             default:
-                System.out.println("\n*** Butterfingers Error *** Please try again!");
+                console.println("\n*** Butterfingers Error *** Please try again!");
                 break;
         }
         
@@ -64,7 +64,7 @@ public class Inventory extends View {
     }
 
     private void loadUseItem() {
-        System.out.println("\n*** Call UseItem Stub ***");
+        console.println("\n*** Call UseItem Stub ***");
     }
 
     private void loadDropItem() {
@@ -79,12 +79,12 @@ public class Inventory extends View {
             InventoryController bagMule = new InventoryController();
             bagMule.inventoryController(addItem, subtractItem, itemWeight, playerMaxWeight, bagWeight);
         } catch (InventoryError ie) {
-            System.out.println("You must drop an item");
+            console.println("You must drop an item");
         }
     }
 
     private void loadEquipItem() {
-        System.out.println("\n*** Call EquipItem Stub ***");
+        console.println("\n*** Call EquipItem Stub ***");
     }
 
     private void GameMenuView() {

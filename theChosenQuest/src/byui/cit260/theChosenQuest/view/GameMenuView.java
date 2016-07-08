@@ -45,7 +45,7 @@ public class GameMenuView extends View {
             case "E":
                 System.exit(0);
           //  default:
-          //      System.out.println("\n*** Fat Finger Error *** Please try again!");
+          //      console.println("\n*** Fat Finger Error *** Please try again!");
            //     break;
         }
         
@@ -53,19 +53,19 @@ public class GameMenuView extends View {
     }
 
     private void resumeGame() {
-        System.out.println("\n*** Good Luck!");
+        console.println("\n*** Good Luck!");
         MovementView moveMe = new MovementView();
         moveMe.display();        
         }
 
     private void optionM() {
-        System.out.println("You have opened the game menu");
+        console.println("You have opened the game menu");
         InGameMenuView gameView = new InGameMenuView();
         gameView.display();
     }
 
     private void helpmenu() {
-        System.out.println("Welcome to the Divine Assistance Menu");
+        console.println("Welcome to the Divine Assistance Menu");
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.display();
     }

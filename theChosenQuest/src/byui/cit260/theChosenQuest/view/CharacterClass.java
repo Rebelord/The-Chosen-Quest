@@ -46,7 +46,7 @@ public class CharacterClass extends View {
                 this.hunter();
                 break;
             default:
-                System.out.println("\n*** Fat Finger Error *** Please try again!");
+                console.println("\n*** Fat Finger Error *** Please try again!");
                 break;
         }
         
@@ -55,28 +55,28 @@ public class CharacterClass extends View {
 
     private void fighter() {
         TheChosenQuest.player.setPlayerClass("Fighter");
-        System.out.println("You have chosen the way of the Sword. You are the epitome of bladed fury. You are the mighty fighter.");
+        console.println("You have chosen the way of the Sword. You are the epitome of bladed fury. You are the mighty fighter.");
         MovementView moveMe = new MovementView();
         moveMe.display();
     }
 
     private void mage() {
         TheChosenQuest.player.setPlayerClass("Mage");
-        System.out.println("You have chosen the way of the Mind. Wielder of the sacred arts. You are the brilliant mage.");
+        console.println("You have chosen the way of the Mind. Wielder of the sacred arts. You are the brilliant mage.");
         MovementView moveMe = new MovementView();
         moveMe.display();
     }
 
     private void rouge() {
         TheChosenQuest.player.setPlayerClass("Rouge");
-        System.out.println("You have chosen the way of the Shadows. You strike your enemies weak points. You are the crafty rogue.");
+        console.println("You have chosen the way of the Shadows. You strike your enemies weak points. You are the crafty rogue.");
         MovementView moveMe = new MovementView();
         moveMe.display();
     }
 
     private void hunter() {
         TheChosenQuest.player.setPlayerClass("Hunter");
-        System.out.println("You have chosen the way of the Bow. Your arrows fly unerringly with deadly accuracy. You are the nimble hunter.");
+        console.println("You have chosen the way of the Bow. Your arrows fly unerringly with deadly accuracy. You are the nimble hunter.");
         MovementView moveMe = new MovementView();
         moveMe.display();
     }

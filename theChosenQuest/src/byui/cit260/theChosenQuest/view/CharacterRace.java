@@ -45,7 +45,7 @@ public class CharacterRace extends View {
                 this.elf();
                 break;
             default:
-                System.out.println("\n*** Fat Finger Error *** Please try again!");
+                console.println("\n*** Fat Finger Error *** Please try again!");
                 break;
         }
         
@@ -58,7 +58,7 @@ public class CharacterRace extends View {
         TheChosenQuest.player.setMaxHealth(20);
         TheChosenQuest.player.setHealth(20);
         TheChosenQuest.player.setPoison(0);
-        System.out.println ("Create a new dwarf hero fuction is called");
+        console.println ("Create a new dwarf hero fuction is called");
         CharacterClass charClass = new CharacterClass();
         charClass.display();
     }
@@ -68,7 +68,7 @@ public class CharacterRace extends View {
         TheChosenQuest.player.setHealth(20);
         TheChosenQuest.player.setMaxHealth(20);
         TheChosenQuest.player.setPoison(0);
-        System.out.println ("Create a new Human hero fuction is called");
+        console.println ("Create a new Human hero fuction is called");
         CharacterClass charClass = new CharacterClass();
         charClass.display();
     }
@@ -78,7 +78,7 @@ public class CharacterRace extends View {
         TheChosenQuest.player.setHealth(20);
         TheChosenQuest.player.setMaxHealth(20);
         TheChosenQuest.player.setPoison(0);
-        System.out.println ("Create a new Halfling hero fuction is called");
+        console.println ("Create a new Halfling hero fuction is called");
         CharacterClass charClass = new CharacterClass();
         charClass.display();
     }
@@ -88,7 +88,7 @@ public class CharacterRace extends View {
         TheChosenQuest.player.setHealth(20);
         TheChosenQuest.player.setMaxHealth(20);
         TheChosenQuest.player.setPoison(0);
-        System.out.println ("Create a new Elf hero fuction is called");
+        console.println ("Create a new Elf hero fuction is called");
         CharacterClass charClass = new CharacterClass();
         charClass.display();
     }

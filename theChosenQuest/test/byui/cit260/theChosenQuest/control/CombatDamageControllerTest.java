@@ -32,7 +32,7 @@ public class CombatDamageControllerTest {
      */
     @Test
     public void testCombatDamageController() {
-        System.out.println("combatDamageController test 1");
+        console.println("combatDamageController test 1");
         int playerAttackBonus = 2;
         int playerDefense = 0;
         int creatureAttackBonus = 0;
@@ -51,7 +51,7 @@ public class CombatDamageControllerTest {
         
         //test 2
        
-        System.out.println("combatDamageController test 1");
+        console.println("combatDamageController test 1");
         playerAttackBonus = 1;
         playerDefense = 0;
         creatureAttackBonus = 0;
@@ -65,7 +65,7 @@ public class CombatDamageControllerTest {
         assertEquals(expResult, result);
         
         //test 3
-        System.out.println("combatDamageController test 1");
+        console.println("combatDamageController test 1");
         playerAttackBonus = 3;
         playerDefense = 0;
         creatureAttackBonus = 0;
@@ -79,7 +79,7 @@ public class CombatDamageControllerTest {
         assertEquals(expResult, result);
         
         //test 4
-        System.out.println("combatDamageController test 1");
+        console.println("combatDamageController test 1");
         playerAttackBonus = -15;
         playerDefense = 0;
         creatureAttackBonus = 0;
@@ -93,7 +93,7 @@ public class CombatDamageControllerTest {
         assertEquals(expResult, result);
         
         //test 5
-        System.out.println("combatDamageController test 1");
+        console.println("combatDamageController test 1");
         playerAttackBonus = 2;
         playerDefense = 0;
         creatureAttackBonus = 0;
@@ -107,7 +107,7 @@ public class CombatDamageControllerTest {
         assertEquals(expResult, result);
         
         //test 6
-        System.out.println("combatDamageController test 1");
+        console.println("combatDamageController test 1");
         playerAttackBonus = -3;
         playerDefense = 0;
         creatureAttackBonus = 0;

@@ -27,37 +27,37 @@ public class DiceFacesTest {
         int result;
         DiceFaces instance = new DiceFaces();
         
-        System.out.println("rollTheDice Test Case #1");
+        console.println("rollTheDice Test Case #1");
         diceChoice = 5;
         expResult = -1;
         result = instance.rollTheDice(diceChoice);
         assertEquals(expResult, result);
         
-        System.out.println("rollTheDice Test Case #2");
+        console.println("rollTheDice Test Case #2");
         diceChoice = 20;
         expResult = -1;
         result = instance.rollTheDice(diceChoice);
         assertEquals(expResult, result);
         
-        System.out.println("rollTheDice Test Case #3");
+        console.println("rollTheDice Test Case #3");
         diceChoice = 5;
         expResult = -1;
         result = instance.rollTheDice(diceChoice);
         assertEquals(expResult, result);
         
-        System.out.println("rollTheDice Test Case #4");
+        console.println("rollTheDice Test Case #4");
         diceChoice = 5;
         expResult = -1;
         result = instance.rollTheDice(diceChoice);
         assertEquals(expResult, result);
         
-        System.out.println("rollTheDice Test Case #5");
+        console.println("rollTheDice Test Case #5");
         diceChoice = 5;
         expResult = -1;
         result = instance.rollTheDice(diceChoice);
         assertEquals(expResult, result);
         
-        System.out.println("rollTheDice Test Case #6");
+        console.println("rollTheDice Test Case #6");
         diceChoice = 5;
         expResult = -1;
         result = instance.rollTheDice(diceChoice);

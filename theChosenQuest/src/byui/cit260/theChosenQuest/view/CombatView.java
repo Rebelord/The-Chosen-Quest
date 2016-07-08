@@ -29,7 +29,7 @@ public class CombatView extends View{
     @Override
     public boolean doAction(String combatOption) {
         combatOption = combatOption.toUpperCase(); // Convert choice to Lowercase.
-        System.out.println(combatOption);
+        console.println(combatOption);
         switch (combatOption) {
             case "A": // Select Attack.
                 this.Attack();
@@ -44,7 +44,7 @@ public class CombatView extends View{
                 this.Run();
                 break;
             default:
-                System.out.println("\n Lets try this again, shall we.");
+                console.println("\n Lets try this again, shall we.");
                 break;
         }
         
@@ -55,7 +55,7 @@ public class CombatView extends View{
         // calls the Combat controller
         /*CombatDamageController combat = new CombatDamageController();
         combat.combatDamageController();*/
-        System.out.println("You strike out at your enemy!");
+        console.println("You strike out at your enemy!");
         
     }
 
@@ -63,14 +63,14 @@ public class CombatView extends View{
         // calls the Combat controller
         /*CombatDamageController combat = new CombatDamageController();
         combat.CombatDamageController();*/
-        System.out.println("Your enemy swings at you with the intent of your demise");
+        console.println("Your enemy swings at you with the intent of your demise");
     }
 
     private void Potion() {
         // calls the Combat controller
         /*CombatDamageController combat = new CombatDamageController();
         combat.CombatDamageController();*/
-        System.out.println("Ugh, you would think after all this time this stuff would taste better.");
+        console.println("Ugh, you would think after all this time this stuff would taste better.");
     }
 
     private void Run() {
@@ -78,7 +78,7 @@ public class CombatView extends View{
         CombatDamageController combat = new CombatDamageController();
         combat.CombatDamageController();
         */
-        System.out.println("RUNNNNNNNN AWWWWAAAAAAYYYY!!!!!!!!!! It's going to eat ME!!!!!!!!");
+        console.println("RUNNNNNNNN AWWWWAAAAAAYYYY!!!!!!!!!! It's going to eat ME!!!!!!!!");
         MovementView moveMe = new MovementView();
         moveMe.display();
     }

@@ -5,8 +5,11 @@
  */
 package byui.cit260.theChosenQuest.model;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.Objects;
+import thechosenquest.TheChosenQuest;
 
 /**
  *
@@ -19,6 +22,9 @@ public class CharacterSheet implements Serializable{
     private String equipment;
     private String spells;
     private String inventory;
+    
+    protected final PrintWriter console = TheChosenQuest.getOutFile();
+    protected final BufferedReader keyboard = TheChosenQuest.getInFile();
 
     public CharacterSheet() {
     }
@@ -54,6 +60,7 @@ public class CharacterSheet implements Serializable{
     public void setInventory(String inventory) {
         this.inventory = inventory;
     }
+    
 
     @Override
     public int hashCode() {
@@ -98,7 +105,7 @@ public class CharacterSheet implements Serializable{
     }
 
     public void display() {
-        System.out.println("This is me");
+        console.println("This is me");
     }
     
     

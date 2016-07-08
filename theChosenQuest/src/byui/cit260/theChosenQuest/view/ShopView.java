@@ -45,7 +45,7 @@ public class ShopView extends View {
             case "E":
                 this.resumeGame();
             default:
-                System.out.println("\n*** Fat Finger Error *** Please try again!");
+                console.println("\n*** Fat Finger Error *** Please try again!");
                 break;
         }
         
@@ -53,21 +53,21 @@ public class ShopView extends View {
     }
 
     private void EquipmentList() {
-        System.out.println("Here is what I have to offer:");
+        console.println("Here is what I have to offer:");
         
         listShopInventory();
     }
 
     private void buyItem() {
-        System.out.println("buy an item");
+        console.println("buy an item");
     }
 
     private void sellItem() {
-        System.out.println("Sell an item");
+        console.println("Sell an item");
     }
 
     private void resumeGame() {
-       System.out.println("\n*** Good Luck!");
+       console.println("\n*** Good Luck!");
         MovementView moveMe = new MovementView();
         moveMe.display();
     }

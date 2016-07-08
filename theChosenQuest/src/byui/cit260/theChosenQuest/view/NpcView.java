@@ -34,7 +34,7 @@ public class NpcView extends View {
     @Override
     public boolean doAction(String chatOption) {
         chatOption = chatOption.toUpperCase(); // Convert choice to Lowercase.
-        System.out.println(chatOption);
+        console.println(chatOption);
         switch (chatOption) {
             case "A": // Select travel South.
                 this.optionA();
@@ -55,7 +55,7 @@ public class NpcView extends View {
                 this.optionM();
                 break;
             default:
-                System.out.println("\n Need a real answer on this issue.");
+                console.println("\n Need a real answer on this issue.");
                 break;
         }
         
@@ -63,12 +63,12 @@ public class NpcView extends View {
     }
 
     private void optionA() {
-        System.out.println("\n The beggar farts in your general direction as you pass by him.");
+        console.println("\n The beggar farts in your general direction as you pass by him.");
         MovementView moveMe = new MovementView();
         moveMe.display();
     }
     private void optionB() {
-        System.out.println("\nHow many coins would you like to throw?");
+        console.println("\nHow many coins would you like to throw?");
         Scanner keyboard = new Scanner(System.in);
         // Will move this later to an option to give a bum money.
         String input = "";
@@ -82,28 +82,28 @@ public class NpcView extends View {
         try {
             myNum = Integer.parseInt(input);
         } catch (NumberFormatException nfe) {
-            System.out.println("Bad number input.");
+            console.println("Bad number input.");
         }
         
-        System.out.println("\n The beggar blinded by flying coins laughed joyfully at the gift.");
+        console.println("\n The beggar blinded by flying coins laughed joyfully at the gift.");
         MovementView moveMe = new MovementView();
         moveMe.display();
     }
 
     private void optionC() {
-        System.out.println("\n Sure, beat up an old bum!");
+        console.println("\n Sure, beat up an old bum!");
         //CombatView combat = new CombatView();
         //combat.display();
     }
 
     private void optionD() {
-        System.out.println("\n The beggar offended by your condescending tone decides to throw feces at you.");
+        console.println("\n The beggar offended by your condescending tone decides to throw feces at you.");
         MovementView moveMe = new MovementView();
         moveMe.display();
     }
 
     private void optionE() {
-       System.out.println("You quickly cross the street and continue on your way undisturbed.");
+       console.println("You quickly cross the street and continue on your way undisturbed.");
        MovementView moveMe = new MovementView();
        moveMe.display();
     }
