@@ -21,7 +21,8 @@ public class InGameMenuView extends View {
                   + "\n| R - Resume Game                                      |"
                   + "\n| M - Main Menu                                        |"
                   + "\n| C - Character Sheet                                  |"
-                  + "\n| I - Inventory                                        |"    
+                  + "\n| I - Inventory                                        |"
+                  + "\n| P - Print Player to File                             |" 
                   + "\n| Q - Quit Game                                        |"
                   + "\n--------------------------------------------------------");
     }
@@ -45,6 +46,9 @@ public class InGameMenuView extends View {
                 break;
             case "Q":
                 this.GameMenuView();
+                break;
+            case "P":
+                this.printPlayer();
                 break;
             default:
                 console.println("\n*** Fat Finger Error *** Please try again!");
@@ -80,6 +84,10 @@ public class InGameMenuView extends View {
     private void GameMenuView() {
         GameMenuView GameMenuView =  new GameMenuView();
         GameMenuView.display();
+    }
+
+    private void printPlayer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
