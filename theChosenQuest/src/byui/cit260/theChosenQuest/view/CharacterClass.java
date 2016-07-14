@@ -24,7 +24,7 @@ public class CharacterClass extends View {
                 +"\n| M - Mage                                                 |"
                 +"\n| R - Rouge                                                |"
                 +"\n| H - Hunter                                               |"
-                +"\n| Q - Return to Race Selectionds                           |"
+                +"\n| Q - Return to Race Selection                             |"
                 +"\n-----------------------------------------------------------");
     }
     

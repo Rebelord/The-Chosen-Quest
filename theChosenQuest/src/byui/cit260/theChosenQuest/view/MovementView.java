@@ -31,9 +31,9 @@ public class MovementView extends View {
                 + "\n     E - East"
                 + "\n     W - West"
                 + "\n     R - Rest"
-                + "\n     D - Drink Poison!!!!"
+//                + "\n     D - Drink Poison!!!!"
                 + "\n     L - View Location & Map"
-                + "\n     M - Menu");
+                + "\n     M - Game Menu");
     }
 
     @Override

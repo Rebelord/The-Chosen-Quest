@@ -109,7 +109,6 @@ public class NpcView extends View {
     }
 
     private void optionM() {
-       InGameMenuView gameView = new InGameMenuView();
-       gameView.display();
+       
     }
 }

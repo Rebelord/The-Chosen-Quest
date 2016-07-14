@@ -23,8 +23,6 @@ public class MainMenuView extends View {
                   + "\n| N - New Game                                         |"
                   + "\n| G - Load Game                                        |"
                   + "\n| H - How to play the game                             |"
-                  + "\n| S - Save Game                                        |"
-                  + "\n| R - Resume Current Game                              |"    
                   + "\n| E - Quit Game                                        |"
                   + "\n--------------------------------------------------------");
     }
@@ -43,14 +41,8 @@ public class MainMenuView extends View {
             case "H": // Display the help menu.
                 this.displayHelpMenu();
                 break;
-            case "S": // Save the current game.
-                this.saveGame();
-                break;
             case "E":
-                System.exit(0);
-            case "R":
-                this.resumeGame();
-                break;                    
+                System.exit(0);                   
             default:
                 console.println("\n*** Fat Finger Error *** Please try again!");
                 break;
@@ -85,20 +77,5 @@ public class MainMenuView extends View {
     private void displayHelpMenu() {
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.display();
-    }
-
-    private void saveGame() {
-        console.println("\nEnter the file name: ");
-        try {
-            String fileName = keyboard.readLine();
-            GameControl.saveGame(fileName);
-        } catch (Exception e) {
-            ErrorView.display(this.getClass().getName(), "Error on input!");
-        }
-    }
-    private void resumeGame() {
-        console.println("\n*** Good Luck!");
-        MovementView moveMe = new MovementView();
-        moveMe.display();
     }
 }

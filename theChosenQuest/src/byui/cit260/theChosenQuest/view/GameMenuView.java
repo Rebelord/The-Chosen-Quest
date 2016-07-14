@@ -6,7 +6,9 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import byui.cit260.theChosenQuest.control.GameControl;
 import byui.cit260.theChosenQuest.exception.InputErrorException;
+import byui.cit260.theChosenQuest.model.CharacterSheet;
 import byui.cit260.theChosenQuest.model.Location;
 import thechosenquest.TheChosenQuest;
 
@@ -21,8 +23,11 @@ public class GameMenuView extends View {
                   + "\n--------------------------------------------------------"
                   + "\n|                     Game Menu                        |"
                   + "\n--------------------------------------------------------"
-                  + "\n| R - Resume Game                                      |" 
-                  + "\n| O - Options                                          |"    
+                  + "\n| R - Resume Game                                      |"
+                  + "\n| C - Character Sheet                                  |"
+                  + "\n| I - Inventory                                        |"   
+                  + "\n| S - Save Game                                        |"
+                  + "\n| L - Load Game                                        |"   
                   + "\n| H - Help Menu                                        |"    
                   + "\n| E - Exit Game                                        |"
                   + "\n--------------------------------------------------------");
@@ -36,17 +41,24 @@ public class GameMenuView extends View {
             case "R": // Create and Start a new game.
                 this.resumeGame();
                 break;
-            case "O":
-                this.optionM();
+            case "S": // Save the current game.
+                this.saveGame();
+                break;
+            case "L":
+                this.loadGame();
                 break;
             case "H":
                 this.helpmenu();
                 break;
+            case "C": // Display the Character Sheet
+                this.characterSheet();
+                break;
+            case "I":
+                this.inventory();
+                break;
             case "E":
                 System.exit(0);
-          //  default:
-          //      console.println("\n*** Fat Finger Error *** Please try again!");
-           //     break;
+            
         }
         
         return false;
@@ -58,15 +70,42 @@ public class GameMenuView extends View {
         moveMe.display();        
         }
 
-    private void optionM() {
-        console.println("You have opened the game menu");
-        InGameMenuView gameView = new InGameMenuView();
-        gameView.display();
-    }
-
     private void helpmenu() {
         console.println("Welcome to the Divine Assistance Menu");
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.display();
+    }
+    
+    private void saveGame() {
+        console.println("\nEnter the file name: ");
+        try {
+            String fileName = keyboard.readLine();
+            GameControl.saveGame(fileName);
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error on input!");
+        }
+    }
+    
+    private void loadGame() {
+        console.println("\nEnter the file name: ");
+        try {
+            String fileName = keyboard.readLine();
+            GameControl.loadGame(fileName);
+            GameMenuView gmv = new GameMenuView();
+            gmv.display();
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error on input!");
+        }
+    }
+    
+        private void characterSheet() {
+        console.println("\n*** What do I look like again?");
+        CharacterSheet charSheet = new CharacterSheet();
+        charSheet.display();
+    }
+    private void inventory() {
+        console.println("What do I have with me that will help?");
+        Inventory inventory = new Inventory();
+        inventory.display();
     }
 }
