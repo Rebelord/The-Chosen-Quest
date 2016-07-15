@@ -5,9 +5,9 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import static byui.cit260.theChosenQuest.control.GameControl.showPlayerEquipment;
 import byui.cit260.theChosenQuest.control.InventoryController;
 import byui.cit260.theChosenQuest.exception.InventoryError;
-import java.util.Scanner;
 
 /**
  *
@@ -20,11 +20,7 @@ public class Inventory extends View {
                   + "\n--------------------------------------------------------"
                   + "\n|                     Inventory                        |"
                   + "\n--------------------------------------------------------"
-                  + "\n| 1 - (Dynamic List Item, Future Implmentation)        |"
-                  + "\n| 2 - (Dynamic List Item, Future Implmentation)        |"
-                  + "\n| 3 - (Dynamic List Item, Future Implmentation)        |"
-                  + "\n| 4 - (Dynamic List Item, Future Implmentation)        |"
-                  + "\n| 5 - (Dynamic List Item, Future Implmentation)        |"
+                  + "\n| S - Show Inventory                                   |"
                   + "\n| U - Use Item                                         |"
                   + "\n| D - Drop an Item from Inventory                      |"
                   + "\n| E - Equip Item on your Character                     |"
@@ -37,12 +33,9 @@ public class Inventory extends View {
     inventoryOption = inventoryOption.toUpperCase(); // Convert choice to Uppercase.
     
         switch (inventoryOption) {
-            case "1": // Show Dynamic List Item.
-            case "2":
-            case "3":
-            case "4":
-            case "5":
-                
+            case "S":
+                this.showInventory();
+                break;
             case "U": // Use Item
                 this.loadUseItem();
                 break;
@@ -91,5 +84,9 @@ public class Inventory extends View {
         GameMenuView GameMenuView =  new GameMenuView();
         GameMenuView.display();
     }
-    
+
+    private void showInventory() {
+        // Display players equipment.
+        showPlayerEquipment();
+    }
 }

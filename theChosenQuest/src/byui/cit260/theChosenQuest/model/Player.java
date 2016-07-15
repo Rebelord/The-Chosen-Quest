@@ -6,6 +6,8 @@
 package byui.cit260.theChosenQuest.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -16,7 +18,7 @@ public class Player implements Serializable{
     
     // class instance variables
     private String name;
-    private String inventory;
+    private List<Equipment> playerEquipment = new ArrayList<>();
     private int characterSheet;
     private String playerRace;
     private String playerClass;
@@ -103,14 +105,6 @@ public class Player implements Serializable{
         this.characterSheet = characterSheet;
     }
 
-    public String getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(String inventory) {
-        this.inventory = inventory;
-    }
-
     public int getHealth() {
         return health;
     }
@@ -135,9 +129,16 @@ public class Player implements Serializable{
         this.maxHealth = maxHealth;
     }
 
-    public Player(String name, String inventory, int characterSheet, String playerRace, String playerClass, int health, int poison, int maxHealth, Location location) {
+    public List<Equipment> getPlayerEquipment() {
+        return playerEquipment;
+    }
+
+    public void setPlayerEquipment(List<Equipment> playerEquipment) {
+        this.playerEquipment = playerEquipment;
+    }
+
+    public Player(String name, int characterSheet, String playerRace, String playerClass, int health, int poison, int maxHealth, Location location) {
         this.name = name;
-        this.inventory = inventory;
         this.characterSheet = characterSheet;
         this.playerRace = playerRace;
         this.playerClass = playerClass;
@@ -146,6 +147,7 @@ public class Player implements Serializable{
         this.maxHealth = maxHealth;
         this.location = location;
     }
+
     
     
 }

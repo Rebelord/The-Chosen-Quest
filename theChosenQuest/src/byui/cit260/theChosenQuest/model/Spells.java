@@ -15,31 +15,37 @@ import java.util.Objects;
 public class Spells implements Serializable{
     
     // class instance variables
-    private String attack;
+    private String name;
+    private int attack;
     private String description;
     private String type;
 
-    public Spells() {
+    public String getName() {
+        return name;
     }
 
-    public String getAttack() {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAttack() {
         return attack;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setAttack(String attack) {
-        this.attack = attack;
-    }
-
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public void setType(String type) {
@@ -48,10 +54,11 @@ public class Spells implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 67 * hash + Objects.hashCode(this.attack);
-        hash = 67 * hash + Objects.hashCode(this.description);
-        hash = 67 * hash + Objects.hashCode(this.type);
+        int hash = 5;
+        hash = 59 * hash + Objects.hashCode(this.name);
+        hash = 59 * hash + this.attack;
+        hash = 59 * hash + Objects.hashCode(this.description);
+        hash = 59 * hash + Objects.hashCode(this.type);
         return hash;
     }
 
@@ -67,7 +74,10 @@ public class Spells implements Serializable{
             return false;
         }
         final Spells other = (Spells) obj;
-        if (!Objects.equals(this.attack, other.attack)) {
+        if (this.attack != other.attack) {
+            return false;
+        }
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         if (!Objects.equals(this.description, other.description)) {
@@ -79,10 +89,14 @@ public class Spells implements Serializable{
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Spells{" + "attack=" + attack + ", description=" + description + ", type=" + type + '}';
+    public Spells(String name, int attack, String description, String type) {
+        this.name = name;
+        this.attack = attack;
+        this.description = description;
+        this.type = type;
     }
+
+
     
            
 }

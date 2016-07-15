@@ -13,12 +13,14 @@ import java.io.Serializable;
  *
  * @author Zack Durbin
  */
-public class Equipment implements Serializable{
+public class Equipment implements Serializable {
    
     private String name;
     private int attack;
     private int defense;
     private int cost;
+    private String type;
+    private Boolean equiped;
 
     public String getName() {
         return name;
@@ -51,4 +53,21 @@ public class Equipment implements Serializable{
     public void setCost(int cost) {
         this.cost = cost;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Boolean getEquiped() {
+        return equiped;
+    }
+
+    public void setEquiped(Boolean equiped) {
+        this.equiped = equiped;
+    }
+    
 }

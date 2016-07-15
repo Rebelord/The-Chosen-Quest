@@ -41,7 +41,8 @@ public class CombatDamageController {
         // Got past everything without doing it's job.
         return attackSuccess;
     }
-    /*public int playerAttackroll (int diceChoice, int playerAttackBonus, int creatureDefense) {
+    
+    public int playerAttackroll (int diceChoice, int playerAttackBonus, int creatureDefense) {
             
         // Intializing the Dice Random.
         DiceFaces diceRoll = new DiceFaces();
@@ -58,9 +59,9 @@ public class CombatDamageController {
             }
             /* Requires a fallback return here, change it to what you need */
 
-        //}
+        }
 
-    /*public int creatureAttack (int creatureAttackBonus, int playerDefense) {
+    public int creatureAttack (int creatureAttackBonus, int playerDefense) {
         
         // Intializing the Dice Random.
         DiceFaces diceRoll = new DiceFaces();
@@ -73,6 +74,6 @@ public class CombatDamageController {
                 return creatureCombatSuccess;
             } else {
                 return -1;}
-        }*/
+        }
 }
 

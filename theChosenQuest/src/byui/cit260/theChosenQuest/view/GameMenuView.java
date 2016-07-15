@@ -7,10 +7,7 @@
 package byui.cit260.theChosenQuest.view;
 
 import byui.cit260.theChosenQuest.control.GameControl;
-import byui.cit260.theChosenQuest.exception.InputErrorException;
 import byui.cit260.theChosenQuest.model.CharacterSheet;
-import byui.cit260.theChosenQuest.model.Location;
-import thechosenquest.TheChosenQuest;
 
 /**
  *
