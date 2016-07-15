@@ -10,70 +10,40 @@ package byui.cit260.theChosenQuest.control;
  * @author Zack Durbin
  */
 public class CombatDamageController {
-    public boolean[] combatDamageController(boolean[] attackSuccess, int playerAttackBonus, int playerDefense, int creatureAttackBonus, int creatureDefense){
+    public boolean AttackCheck (int attack, int hit){
+        
+        // Sanity check
+        if (attack <= 0)
+            return false;
+        
+        if ((hit <= 0) && (attack > 0))
+            return true;
+        
         // Intializing the Dice Random.
         DiceFaces diceRoll = new DiceFaces();
         
-        int playerAttack = 0;
-        int playerAttackRoll;
-        int playerCombatSuccess;
-        int creatureAttackRoll;
+        int attackRoll;
+        int combatSuccess;
         
-        playerAttackRoll = playerAttackBonus + diceRoll.rollTheDice(20);
-        playerCombatSuccess = playerAttackRoll - creatureDefense;
-        if(playerCombatSuccess > 0){
-            attackSuccess[0] = true;
+        attackRoll = attack + diceRoll.rollTheDice(20);
+        combatSuccess = attackRoll - hit;
+        if(combatSuccess > 0){
+            return true;
         } else {
-            attackSuccess[0] = false;
+            return false;
         }
-        /* Requires a fallback return here, change it to what you need */
-
-
-        
-            creatureAttackRoll = creatureAttackBonus + diceRoll.rollTheDice(20);
-        int creatureCombatSuccess = creatureAttackRoll - playerDefense;
-
-            if(creatureCombatSuccess > 0){
-                attackSuccess[1] = true;
-            } else {
-                attackSuccess[1] = false;
-        }
-        // Got past everything without doing it's job.
-        return attackSuccess;
     }
     
-    public int playerAttackroll (int diceChoice, int playerAttackBonus, int creatureDefense) {
+    public int AttackRoll (int attack, int defense) {
             
         // Intializing the Dice Random.
         DiceFaces diceRoll = new DiceFaces();
 
-        int playerAttack = 0;
-        int playerAttackRoll;
-        playerAttackRoll = playerAttackBonus + diceRoll.rollTheDice(20);
-        int playerCombatSuccess;
-        playerCombatSuccess = playerAttackRoll - creatureDefense;
-            if(playerCombatSuccess > 0){
-                return playerCombatSuccess;
-            } else {
-                return -1;
-            }
-            /* Requires a fallback return here, change it to what you need */
-
-        }
-
-    public int creatureAttack (int creatureAttackBonus, int playerDefense) {
+        int damage;
         
-        // Intializing the Dice Random.
-        DiceFaces diceRoll = new DiceFaces();
-
-        int creatureAttackRoll;
-            creatureAttackRoll = creatureAttackBonus + diceRoll.rollTheDice(20);
-        int creatureCombatSuccess = creatureAttackRoll- playerDefense;
-
-            if(creatureCombatSuccess > 0){
-                return creatureCombatSuccess;
-            } else {
-                return -1;}
+        // Calculate attack damage.
+        damage = attack - defense;
+        return damage;
         }
 }
 

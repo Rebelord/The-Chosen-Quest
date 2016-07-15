@@ -4,10 +4,9 @@
  * and open the template in the editor.
  */
 package byui.cit260.theChosenQuest.view;
-
 import byui.cit260.theChosenQuest.control.CombatDamageController;
 import byui.cit260.theChosenQuest.model.Player;
-import java.util.Scanner;
+import static thechosenquest.TheChosenQuest.player;
 
 /**
  *
@@ -53,8 +52,8 @@ public class CombatView extends View{
 
     private void Attack() {
         // calls the Combat controller
-        /*CombatDamageController combat = new CombatDamageController();
-        combat.combatDamageController();*/
+        CombatDamageController combat = new CombatDamageController();
+        combat.AttackCheck(10, player.getLocation().getCreatures().getDefense());
         console.println("You strike out at your enemy!");
         
     }
