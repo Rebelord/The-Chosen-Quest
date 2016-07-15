@@ -117,6 +117,7 @@ public class GameControl {
         blob.setName("Ooze");
         blob.setHp(10);
         blob.setAttack(5);
+                blob.setHit(15);
         blob.setDefense(3);
         blob.setGoldDrop(15);
         creatureList.add(blob);
@@ -125,6 +126,7 @@ public class GameControl {
         wolf.setName("Dire Wolf");
         wolf.setHp(10);
         wolf.setAttack(5);
+                wolf.setHit(12);
         wolf.setDefense(4);
         wolf.setGoldDrop(5);
         creatureList.add(wolf);
@@ -133,6 +135,7 @@ public class GameControl {
         goblin.setName("Bob the Goblin");
         goblin.setHp(5);
         goblin.setAttack(3);
+                goblin.setHit(10);
         goblin.setDefense(2);
         goblin.setGoldDrop(10);
         creatureList.add(goblin);

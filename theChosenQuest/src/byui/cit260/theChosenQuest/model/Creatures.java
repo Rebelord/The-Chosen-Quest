@@ -18,6 +18,7 @@ public class Creatures implements Serializable{
     private double hp;
     private double attack;
     private double defense;
+            private double hit;
     private String name;
     private double goldDrop;
 
@@ -63,6 +64,14 @@ public class Creatures implements Serializable{
     public void setGoldDrop(double goldDrop) {
         this.goldDrop = goldDrop;
     }
+
+            public double getHit() {
+                return hit;
+            }
+
+            public void setHit(double hit) {
+                this.hit = hit;
+            }
     
     
 }
