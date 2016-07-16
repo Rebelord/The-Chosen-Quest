@@ -7,45 +7,44 @@ package byui.cit260.theChosenQuest.model;
 
 import java.io.Serializable;
 
-
 /**
  *
  * @author Zack Durbin
  */
-public class Creatures implements Serializable{
-    
+public class Creatures implements Serializable {
+
     // class instance variables
-    private double hp;
-    private double attack;
-    private double defense;
-            private double hit;
+    private int hp;
+    private int attack;
+    private int defense;
+    private int hit;
     private String name;
-    private double goldDrop;
+    private int goldDrop;
 
     public Creatures() {
     }
 
-    public double getHp() {
+    public int getHp() {
         return hp;
     }
 
-    public void setHp(double hp) {
+    public void setHp(int hp) {
         this.hp = hp;
     }
 
-    public double getAttack() {
+    public int getAttack() {
         return attack;
     }
 
-    public void setAttack(double attack) {
+    public void setAttack(int attack) {
         this.attack = attack;
     }
 
-    public double getDefense() {
+    public int getDefense() {
         return defense;
     }
 
-    public void setDefense(double defense) {
+    public void setDefense(int defense) {
         this.defense = defense;
     }
 
@@ -57,21 +56,20 @@ public class Creatures implements Serializable{
         this.name = name;
     }
 
-    public double getGoldDrop() {
+    public int getGoldDrop() {
         return goldDrop;
     }
 
-    public void setGoldDrop(double goldDrop) {
+    public void setGoldDrop(int goldDrop) {
         this.goldDrop = goldDrop;
     }
 
-            public double getHit() {
-                return hit;
-            }
+    public int getHit() {
+        return hit;
+    }
 
-            public void setHit(double hit) {
-                this.hit = hit;
-            }
-    
-    
+    public void setHit(int hit) {
+        this.hit = hit;
+    }
+
 }

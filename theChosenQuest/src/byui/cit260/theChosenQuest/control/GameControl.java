@@ -277,10 +277,16 @@ public class GameControl {
         if (location.getCreatures() != null) {
             CombatView fight = new CombatView(player);
             fight.display();
-            location.setCreatures(null);
             return true;
         }
         return false;
+    }
+    
+    public void removeCreature(Player player) {
+        Location location = player.getLocation();
+        if (location.getCreatures() != null)
+            location.setCreatures(null);
+        return;
     }
 
     public boolean findShop(Player player) {

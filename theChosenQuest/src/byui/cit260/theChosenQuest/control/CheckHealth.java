@@ -6,6 +6,7 @@
 package byui.cit260.theChosenQuest.control;
 
 import byui.cit260.theChosenQuest.exception.LoseGameException;
+import byui.cit260.theChosenQuest.model.Player;
 
 /**
  *
@@ -13,7 +14,11 @@ import byui.cit260.theChosenQuest.exception.LoseGameException;
  */
 public class CheckHealth {
 
-    public int checkHealth(int health, int poison, boolean rest, int charMaxHealth) throws LoseGameException {
+    public int checkHealth(Player player, boolean rest) throws LoseGameException {
+        
+        int poison = player.getPoison();
+        int health = player.getHealth();
+        int charMaxHealth = player.getMaxHealth();
 
         // Perform Sanity Checks
         if ((poison <= 0) && (rest == false)) {
@@ -36,6 +41,7 @@ public class CheckHealth {
         // If it got here without doing something, then there's an error.
         return health;
     }
+    
 }
 //This controller will inform the user of their health after attacks have been done. If hp <= 0 Game is over.
 

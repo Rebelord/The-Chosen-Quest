@@ -189,9 +189,11 @@ public class MovementView extends View {
     private void takeNap() {
         // Health check on movement for poisons.
         try {
+            // Initalize rest
             boolean rest = true;
             CheckHealth life = new CheckHealth();
-            int health = life.checkHealth(player.getHealth(), player.getPoison(), rest, player.getMaxHealth());
+            // Check rest state and apply.
+            int health = life.checkHealth(player, rest);
             player.setHealth(health);
         } catch (LoseGameException wipe) {
             // Yippee Ki Yay Mam
