@@ -9,8 +9,10 @@ import byui.cit260.theChosenQuest.control.CheckHealth;
 import byui.cit260.theChosenQuest.control.CombatDamageController;
 import byui.cit260.theChosenQuest.control.GameControl;
 import byui.cit260.theChosenQuest.exception.LoseGameException;
+import byui.cit260.theChosenQuest.model.Creatures;
 import byui.cit260.theChosenQuest.model.Player;
 import static thechosenquest.TheChosenQuest.player;
+import byui.cit260.theChosenQuest.model.Inventory;
 
 /**
  *
@@ -61,12 +63,7 @@ public class CombatView extends View {
         CombatDamageController combat = new CombatDamageController();
 
         // Get stats for player and creature for fight.
-        String creatureName = player.getLocation().getCreatures().getName();
-        int creatureAttack = player.getLocation().getCreatures().getAttack();
-        int creatureHealth = player.getLocation().getCreatures().getHp();
-        int creatureDefense = player.getLocation().getCreatures().getDefense();
-        int creatureHit = player.getLocation().getCreatures().getHit();
-        int playerHealth = player.getHealth();
+        Creatures creature = player.getLocation().getCreatures();
         
         // *****************
         // * Player Attack *
@@ -77,32 +74,41 @@ public class CombatView extends View {
         int playerAttack = 10;
         
         // Check if player attack was successful.
-        boolean attackScucces = combat.AttackCheck(playerAttack, creatureHit);
+        boolean attackScucces = combat.AttackCheck(playerAttack, creature.getHit());
 
         // Calculate damage or miss.
         if (attackScucces) {
 
             // Get damage from attack.
-            int damage = combat.AttackRoll(playerAttack, creatureDefense);
-            console.println("\nYou hit " + creatureName
+            int damage = combat.AttackRoll(playerAttack, creature.getDefense());
+            console.println("\nYou hit " + creature.getName()
                     + " for " + damage + " damage.\n");
 
             // Apply damage to creature.
-            creatureHealth -= damage;
-            player.getLocation().getCreatures().setHp(creatureHealth - damage);
+            player.getLocation().getCreatures().setHp(creature.getHp() - damage);
 
             // Check if creature is still alive.
-            if (creatureHealth > 0) 
-                console.println(creatureName + " is still alive.\n");
+            if (creature.getHp() > 0) 
+                console.println(creature.getName() + " is still alive.\n");
             else {
+                
                 // Display message to user upon creature defeat.
-                console.println("***You've defeated the " + creatureName + "***\n");
+                console.println("***You've defeated the " + creature.getName() + "***\n");
+                
+                // Disperse rewards to player sometimes.
+                Inventory inventory = player.getInventory();
+                console.println(inventory.getGold());
+                console.println(creature.getGoldDrop());
+                inventory.setGold(inventory.getGold() + creature.getGoldDrop());
+                player.setInventory(inventory);
+                console.println("You receive " + creature.getGoldDrop() + " gold for a total of " +
+                        player.getInventory().getGold() + " gold.\n");
 
                 //Remove defeated creature from map.
                 game.removeCreature(player);
                 
                 // Display player current health.
-                console.println("Your health is at " + playerHealth + "\n");
+                console.println("Your health is at " + player.getHealth() + "\n");
 
                 // Return player to movement.
                 MovementView moveMe = new MovementView();
@@ -117,22 +123,20 @@ public class CombatView extends View {
         // *******************
         
         // Check if creature attack was successful.
-        attackScucces = combat.AttackCheck(creatureAttack, playerDefense);
+        attackScucces = combat.AttackCheck(creature.getAttack(), playerDefense);
 
         // Calculate damage or miss.
         if (attackScucces) {
 
             // Get damage from attack.
-            int damage = combat.AttackRoll(creatureAttack, playerDefense);
+            int damage = combat.AttackRoll(creature.getAttack(), playerDefense);
             console.println("\nThe creature attacks you for " + damage + " damage.\n");
 
             // Apply damage to player.
-            playerHealth -= damage;
-            player.setHealth(playerHealth);
+            player.setHealth(player.getHealth() - damage);
 
         } else
-            console.println("\n" + creatureName + "'s attack missed!\n");
-        
+            console.println("\n" + creature.getName() + "'s attack missed!\n");
         
         // Initalize rest
         boolean rest = false;
@@ -141,11 +145,13 @@ public class CombatView extends View {
         // Check if player is still alive.
         try {
             check.checkHealth(player, rest);
-        } catch (LoseGameException wipe) {
-            console.println("\n*** You have been defeated by " + creatureName +  " ***");
+        } catch (LoseGameException lge) {
+            console.println("\n*** You have been defeated by " + creature.getName() +  " ***");
             System.exit(0);
         } finally {
-            console.println("Your health is at " + playerHealth + "\n");
+            if (player.getHealth() <= 10)
+                console.println("*** Your health is only " + player.getHealth() + ", you might want to run! ***\n");
+            else console.println("Your health is at " + player.getHealth() + "\n");
         }
     }
 

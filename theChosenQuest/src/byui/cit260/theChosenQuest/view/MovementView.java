@@ -111,7 +111,7 @@ public class MovementView extends View {
             find.findShop(player);
         } catch (MovementException me) {
             console.println("You cannot move South");
-        }
+        }   
 //        // Health check on movement for poisons.
 //        try {
 //            boolean rest = false;

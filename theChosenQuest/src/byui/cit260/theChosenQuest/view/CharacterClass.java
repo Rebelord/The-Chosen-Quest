@@ -8,6 +8,7 @@ package byui.cit260.theChosenQuest.view;
 import byui.cit260.theChosenQuest.model.Equipment;
 import java.util.List;
 import thechosenquest.TheChosenQuest;
+import byui.cit260.theChosenQuest.model.Inventory;
 
 /**
  *
@@ -88,11 +89,16 @@ public class CharacterClass extends View {
         shield.setCost(5);
         shield.setEquiped(true);
 
-        // Add Equipment to player inventory.
+        // Add Equipment to player.
         playerEquipment.add(longSword);
         playerEquipment.add(chainmail);
         playerEquipment.add(shield);
         TheChosenQuest.player.setPlayerEquipment(playerEquipment);
+        
+        // Setup player inventory.
+        Inventory inventory = new Inventory();
+        inventory.setGold(15);
+        TheChosenQuest.player.setInventory(inventory);
         
         console.println("You have chosen the way of the Sword. You are the epitome of bladed fury. You are the mighty fighter.");
         MovementView moveMe = new MovementView();
@@ -129,6 +135,11 @@ public class CharacterClass extends View {
         playerEquipment.add(staff);
         playerEquipment.add(clothArmor);
         TheChosenQuest.player.setPlayerEquipment(playerEquipment);
+        
+        // Setup player inventory.
+        Inventory inventory = new Inventory();
+        inventory.setGold(25);
+        TheChosenQuest.player.setInventory(inventory);
         
         console.println("You have chosen the way of the Mind. Wielder of the sacred arts. You are the brilliant mage.");
         MovementView moveMe = new MovementView();
@@ -174,6 +185,11 @@ public class CharacterClass extends View {
         playerEquipment.add(leatherArmour);
         TheChosenQuest.player.setPlayerEquipment(playerEquipment);
         
+        // Setup player inventory.
+        Inventory inventory = new Inventory();
+        inventory.setGold(40);
+        TheChosenQuest.player.setInventory(inventory);
+        
         console.println("You have chosen the way of the Shadows. You strike your enemies weak points. You are the crafty rogue.");
         MovementView moveMe = new MovementView();
         moveMe.display();
@@ -210,6 +226,11 @@ public class CharacterClass extends View {
         playerEquipment.add(shortBow);
         playerEquipment.add(scaleArmour);
         TheChosenQuest.player.setPlayerEquipment(playerEquipment);
+        
+        // Setup player inventory.
+        Inventory inventory = new Inventory();
+        inventory.setGold(10);
+        TheChosenQuest.player.setInventory(inventory);
         
         console.println("You have chosen the way of the Bow. Your arrows fly unerringly with deadly accuracy. You are the nimble hunter.");
         MovementView moveMe = new MovementView();

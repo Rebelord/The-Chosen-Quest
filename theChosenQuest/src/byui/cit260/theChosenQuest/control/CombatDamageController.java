@@ -37,11 +37,13 @@ public class CombatDamageController {
 
         // Intializing the Dice Random.
         DiceFaces diceRoll = new DiceFaces();
-
-        int damage;
-
+        
         // Calculate attack damage.
-        damage = attack - defense;
+        int damage = attack - defense;
+
+        if (damage < 0)
+            damage = 0;
+        
         return damage;
     }
 }

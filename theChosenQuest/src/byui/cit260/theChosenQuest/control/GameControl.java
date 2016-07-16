@@ -117,7 +117,7 @@ public class GameControl {
         blob.setName("Ooze");
         blob.setHp(10);
         blob.setAttack(5);
-                blob.setHit(15);
+        blob.setHit(15);
         blob.setDefense(3);
         blob.setGoldDrop(15);
         creatureList.add(blob);
@@ -126,17 +126,35 @@ public class GameControl {
         wolf.setName("Dire Wolf");
         wolf.setHp(10);
         wolf.setAttack(5);
-                wolf.setHit(12);
+        wolf.setHit(12);
+        wolf.setDefense(4);
+        wolf.setGoldDrop(5);
+        creatureList.add(wolf);
+        
+        Creatures blob2 = new Creatures();
+        blob.setName("Ooze");
+        blob.setHp(10);
+        blob.setAttack(5);
+        blob.setHit(15);
+        blob.setDefense(3);
+        blob.setGoldDrop(15);
+        creatureList.add(blob);
+
+        Creatures wolf2 = new Creatures();
+        wolf.setName("Dire Wolf");
+        wolf.setHp(10);
+        wolf.setAttack(5);
+        wolf.setHit(12);
         wolf.setDefense(4);
         wolf.setGoldDrop(5);
         creatureList.add(wolf);
 
         Creatures goblin = new Creatures();
-        goblin.setName("Bob the Goblin");
-        goblin.setHp(5);
-        goblin.setAttack(3);
-                goblin.setHit(10);
-        goblin.setDefense(2);
+        goblin.setName("Hobgoblin Soldier");
+        goblin.setHp(47);
+        goblin.setAttack(7);
+        goblin.setHit(12);
+        goblin.setDefense(3);
         goblin.setGoldDrop(10);
         creatureList.add(goblin);
 

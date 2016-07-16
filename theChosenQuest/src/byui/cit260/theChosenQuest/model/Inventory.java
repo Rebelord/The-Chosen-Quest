@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Zack Durbin
  */
-public class Inventory implements Serializable{
+public class Inventory implements Serializable {
     
     private String items;
     private String equipment;
@@ -47,10 +47,10 @@ public class Inventory implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.items);
-        hash = 53 * hash + Objects.hashCode(this.equipment);
-        hash = 53 * hash + this.gold;
+        int hash = 7;
+        hash = 37 * hash + Objects.hashCode(this.items);
+        hash = 37 * hash + Objects.hashCode(this.equipment);
+        hash = 37 * hash + this.gold;
         return hash;
     }
 
@@ -78,11 +78,15 @@ public class Inventory implements Serializable{
         return true;
     }
 
+    public Inventory(String items, String equipment, int gold) {
+        this.items = items;
+        this.equipment = equipment;
+        this.gold = gold;
+    }
+
     @Override
     public String toString() {
         return "Inventory{" + "items=" + items + ", equipment=" + equipment + ", gold=" + gold + '}';
     }
-    
-    
-    
+
 }

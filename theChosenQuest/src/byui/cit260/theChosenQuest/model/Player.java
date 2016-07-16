@@ -25,84 +25,51 @@ public class Player implements Serializable{
     private int health;
     private int poison;
     private int maxHealth;
-    Location location;
+    private Location location;
+    private Inventory inventory;
 
     public Player() {
+
     }
 
-    public void setPlayerRace(String playerRace) {
-        this.playerRace = playerRace;
-    }
-
-    public void setPlayerClass(String playerClass) {
-        this.playerClass = playerClass;
-    }
-
-    public String getPlayerRace() {
-        return playerRace;
-    }
-
-    public String getPlayerClass() {
-        return playerClass;
-    }
-    
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.name);
-        hash = 97 * hash + this.characterSheet;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Player other = (Player) obj;
-        if (this.characterSheet != other.characterSheet) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Player{" + "name=" + name + ", characterSheet=" + characterSheet + '}';
-    }
-
-    
     public String getName() {
         return name;
-    }
-
-    public int getCharacterSheet() {
-        return characterSheet;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
+    public List<Equipment> getPlayerEquipment() {
+        return playerEquipment;
+    }
+
+    public void setPlayerEquipment(List<Equipment> playerEquipment) {
+        this.playerEquipment = playerEquipment;
+    }
+
+    public int getCharacterSheet() {
+        return characterSheet;
+    }
+
     public void setCharacterSheet(int characterSheet) {
         this.characterSheet = characterSheet;
+    }
+
+    public String getPlayerRace() {
+        return playerRace;
+    }
+
+    public void setPlayerRace(String playerRace) {
+        this.playerRace = playerRace;
+    }
+
+    public String getPlayerClass() {
+        return playerClass;
+    }
+
+    public void setPlayerClass(String playerClass) {
+        this.playerClass = playerClass;
     }
 
     public int getHealth() {
@@ -129,15 +96,84 @@ public class Player implements Serializable{
         this.maxHealth = maxHealth;
     }
 
-    public List<Equipment> getPlayerEquipment() {
-        return playerEquipment;
+    public Location getLocation() {
+        return location;
     }
 
-    public void setPlayerEquipment(List<Equipment> playerEquipment) {
-        this.playerEquipment = playerEquipment;
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
-    public Player(String name, int characterSheet, String playerRace, String playerClass, int health, int poison, int maxHealth, Location location) {
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this.name);
+        hash = 47 * hash + Objects.hashCode(this.playerEquipment);
+        hash = 47 * hash + this.characterSheet;
+        hash = 47 * hash + Objects.hashCode(this.playerRace);
+        hash = 47 * hash + Objects.hashCode(this.playerClass);
+        hash = 47 * hash + this.health;
+        hash = 47 * hash + this.poison;
+        hash = 47 * hash + this.maxHealth;
+        hash = 47 * hash + Objects.hashCode(this.location);
+        hash = 47 * hash + Objects.hashCode(this.inventory);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Player other = (Player) obj;
+        if (this.characterSheet != other.characterSheet) {
+            return false;
+        }
+        if (this.health != other.health) {
+            return false;
+        }
+        if (this.poison != other.poison) {
+            return false;
+        }
+        if (this.maxHealth != other.maxHealth) {
+            return false;
+        }
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.playerRace, other.playerRace)) {
+            return false;
+        }
+        if (!Objects.equals(this.playerClass, other.playerClass)) {
+            return false;
+        }
+        if (!Objects.equals(this.playerEquipment, other.playerEquipment)) {
+            return false;
+        }
+        if (!Objects.equals(this.location, other.location)) {
+            return false;
+        }
+        if (!Objects.equals(this.inventory, other.inventory)) {
+            return false;
+        }
+        return true;
+    }
+
+    public Player(String name, int characterSheet, String playerRace, String playerClass, int health, int poison, int maxHealth, Location location, Inventory inventory) {
         this.name = name;
         this.characterSheet = characterSheet;
         this.playerRace = playerRace;
@@ -146,8 +182,11 @@ public class Player implements Serializable{
         this.poison = poison;
         this.maxHealth = maxHealth;
         this.location = location;
+        this.inventory = inventory;
     }
 
-    
-    
+    @Override
+    public String toString() {
+        return "Player{" + "name=" + name + ", playerEquipment=" + playerEquipment + ", characterSheet=" + characterSheet + ", playerRace=" + playerRace + ", playerClass=" + playerClass + ", health=" + health + ", poison=" + poison + ", maxHealth=" + maxHealth + ", location=" + location + ", inventory=" + inventory + '}';
+    }    
 }

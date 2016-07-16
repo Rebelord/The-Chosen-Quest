@@ -21,12 +21,14 @@ public class CheckHealth {
         int charMaxHealth = player.getMaxHealth();
 
         // Perform Sanity Checks
-        if ((poison <= 0) && (rest == false)) {
-            return -1;
-        }
         if (health <= 0) {
             throw new LoseGameException("Wipe yourself off, you dead.");
         }
+        
+        if ((poison <= 0) && (rest == false)) {
+            return health;
+        }
+        
 
         // Lets make some changes to your health.
         if (rest == true) {
