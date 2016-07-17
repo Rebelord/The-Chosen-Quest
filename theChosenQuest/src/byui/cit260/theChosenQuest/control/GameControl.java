@@ -113,36 +113,99 @@ public class GameControl {
 
         List<Creatures> creatureList = new ArrayList<>();
 
+        Creatures dragon = new Creatures();
+        dragon.setName("Dragon");
+        dragon.setHp(100);
+        dragon.setAttack(15);
+        dragon.setHit(15);
+        dragon.setDefense(6);
+        dragon.setGoldDrop(150);
+        creatureList.add(dragon);
+        
+        Creatures spider = new Creatures();
+        spider.setName("Spider");
+        spider.setHp(25);
+        spider.setAttack(6);
+        spider.setHit(11);
+        spider.setDefense(1);
+        spider.setGoldDrop(1);
+        creatureList.add(spider);
+        
+        Creatures troll = new Creatures();
+        troll.setName("Troll");
+        troll.setHp(20);
+        troll.setAttack(8);
+        troll.setHit(13);
+        troll.setDefense(3);
+        troll.setGoldDrop(10);
+        creatureList.add(troll);
+        
+        Creatures skeleton = new Creatures();
+        skeleton.setName("skeleton");
+        skeleton.setHp(30);
+        skeleton.setAttack(5);
+        skeleton.setHit(11);
+        skeleton.setDefense(1);
+        skeleton.setGoldDrop(1);
+        creatureList.add(skeleton);
+        
+        Creatures mimic = new Creatures();
+        mimic.setName("Skeleton");
+        mimic.setHp(25);
+        mimic.setAttack(6);
+        mimic.setHit(11);
+        mimic.setDefense(1);
+        mimic.setGoldDrop(1);
+        creatureList.add(mimic);
+        
+        Creatures beholder = new Creatures();
+        beholder.setName("Beholder");
+        beholder.setHp(25);
+        beholder.setAttack(6);
+        beholder.setHit(11);
+        beholder.setDefense(1);
+        beholder.setGoldDrop(1);
+        creatureList.add(beholder);
+        
+        Creatures lich = new Creatures();
+        lich.setName("Lich");
+        lich.setHp(25);
+        lich.setAttack(6);
+        lich.setHit(11);
+        lich.setDefense(1);
+        lich.setGoldDrop(1);
+        creatureList.add(lich);
+        
+        Creatures rat = new Creatures();
+        rat.setName("Rat");
+        rat.setHp(25);
+        rat.setAttack(6);
+        rat.setHit(11);
+        rat.setDefense(1);
+        rat.setGoldDrop(1);
+        creatureList.add(rat);
+        
+        Creatures minotaur = new Creatures();
+        minotaur.setName("Minotaur");
+        minotaur.setHp(25);
+        minotaur.setAttack(6);
+        minotaur.setHit(11);
+        minotaur.setDefense(1);
+        minotaur.setGoldDrop(1);
+        creatureList.add(minotaur);
+        
         Creatures blob = new Creatures();
         blob.setName("Ooze");
         blob.setHp(10);
         blob.setAttack(5);
-        blob.setHit(15);
+        blob.setHit(12);
         blob.setDefense(3);
         blob.setGoldDrop(15);
         creatureList.add(blob);
 
         Creatures wolf = new Creatures();
         wolf.setName("Dire Wolf");
-        wolf.setHp(10);
-        wolf.setAttack(5);
-        wolf.setHit(12);
-        wolf.setDefense(4);
-        wolf.setGoldDrop(5);
-        creatureList.add(wolf);
-        
-        Creatures blob2 = new Creatures();
-        blob.setName("Ooze");
-        blob.setHp(10);
-        blob.setAttack(5);
-        blob.setHit(15);
-        blob.setDefense(3);
-        blob.setGoldDrop(15);
-        creatureList.add(blob);
-
-        Creatures wolf2 = new Creatures();
-        wolf.setName("Dire Wolf");
-        wolf.setHp(10);
+        wolf.setHp(15);
         wolf.setAttack(5);
         wolf.setHit(12);
         wolf.setDefense(4);

@@ -17,5 +17,9 @@ public enum CreatureType {
     Spider,
     Beholder,
     Mimic,
-    Lich
+    Lich,
+    Dragon,
+    Rat,
+    Minotaur
+    
 }
