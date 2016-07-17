@@ -33,14 +33,18 @@ public class CombatDamageController {
         return combatSuccess > 0;
     }
 
-    public int AttackRoll(int attack, int defense) {
+    public int AttackRoll(int attack, int defense, boolean creatureAttack) {
 
-        // Intializing the Dice Random.
+        // Intializing variables.
         DiceFaces diceRoll = new DiceFaces();
+        int damage;            
         
         // Calculate attack damage.
-        int damage = attack - defense;
-
+        if (creatureAttack)
+            damage = diceRoll.rollTheDice(attack) - defense;
+        else 
+            damage = attack - defense;
+       
         if (damage < 0)
             damage = 0;
         

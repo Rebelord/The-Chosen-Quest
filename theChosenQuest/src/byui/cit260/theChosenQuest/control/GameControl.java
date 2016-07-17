@@ -5,12 +5,15 @@
  */
 package byui.cit260.theChosenQuest.control;
 
+import byui.cit260.theChosenQuest.exception.WinGameException;
 import byui.cit260.theChosenQuest.model.Creatures;
 import byui.cit260.theChosenQuest.model.Equipment;
 import byui.cit260.theChosenQuest.model.Game;
 import byui.cit260.theChosenQuest.model.Location;
 import byui.cit260.theChosenQuest.model.LocationType;
+import static byui.cit260.theChosenQuest.model.LocationType.Encampment;
 import static byui.cit260.theChosenQuest.model.LocationType.Shop;
+import static byui.cit260.theChosenQuest.model.LocationType.Tavern;
 import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.model.Map;
 import byui.cit260.theChosenQuest.view.CombatView;
@@ -98,6 +101,12 @@ public class GameControl {
                 int col = (int) (Math.random() * Map.NUM_COLS);
 
                 success = false;
+                
+                // Make sure there aren't creatures at Taverns or Shops.
+                while (map.getLocation(row, col).getType() == Shop || map.getLocation(row, col).getType() == Tavern){
+                    row = (int) (Math.random() * Map.NUM_ROWS);
+                    col = (int) (Math.random() * Map.NUM_COLS);
+                }
 
                 if (map.getLocation(row, col).getCreatures() == null) {
                     map.getLocation(row, col).setCreatures(c);
@@ -367,7 +376,6 @@ public class GameControl {
         Location location = player.getLocation();
         if (location.getCreatures() != null)
             location.setCreatures(null);
-        return;
     }
 
     public boolean findShop(Player player) {
@@ -381,5 +389,17 @@ public class GameControl {
             return true;
         }
         return false;
+    }
+    
+    public boolean findRestStop(Player player) {
+        // Grab LocationType and save to variable
+        LocationType currentLocation = TheChosenQuest.getCurrentGame().getPlayer().getLocation().getType();
+        // Check LocationType for Shop, then Display ShopView
+        return currentLocation == Encampment || currentLocation == Tavern;
+    }
+    
+    public void dragonCheck(Player player) throws WinGameException {
+        if (player.getLocation().getCreatures().getName() == "Dragon")
+            throw new WinGameException("Dragon Dead!");      
     }
 }

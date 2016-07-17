@@ -19,7 +19,9 @@ public class DiceFaces{
             Random rand = new Random();
             
             // Sanity Check
-            if ((diceChoice != 20) && (diceChoice != 10) && (diceChoice != 8) && (diceChoice != 8) && (diceChoice != 6)) {
+            if ((diceChoice != 20) && (diceChoice != 12) && (diceChoice != 10)
+                    && (diceChoice != 8) && (diceChoice != 8)
+                    && (diceChoice != 6) && (diceChoice != 4)) {
                 return -1;
             }
             
@@ -27,6 +29,9 @@ public class DiceFaces{
             switch (diceChoice) {
                 case 20:
                     roll = rand.nextInt(20) + 1;
+                    break;
+                case 12:
+                    roll = rand.nextInt(12) + 1;
                     break;
                 case 10:
                     roll = rand.nextInt(10) + 1;
@@ -36,6 +41,9 @@ public class DiceFaces{
                     break;
                 case 6:
                     roll = rand.nextInt(6) + 1;
+                    break;
+                case 4:
+                    roll = rand.nextInt(4) + 1;
                     break;
                 default:
                     break;

@@ -9,6 +9,7 @@ import byui.cit260.theChosenQuest.control.CheckHealth;
 import byui.cit260.theChosenQuest.control.CombatDamageController;
 import byui.cit260.theChosenQuest.control.GameControl;
 import byui.cit260.theChosenQuest.exception.LoseGameException;
+import byui.cit260.theChosenQuest.exception.WinGameException;
 import byui.cit260.theChosenQuest.model.Creatures;
 import byui.cit260.theChosenQuest.model.Player;
 import static thechosenquest.TheChosenQuest.player;
@@ -80,7 +81,7 @@ public class CombatView extends View {
         if (attackScucces) {
 
             // Get damage from attack.
-            int damage = combat.AttackRoll(playerAttack, creature.getDefense());
+            int damage = combat.AttackRoll(playerAttack, creature.getDefense(), false);
             console.println("\nYou hit " + creature.getName()
                     + " for " + damage + " damage.\n");
 
@@ -93,12 +94,10 @@ public class CombatView extends View {
             else {
                 
                 // Display message to user upon creature defeat.
-                console.println("***You've defeated the " + creature.getName() + "***\n");
+                console.println("*** You've defeated the " + creature.getName() + " ***\n");
                 
                 // Disperse rewards to player sometimes.
                 Inventory inventory = player.getInventory();
-                console.println(inventory.getGold());
-                console.println(creature.getGoldDrop());
                 inventory.setGold(inventory.getGold() + creature.getGoldDrop());
                 player.setInventory(inventory);
                 console.println("You receive " + creature.getGoldDrop() + " gold for a total of " +
@@ -109,6 +108,15 @@ public class CombatView extends View {
                 
                 // Display player current health.
                 console.println("Your health is at " + player.getHealth() + "\n");
+                
+                // Check for Win Game.
+                try {
+                    GameControl gameControl = new GameControl();
+                    gameControl.dragonCheck(player);
+                } catch (WinGameException wge) {
+                    console.println("*** You WIN! ***\n");
+                    System.exit(0);
+                }
 
                 // Return player to movement.
                 MovementView moveMe = new MovementView();
@@ -129,7 +137,7 @@ public class CombatView extends View {
         if (attackScucces) {
 
             // Get damage from attack.
-            int damage = combat.AttackRoll(creature.getAttack(), playerDefense);
+            int damage = combat.AttackRoll(creature.getAttack(), playerDefense, true);
             console.println("\nThe creature attacks you for " + damage + " damage.\n");
 
             // Apply damage to player.

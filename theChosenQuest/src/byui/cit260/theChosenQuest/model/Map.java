@@ -5,6 +5,9 @@
  */
 package byui.cit260.theChosenQuest.model;
 
+import static byui.cit260.theChosenQuest.model.LocationType.Encampment;
+import static byui.cit260.theChosenQuest.model.LocationType.Shop;
+import static byui.cit260.theChosenQuest.model.LocationType.Tavern;
 import java.io.Serializable;
 
 /**
@@ -24,6 +27,11 @@ public class Map implements Serializable {
     }
 
     public void mapMaker() {
+        
+            // Initalize vairable.
+            int shopMax = 0;
+            int campMax = 0;
+            int tavernMax = 0;
     
             // Loop for random map generation.
             for (int row = 0; row < NUM_ROWS; row++) {
@@ -32,6 +40,38 @@ public class Map implements Serializable {
                     
                     // Create a random location type
                     loc.setType(LocationType.values()[(int) (Math.random() * LocationType.values().length)]);
+                    
+                    // Prevent more than 3 Shops.
+                    if (loc.getType() == Shop) {
+                        shopMax++;
+                    }
+                    if (shopMax > 2) {
+                        while (loc.getType() == Shop) {
+                            loc.setType(LocationType.values()[(int) (Math.random() * LocationType.values().length)]);
+                        }
+                    }
+                    
+                    // Prevent more than 3 Tavern.
+                    if (loc.getType() == Tavern) {
+                        tavernMax++;
+                    }
+                    if (tavernMax > 2) {
+                        while (loc.getType() == Tavern) {
+                            loc.setType(LocationType.values()[(int) (Math.random() * LocationType.values().length)]);
+                        }
+                    }
+                    
+                    // Prevent more than 3 Camps.
+                    if (loc.getType() == Encampment) {
+                        campMax++;
+                    }
+                    if (campMax > 2) {
+                        while (loc.getType() == Encampment) {
+                            loc.setType(LocationType.values()[(int) (Math.random() * LocationType.values().length)]);
+                        }
+                    }
+                    
+                    // Set location.
                     loc.setRow(row);
                     loc.setCol(col);
                     

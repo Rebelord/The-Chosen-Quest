@@ -187,20 +187,24 @@ public class MovementView extends View {
     }
 
     private void takeNap() {
-        // Health check on movement for poisons.
-        try {
-            // Initalize rest
-            boolean rest = true;
-            CheckHealth life = new CheckHealth();
-            // Check rest state and apply.
-            int health = life.checkHealth(player, rest);
-            player.setHealth(health);
-        } catch (LoseGameException wipe) {
-            // Yippee Ki Yay Mam
-            console.println("\n***** Wipe yourself off, you dead! *****");
-        } finally {
-            console.println("\nHealth: " + player.getHealth());
-        }
+        // Limite rest to Camp and Tavern.
+        GameControl find = new GameControl();
+        if (find.findRestStop(player)) {
+            try {
+                // Initalize rest
+                boolean rest = true;
+                CheckHealth life = new CheckHealth();
+                // Check rest state and apply.
+                int health = life.checkHealth(player, rest);
+                player.setHealth(health);
+            } catch (LoseGameException wipe) {
+                // Yippee Ki Yay Mam
+                console.println("\n***** Wipe yourself off, you dead! *****");
+            } finally {
+                console.println("\nHealth: " + player.getHealth());
+            }
+        } else
+            console.println("You may only rest at a Tavern or Camp.\n");
     }
 
 //    private void drinkPoison() {

@@ -12,8 +12,8 @@ package byui.cit260.theChosenQuest.model;
 public enum LocationType {
     Tavern,
     Shop,
-    Camp,
+    Encampment,
     Field,
     Lake,
-    Cave
+    Crypt
 }
