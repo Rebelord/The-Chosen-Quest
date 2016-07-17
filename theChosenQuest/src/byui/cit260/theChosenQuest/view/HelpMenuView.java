@@ -21,6 +21,7 @@ public class HelpMenuView extends View{
                   + "\n--------------------------------------------------------"
                   + "\n| G - The Goal of your Quest.                          |"
                   + "\n| M - Movement and how to use your lower limbs.        |"
+                  + "\n| L - Map and Legend guide                             |"
                   + "\n| C - Combat, The Idiot's Guide to your Defense.       |"
                   + "\n| N - Non-Sentient beings and their role.              |"
                   + "\n| I - Inventory, Finders Keepers rules apply.          |"
@@ -48,6 +49,9 @@ public class HelpMenuView extends View{
             case "I": // Show Inventory Management info.
                 this.loadInventoryInfo();
                 break;
+            case "L":
+                this.loadLegendInfo();
+                break;
             default:
                 console.println("\n*** Divine Fat Finger Error *** Please try again!");
                 break;
@@ -58,11 +62,14 @@ public class HelpMenuView extends View{
 
     private void loadGoalInfo() {
         console.println("\n*** Your quest, should you chose to accept it is"
-                         +  "\n to transverse the wilds around Elspeth to" +
-                            "\n find the cause of all the troubles that have" +
-                            "\n befallen the poor towns people. Can you survive" +
-                            "\n the hordes of monsters and bring peace back to" +
-                            "\n the land?***");
+                         +  "\n to transverse the town of Elspeth to find the" +
+                            "\n cause of all the troubles that have befallen" +
+                            "\n the poor towns people. Can you survive the " +
+                            "\n hordes of monsters and bring peace back to" +
+                            "\n the land?*** You must locate and defeat the" +
+                            "\n Dragon to bring peace back to the land. Be" +
+                            "\n wary player, for you are crunchy and taste good" +
+                            "\n with ketchup!");
     }
 
     private void loadMovementInfo() {
@@ -90,6 +97,20 @@ public class HelpMenuView extends View{
     private void loadInventoryInfo() {
         console.println("\n*** This will explain how to equip items you find"+
                 "\n look at items, and a brief description of the different items***");
+    }
+
+    private void loadLegendInfo() {
+        console.println("\n *** This is an explination on how to read your map." +
+                        "\n You start in the location 0,0 which is in the top" +
+                        "\n right corner of the map. Each letter represents a" +
+                        "\n certain location type. Those location types are as follows:" +
+                        "\n T - Tavern" +
+                        "\n S - Shop" +
+                        "\n E - Encampment" +
+                        "\n C - Crypt" +
+                        "\n L - Shallow Lake" +
+                        "\n F - Field"+
+                        "\n You are only able to rest in Taverns and Encampments");
     }
 
 }
