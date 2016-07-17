@@ -125,7 +125,7 @@ public class GameControl {
         Creatures dragon = new Creatures();
         dragon.setName("Dragon");
         dragon.setHp(100);
-        dragon.setAttack(15);
+        dragon.setAttack(6);
         dragon.setHit(15);
         dragon.setDefense(6);
         dragon.setGoldDrop(150);

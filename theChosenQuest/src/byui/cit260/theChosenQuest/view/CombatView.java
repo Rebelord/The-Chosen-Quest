@@ -101,10 +101,7 @@ public class CombatView extends View {
                 inventory.setGold(inventory.getGold() + creature.getGoldDrop());
                 player.setInventory(inventory);
                 console.println("You receive " + creature.getGoldDrop() + " gold for a total of " +
-                        player.getInventory().getGold() + " gold.\n");
-
-                //Remove defeated creature from map.
-                game.removeCreature(player);
+                player.getInventory().getGold() + " gold.\n");
                 
                 // Display player current health.
                 console.println("Your health is at " + player.getHealth() + "\n");
@@ -117,6 +114,9 @@ public class CombatView extends View {
                     console.println("*** You WIN! ***\n");
                     System.exit(0);
                 }
+                
+                //Remove defeated creature from map.
+                game.removeCreature(player);
 
                 // Return player to movement.
                 MovementView moveMe = new MovementView();
