@@ -16,6 +16,7 @@ import static byui.cit260.theChosenQuest.model.LocationType.Shop;
 import static byui.cit260.theChosenQuest.model.LocationType.Tavern;
 import byui.cit260.theChosenQuest.model.Player;
 import byui.cit260.theChosenQuest.model.Map;
+import byui.cit260.theChosenQuest.model.Spells;
 import byui.cit260.theChosenQuest.view.CombatView;
 import byui.cit260.theChosenQuest.view.ErrorView;
 import byui.cit260.theChosenQuest.view.ShopView;
@@ -407,4 +408,47 @@ public class GameControl {
         if (player.getLocation().getCreatures().getName() == "Dragon")
             throw new WinGameException("Dragon Dead!");      
     }
+    
+    public static List<Spells> createSpellsList() {
+
+        List<Spells> spellsList = new ArrayList<>();
+    
+        Spells fireball = new Spells();
+        fireball.setName("Fireball");
+        fireball.setAttack(15);
+        fireball.setDescription("Hurls a fireball at your enemy.");
+        spellsList.add(fireball);
+        
+        Spells magicMissle = new Spells();
+        magicMissle.setName("Magic Missle");
+        magicMissle.setAttack(10);
+        magicMissle.setDescription("You point your finger at the enemy and an arcane blast hurtles at them.");
+        magicMissle.setType("Arcane");
+        spellsList.add(magicMissle);
+        
+        Spells iceSpike = new Spells();
+        iceSpike.setName("Ice Spike");
+        iceSpike.setAttack(20);
+        iceSpike.setDescription("The ground below your foe freezes before a spike shoots up from the ground impaling it.");
+        iceSpike.setType("Ice");
+        spellsList.add(iceSpike);
+        
+        Spells earthquake = new Spells();
+        earthquake.setName("Earthquake");
+        earthquake.setAttack(20);
+        earthquake.setDescription("The ground shakes and collapses under your foe.");
+        earthquake.setType("Earth");
+        spellsList.add(earthquake);
+        
+        Spells gust = new Spells();
+        gust.setName("Gust");
+        gust.setAttack(8);
+        gust.setDescription("The four winds surround your enemy and lifts them off the ground before dropping them back to the earth.");
+        gust.setType("Wind");
+        spellsList.add(gust);
+        
+        
+        
+        return spellsList;
+    }    
 }
