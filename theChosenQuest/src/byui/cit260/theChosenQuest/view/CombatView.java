@@ -23,9 +23,8 @@ public class CombatView extends View {
 
     public CombatView(Player player) {
         super(" You are under attack by a " + player.getLocation().getCreatures().getName()
-                + "\n Please decide what you want to do."
                 + "\n"
-                + "\n You may ..."
+                + "\n You may ...\n"
                 + "\n  A - Attack your opponent"
                 + "\n  D - Defend against your opponents attack"
                 + "\n  P - Drink a potion (if you have one)"
@@ -175,7 +174,10 @@ public class CombatView extends View {
         try {
             check.checkHealth(player, rest);
         } catch (LoseGameException lge) {
-            console.println("\n*** You have been defeated by " + creature.getName() + " ***");
+            console.println("\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            console.println("\n\tYou have been defeated by " + creature.getName() + "");
+            console.println("\n\tWipe yourself off " + player.getName() + ", you DEAD!");
+            console.println("\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
             System.exit(0);
         } finally {
             if (player.getHealth() <= 10) {
