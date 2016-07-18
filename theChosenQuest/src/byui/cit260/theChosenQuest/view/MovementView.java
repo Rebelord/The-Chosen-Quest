@@ -11,7 +11,6 @@ import byui.cit260.theChosenQuest.control.MovementController;
 import byui.cit260.theChosenQuest.exception.LoseGameException;
 import byui.cit260.theChosenQuest.model.Location;
 import byui.cit260.theChosenQuest.exception.MovementException;
-import java.util.Scanner;
 import thechosenquest.TheChosenQuest;
 import static thechosenquest.TheChosenQuest.player;
 
@@ -181,9 +180,12 @@ public class MovementView extends View {
     }
 
     private void viewMap() {
+        console.println("\n\n---------------------------------");
         console.println(TheChosenQuest.getCurrentGame().getMap().getMapString());
+        console.println("---------------------------------");
         Location currentLocation = TheChosenQuest.getCurrentGame().getPlayer().getLocation();
-        console.println("You are currently at: (" + currentLocation.getRow() + "," + currentLocation.getCol() + ") Type: " + currentLocation.getType());
+        console.println("Legend: T - Tavern | S - Shop | C - Crypt | E - Encampment | L - Shallow Lake | F - Field\n");
+        console.println("You are currently at: (" + currentLocation.getRow() + "," + currentLocation.getCol() + ") Type: " + currentLocation.getType() + "\n");
     }
 
     private void takeNap() {

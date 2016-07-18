@@ -89,7 +89,8 @@ public class Map implements Serializable {
             for (int col = 0; col < NUM_COLS; col++) {
                 map += matrix[row][col].getType().name().charAt(0) + "\t";
            }
-            map += "\n";
+            if (row != (NUM_ROWS - 1))
+                map += "\n";
         }
         return map;
     }
