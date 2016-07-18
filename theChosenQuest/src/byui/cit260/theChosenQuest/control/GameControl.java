@@ -448,5 +448,39 @@ public class GameControl {
         spellsList.add(gust);
                 
         return spellsList;
-    }    
+    } 
+    
+    public int weaponAttack(Player player) {
+        
+        // Intialize variables.
+        int attack = 0;
+        
+        // Grab the player's inventory.
+        List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();
+        
+        // Add attack for each weapon equiped.
+        for (Equipment e : playerEquipment) {
+            if (e.getEquiped())
+                attack += e.getAttack();
+        }
+            
+        return attack;
+    }
+    
+    public int armourDefense(Player player) {
+        
+        // Intialize variables.
+        int defense = 0;
+        
+        // Grab the player's inventory.
+        List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();
+        
+        // Add defense for each armour piece equiped.
+        for (Equipment e : playerEquipment) {
+            if (e.getEquiped())
+                defense += e.getDefense();
+        }
+            
+        return defense;
+    }
 }

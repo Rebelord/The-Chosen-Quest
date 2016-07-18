@@ -50,4 +50,5 @@ public class CombatDamageController {
         
         return damage;
     }
+    
 }
