@@ -138,7 +138,7 @@ public class CombatView extends View {
 
             // Get damage from attack.
             int damage = combat.AttackRoll(creature.getAttack(), playerDefense, true);
-            console.println("\nThe creature attacks you for " + damage + " damage.\n");
+            console.println("\nThe " + creature.getName() + " attacks you for " + damage + " damage.\n");
 
             // Apply damage to player.
             player.setHealth(player.getHealth() - damage);

@@ -54,8 +54,8 @@ public class CharacterRace extends View {
     
     private void dwarf() {
         TheChosenQuest.player.setPlayerRace("Dwarf");
-        TheChosenQuest.player.setHealth(30);
-        TheChosenQuest.player.setMaxHealth(30);
+        TheChosenQuest.player.setHealth(100);
+        TheChosenQuest.player.setMaxHealth(100);
         TheChosenQuest.player.setPoison(0);
         console.println ("Create a new dwarf hero fuction is called");
         CharacterClass charClass = new CharacterClass();
@@ -64,8 +64,8 @@ public class CharacterRace extends View {
 
     private void human() {
         TheChosenQuest.player.setPlayerRace("Human");
-        TheChosenQuest.player.setHealth(30);
-        TheChosenQuest.player.setMaxHealth(30);
+        TheChosenQuest.player.setHealth(80);
+        TheChosenQuest.player.setMaxHealth(80);
         TheChosenQuest.player.setPoison(0);
         console.println ("Create a new Human hero fuction is called");
         CharacterClass charClass = new CharacterClass();
@@ -74,8 +74,8 @@ public class CharacterRace extends View {
 
     private void halfling() {
         TheChosenQuest.player.setPlayerRace("Halfling");
-        TheChosenQuest.player.setHealth(30);
-        TheChosenQuest.player.setMaxHealth(30);
+        TheChosenQuest.player.setHealth(60);
+        TheChosenQuest.player.setMaxHealth(60);
         TheChosenQuest.player.setPoison(0);
         console.println ("Create a new Halfling hero fuction is called");
         CharacterClass charClass = new CharacterClass();
@@ -84,8 +84,8 @@ public class CharacterRace extends View {
 
     private void elf() {
         TheChosenQuest.player.setPlayerRace("Elf");
-        TheChosenQuest.player.setHealth(30);
-        TheChosenQuest.player.setMaxHealth(30);
+        TheChosenQuest.player.setHealth(70);
+        TheChosenQuest.player.setMaxHealth(70);
         TheChosenQuest.player.setPoison(0);
         console.println ("Create a new Elf hero fuction is called");
         CharacterClass charClass = new CharacterClass();

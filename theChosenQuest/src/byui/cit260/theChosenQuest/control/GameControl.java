@@ -122,109 +122,111 @@ public class GameControl {
 
         List<Creatures> creatureList = new ArrayList<>();
 
+        // All stats are from D&D book divided by 2 save setDefense and Dragon HP.
+        
         Creatures dragon = new Creatures();
         dragon.setName("Dragon");
-        dragon.setHp(100);
-        dragon.setAttack(6);
+        dragon.setHp(200);
+        dragon.setAttack(12);
         dragon.setHit(15);
-        dragon.setDefense(6);
-        dragon.setGoldDrop(150);
+        dragon.setDefense(4);
+        dragon.setGoldDrop(1500);
         creatureList.add(dragon);
         
         Creatures spider = new Creatures();
         spider.setName("Spider");
-        spider.setHp(25);
+        spider.setHp(27);
         spider.setAttack(6);
-        spider.setHit(11);
+        spider.setHit(10);
         spider.setDefense(1);
-        spider.setGoldDrop(1);
+        spider.setGoldDrop(2);
         creatureList.add(spider);
         
         Creatures troll = new Creatures();
         troll.setName("Troll");
-        troll.setHp(20);
+        troll.setHp(50);
         troll.setAttack(8);
-        troll.setHit(13);
+        troll.setHit(10);
         troll.setDefense(3);
         troll.setGoldDrop(10);
         creatureList.add(troll);
         
         Creatures skeleton = new Creatures();
-        skeleton.setName("skeleton");
-        skeleton.setHp(30);
-        skeleton.setAttack(5);
-        skeleton.setHit(11);
+        skeleton.setName("Skeleton");
+        skeleton.setHp(10);
+        skeleton.setAttack(4);
+        skeleton.setHit(8);
         skeleton.setDefense(1);
-        skeleton.setGoldDrop(1);
+        skeleton.setGoldDrop(3);
         creatureList.add(skeleton);
         
         Creatures mimic = new Creatures();
-        mimic.setName("Skeleton");
+        mimic.setName("Mimic");
         mimic.setHp(25);
         mimic.setAttack(6);
         mimic.setHit(11);
         mimic.setDefense(1);
-        mimic.setGoldDrop(1);
+        mimic.setGoldDrop(15);
         creatureList.add(mimic);
         
         Creatures beholder = new Creatures();
         beholder.setName("Beholder");
-        beholder.setHp(25);
-        beholder.setAttack(6);
-        beholder.setHit(11);
+        beholder.setHp(60);
+        beholder.setAttack(10);
+        beholder.setHit(13);
         beholder.setDefense(1);
-        beholder.setGoldDrop(1);
+        beholder.setGoldDrop(25);
         creatureList.add(beholder);
         
         Creatures lich = new Creatures();
         lich.setName("Lich");
-        lich.setHp(25);
-        lich.setAttack(6);
-        lich.setHit(11);
+        lich.setHp(54);
+        lich.setAttack(8);
+        lich.setHit(13);
         lich.setDefense(1);
-        lich.setGoldDrop(1);
+        lich.setGoldDrop(15);
         creatureList.add(lich);
         
         Creatures rat = new Creatures();
         rat.setName("Rat");
-        rat.setHp(25);
-        rat.setAttack(6);
-        rat.setHit(11);
+        rat.setHp(19);
+        rat.setAttack(4);
+        rat.setHit(7);
         rat.setDefense(1);
         rat.setGoldDrop(1);
         creatureList.add(rat);
         
         Creatures minotaur = new Creatures();
         minotaur.setName("Minotaur");
-        minotaur.setHp(25);
-        minotaur.setAttack(6);
+        minotaur.setHp(53);
+        minotaur.setAttack(8);
         minotaur.setHit(11);
         minotaur.setDefense(1);
-        minotaur.setGoldDrop(1);
+        minotaur.setGoldDrop(5);
         creatureList.add(minotaur);
         
         Creatures blob = new Creatures();
         blob.setName("Ooze");
-        blob.setHp(10);
-        blob.setAttack(5);
-        blob.setHit(12);
+        blob.setHp(51);
+        blob.setAttack(6);
+        blob.setHit(14);
         blob.setDefense(3);
-        blob.setGoldDrop(15);
+        blob.setGoldDrop(10);
         creatureList.add(blob);
 
         Creatures wolf = new Creatures();
         wolf.setName("Dire Wolf");
-        wolf.setHp(15);
-        wolf.setAttack(5);
+        wolf.setHp(26);
+        wolf.setAttack(6);
         wolf.setHit(12);
-        wolf.setDefense(4);
+        wolf.setDefense(3);
         wolf.setGoldDrop(5);
         creatureList.add(wolf);
 
         Creatures goblin = new Creatures();
         goblin.setName("Hobgoblin Soldier");
-        goblin.setHp(47);
-        goblin.setAttack(7);
+        goblin.setHp(23);
+        goblin.setAttack(8);
         goblin.setHit(12);
         goblin.setDefense(3);
         goblin.setGoldDrop(10);
@@ -261,16 +263,19 @@ public class GameControl {
 
         List<Equipment> equipmentList = new ArrayList<>();
 
+        // all weapon damage is what the dice roll would be (D4,6,8,10) . If we impliment this, we can take out the - defense for a true D&D experience.
+        // may make the game more interesting. Something to look into.
+        
         Equipment longSword = new Equipment();
         longSword.setName("Long Sword");
-        longSword.setAttack(5);
+        longSword.setAttack(8); 
         longSword.setDefense(0);
         longSword.setCost(15);
         equipmentList.add(longSword);
 
         Equipment shortSword = new Equipment();
         shortSword.setName("Short Sword");
-        shortSword.setAttack(4);
+        shortSword.setAttack(6);
         shortSword.setDefense(0);
         shortSword.setCost(10);
         equipmentList.add(shortSword);
@@ -285,35 +290,35 @@ public class GameControl {
 
         Equipment axe = new Equipment();
         axe.setName("Axe");
-        axe.setAttack(8);
+        axe.setAttack(10);
         axe.setDefense(0);
         axe.setCost(20);
         equipmentList.add(axe);
 
         Equipment longBow = new Equipment();
         longBow.setName("Long Bow");
-        longBow.setAttack(12);
+        longBow.setAttack(10);
         longBow.setDefense(0);
         longBow.setCost(30);
         equipmentList.add(longBow);
 
         Equipment shortBow = new Equipment();
         shortBow.setName("Short Bow");
-        shortBow.setAttack(10);
+        shortBow.setAttack(8);
         shortBow.setDefense(0);
         shortBow.setCost(25);
         equipmentList.add(shortBow);
 
         Equipment staff = new Equipment();
         staff.setName("Staff");
-        staff.setAttack(6);
+        staff.setAttack(8);
         staff.setDefense(0);
         staff.setCost(15);
         equipmentList.add(staff);
 
         Equipment mace = new Equipment();
         mace.setName("Mace");
-        mace.setAttack(7);
+        mace.setAttack(8);
         mace.setDefense(0);
         mace.setCost(18);
         equipmentList.add(mace);
@@ -355,7 +360,7 @@ public class GameControl {
 
         Equipment shield = new Equipment();
         shield.setName("Shield");
-        shield.setDefense(1);
+        shield.setDefense(2);
         shield.setCost(5);
         equipmentList.add(shield);
 

@@ -75,23 +75,28 @@ public class HelpMenuView extends View{
     private void loadMovementInfo() {
         console.println("\n*** This option will explain how to move your feet"+
                             "\n so that you can get from one area to the next." +
-                            "\n At this time it is not set yet but more than" +
-                            "\n likely it will be N to move north, S to move" +
-                            "\n south, E for east and W for west.***");
+                            "\n If you wish to move North, provided you are able" +
+                            "\n press 'N', 'S' for south, 'E' for east and" +
+                            "\n 'W' for west.***");
     }
 
     private void loadCombatInfo() {
         console.println("\n*** This option will display an explination of"+
-                "\n how to attack, defend, or run away. Default options will" +
-                "\n more than likely be A, D, R respectively. It may also contain" +
-                "\n how attack success is determined.***");
+                "\n how to attack, defend, use a potion, or run away. To attack" +
+                "\n the enemy, press 'A', to defend yourself and heal a small" +
+                "\n amount of your health press 'D'. To use a potion if you have" +
+                "\n any, press 'P'. To flee from combat because you are about to" +
+                "\n die, press 'R'. Please note that you can only rest at Taverns" +
+                "\n and Encampments***");
     }
 
     private void loadNpcInfo() {
         console.println("\n*** This will have information on how to interact" +
                 "\n with the NPCs of the game. This would include shops, POI's," +
-                "\n and the like. Such interactions of talking, selling, buying," +
-                "\n and if truly evil attacking NPCs.***");
+                "\n and the like. NPCs will occasionally appear in Taverns and" +
+                "\n Encampments to give you information that may help you along" +
+                "\n your quest. The shop keeper will also buy and sell you new" +
+                "\n equipment to help further your cause.***");
     }
 
     private void loadInventoryInfo() {

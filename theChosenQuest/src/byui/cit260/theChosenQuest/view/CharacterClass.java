@@ -59,15 +59,15 @@ public class CharacterClass extends View {
         TheChosenQuest.player.setPlayerClass("Fighter");
         
         // Set Player Health and MaxHealth
-        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() + 10);
-        TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth() + 10);
+        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() + 50);
+        TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth() + 50);
         
         // Give player a weapon.
         List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();
         Equipment longSword = new Equipment();
         longSword.setName("Long Sword");
         longSword.setType("Weapon");
-        longSword.setAttack(5);
+        longSword.setAttack(8);
         longSword.setDefense(0);
         longSword.setCost(15);
         longSword.setEquiped(true);
@@ -85,7 +85,7 @@ public class CharacterClass extends View {
         shield.setName("Shield");
         shield.setType("Armour");
         chainmail.setAttack(0);
-        shield.setDefense(1);
+        shield.setDefense(2);
         shield.setCost(5);
         shield.setEquiped(true);
 
@@ -110,14 +110,14 @@ public class CharacterClass extends View {
         TheChosenQuest.player.setPlayerClass("Mage");
         
         // Set Player Health and MaxHealth
-        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() - 5);
-        TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth() - 5);
+        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() +10);
+        TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth() + 10);
         // Give player a weapon
         List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();
         Equipment staff = new Equipment();
         staff.setName("Staff");
         staff.setType("Weapon");
-        staff.setAttack(6);
+        staff.setAttack(8);
         staff.setDefense(0);
         staff.setCost(15);
         staff.setEquiped(true);
@@ -150,14 +150,17 @@ public class CharacterClass extends View {
         // Set Player Class
         TheChosenQuest.player.setPlayerClass("Rouge");
         
-        // Rogue health stays default values.
+        // Rogue health stays default values. Increased for game balance.
+        // Set Player Health and MaxHealth
+        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() + 20);
+        TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth() + 20);
         
         // Give player some weapons
         List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();
         Equipment shortSword = new Equipment();
         shortSword.setName("Short Sword");
         shortSword.setType("Weapon");
-        shortSword.setAttack(4);
+        shortSword.setAttack(6);
         shortSword.setDefense(0);
         shortSword.setCost(10);
         shortSword.setEquiped(true);
@@ -200,15 +203,15 @@ public class CharacterClass extends View {
         TheChosenQuest.player.setPlayerClass("Hunter");
         
         // Set Player Health and MaxHealth
-        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() + 5);
-        TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth() + 5);
+        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() + 30);
+        TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth() + 30);
         
         // Give player a weapon.
         List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();
         Equipment shortBow = new Equipment();
         shortBow.setName("Short Bow");
         shortBow.setType("Weapon");
-        shortBow.setAttack(10);
+        shortBow.setAttack(8);
         shortBow.setDefense(0);
         shortBow.setCost(25);
         shortBow.setEquiped(true);
