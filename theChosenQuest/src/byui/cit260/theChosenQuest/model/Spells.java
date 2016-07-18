@@ -56,18 +56,23 @@ public class Spells implements Serializable{
     public void setType(String type) {
         this.type = type;
     }
+
+    public Boolean getEquiped() {
+        return equiped;
+    }
+
     public void setEquiped(Boolean equiped) {
         this.equiped = equiped;
     }
-    
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 59 * hash + Objects.hashCode(this.name);
-        hash = 59 * hash + this.attack;
-        hash = 59 * hash + Objects.hashCode(this.description);
-        hash = 59 * hash + Objects.hashCode(this.type);
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.name);
+        hash = 79 * hash + this.attack;
+        hash = 79 * hash + Objects.hashCode(this.description);
+        hash = 79 * hash + Objects.hashCode(this.type);
+        hash = 79 * hash + Objects.hashCode(this.equiped);
         return hash;
     }
 
@@ -95,19 +100,23 @@ public class Spells implements Serializable{
         if (!Objects.equals(this.type, other.type)) {
             return false;
         }
+        if (!Objects.equals(this.equiped, other.equiped)) {
+            return false;
+        }
         return true;
     }
 
-    public Spells(String name, int attack, String description, String type) {
+    public Spells(String name, int attack, String description, String type, Boolean equiped) {
         this.name = name;
         this.attack = attack;
         this.description = description;
         this.type = type;
+        this.equiped = equiped;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Spells{" + "name=" + name + ", attack=" + attack + ", description=" + description + ", type=" + type + ", equiped=" + equiped + '}';
+    }
 
-
-    
-           
 }
