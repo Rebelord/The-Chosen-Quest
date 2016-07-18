@@ -19,6 +19,7 @@ public class Player implements Serializable{
     // class instance variables
     private String name;
     private List<Equipment> playerEquipment = new ArrayList<>();
+    private List<Spells> playerSpells = new ArrayList<>();
     private int characterSheet;
     private String playerRace;
     private String playerClass;
@@ -46,6 +47,14 @@ public class Player implements Serializable{
 
     public void setPlayerEquipment(List<Equipment> playerEquipment) {
         this.playerEquipment = playerEquipment;
+    }
+
+    public List<Spells> getPlayerSpells() {
+        return playerSpells;
+    }
+
+    public void setPlayerSpells(List<Spells> playerSpells) {
+        this.playerSpells = playerSpells;
     }
 
     public int getCharacterSheet() {
@@ -114,17 +123,18 @@ public class Player implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + Objects.hashCode(this.name);
-        hash = 47 * hash + Objects.hashCode(this.playerEquipment);
-        hash = 47 * hash + this.characterSheet;
-        hash = 47 * hash + Objects.hashCode(this.playerRace);
-        hash = 47 * hash + Objects.hashCode(this.playerClass);
-        hash = 47 * hash + this.health;
-        hash = 47 * hash + this.poison;
-        hash = 47 * hash + this.maxHealth;
-        hash = 47 * hash + Objects.hashCode(this.location);
-        hash = 47 * hash + Objects.hashCode(this.inventory);
+        int hash = 3;
+        hash = 29 * hash + Objects.hashCode(this.name);
+        hash = 29 * hash + Objects.hashCode(this.playerEquipment);
+        hash = 29 * hash + Objects.hashCode(this.playerSpells);
+        hash = 29 * hash + this.characterSheet;
+        hash = 29 * hash + Objects.hashCode(this.playerRace);
+        hash = 29 * hash + Objects.hashCode(this.playerClass);
+        hash = 29 * hash + this.health;
+        hash = 29 * hash + this.poison;
+        hash = 29 * hash + this.maxHealth;
+        hash = 29 * hash + Objects.hashCode(this.location);
+        hash = 29 * hash + Objects.hashCode(this.inventory);
         return hash;
     }
 
@@ -164,6 +174,9 @@ public class Player implements Serializable{
         if (!Objects.equals(this.playerEquipment, other.playerEquipment)) {
             return false;
         }
+        if (!Objects.equals(this.playerSpells, other.playerSpells)) {
+            return false;
+        }
         if (!Objects.equals(this.location, other.location)) {
             return false;
         }
@@ -171,6 +184,11 @@ public class Player implements Serializable{
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" + "name=" + name + ", playerEquipment=" + playerEquipment + ", playerSpells=" + playerSpells + ", characterSheet=" + characterSheet + ", playerRace=" + playerRace + ", playerClass=" + playerClass + ", health=" + health + ", poison=" + poison + ", maxHealth=" + maxHealth + ", location=" + location + ", inventory=" + inventory + '}';
     }
 
     public Player(String name, int characterSheet, String playerRace, String playerClass, int health, int poison, int maxHealth, Location location, Inventory inventory) {
@@ -185,8 +203,8 @@ public class Player implements Serializable{
         this.inventory = inventory;
     }
 
-    @Override
-    public String toString() {
-        return "Player{" + "name=" + name + ", playerEquipment=" + playerEquipment + ", characterSheet=" + characterSheet + ", playerRace=" + playerRace + ", playerClass=" + playerClass + ", health=" + health + ", poison=" + poison + ", maxHealth=" + maxHealth + ", location=" + location + ", inventory=" + inventory + '}';
-    }    
-}
+   
+    }
+
+    
+   

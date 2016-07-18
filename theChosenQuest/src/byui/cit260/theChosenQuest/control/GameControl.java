@@ -446,9 +446,7 @@ public class GameControl {
         gust.setDescription("The four winds surround your enemy and lifts them off the ground before dropping them back to the earth.");
         gust.setType("Wind");
         spellsList.add(gust);
-        
-        
-        
+                
         return spellsList;
     }    
 }

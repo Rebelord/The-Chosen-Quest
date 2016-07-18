@@ -19,9 +19,10 @@ public class Spells implements Serializable{
     private int attack;
     private String description;
     private String type;
+    private Boolean equiped;
 
     public Spells() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     public String getName() {
@@ -55,6 +56,10 @@ public class Spells implements Serializable{
     public void setType(String type) {
         this.type = type;
     }
+    public void setEquiped(Boolean equiped) {
+        this.equiped = equiped;
+    }
+    
 
     @Override
     public int hashCode() {
@@ -99,6 +104,8 @@ public class Spells implements Serializable{
         this.description = description;
         this.type = type;
     }
+
+    
 
 
     

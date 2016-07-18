@@ -9,6 +9,7 @@ import byui.cit260.theChosenQuest.model.Equipment;
 import java.util.List;
 import thechosenquest.TheChosenQuest;
 import byui.cit260.theChosenQuest.model.Inventory;
+import byui.cit260.theChosenQuest.model.Spells;
 
 /**
  *
@@ -131,6 +132,41 @@ public class CharacterClass extends View {
         clothArmor.setCost(2);
         clothArmor.setEquiped(true);
         
+        // Give the mage some spells
+        Spells fireball = new Spells();
+        fireball.setName("Fireball");
+        fireball.setAttack(15);
+        fireball.setDescription("Hurls a fireball at your enemy.");
+        fireball.setEquiped(true);
+        
+        Spells magicMissle = new Spells();
+        magicMissle.setName("Magic Missle");
+        magicMissle.setAttack(10);
+        magicMissle.setDescription("You point your finger at the enemy and an arcane blast hurtles at them.");
+        magicMissle.setType("Arcane");
+        magicMissle.setEquiped(true);
+        
+        Spells iceSpike = new Spells();
+        iceSpike.setName("Ice Spike");
+        iceSpike.setAttack(20);
+        iceSpike.setDescription("The ground below your foe freezes before a spike shoots up from the ground impaling it.");
+        iceSpike.setType("Ice");
+        iceSpike.setEquiped(true);
+        
+        Spells earthquake = new Spells();
+        earthquake.setName("Earthquake");
+        earthquake.setAttack(20);
+        earthquake.setDescription("The ground shakes and collapses under your foe.");
+        earthquake.setType("Earth");
+        earthquake.setEquiped(true);
+        
+        Spells gust = new Spells();
+        gust.setName("Gust");
+        gust.setAttack(8);
+        gust.setDescription("The four winds surround your enemy and lifts them off the ground before dropping them back to the earth.");
+        gust.setType("Wind");
+        gust.setEquiped(true);
+        
         // Add Equipment to player inventory.
         playerEquipment.add(staff);
         playerEquipment.add(clothArmor);
@@ -141,9 +177,13 @@ public class CharacterClass extends View {
         inventory.setGold(25);
         TheChosenQuest.player.setInventory(inventory);
         
+        
+        
         console.println("You have chosen the way of the Mind. Wielder of the sacred arts. You are the brilliant mage.");
         MovementView moveMe = new MovementView();
         moveMe.display();
+        
+        
     }
 
     private void rouge() {
