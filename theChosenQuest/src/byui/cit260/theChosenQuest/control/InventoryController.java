@@ -6,9 +6,6 @@
 package byui.cit260.theChosenQuest.control;
 
 import byui.cit260.theChosenQuest.exception.InventoryError;
-import byui.cit260.theChosenQuest.model.Equipment;
-import java.util.List;
-import thechosenquest.TheChosenQuest;
 
 /**
  *

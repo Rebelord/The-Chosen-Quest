@@ -5,8 +5,6 @@
  */
 package byui.cit260.theChosenQuest.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Zack Durbin
@@ -21,7 +19,7 @@ public class HelpMenuView extends View{
                   + "\n--------------------------------------------------------"
                   + "\n| G - The Goal of your Quest.                          |"
                   + "\n| M - Movement and how to use your lower limbs.        |"
-                  + "\n| L - Map and Legend guide                             |"
+                  + "\n| L - Map & Legend guide.                              |"
                   + "\n| C - Combat, The Idiot's Guide to your Defense.       |"
                   + "\n| N - Non-Sentient beings and their role.              |"
                   + "\n| I - Inventory, Finders Keepers rules apply.          |"
@@ -107,15 +105,15 @@ public class HelpMenuView extends View{
     private void loadLegendInfo() {
         console.println("\n *** This is an explination on how to read your map." +
                         "\n You start in the location 0,0 which is in the top" +
-                        "\n right corner of the map. Each letter represents a" +
-                        "\n certain location type. Those location types are as follows:" +
+                        "\n left corner of the map. Each letter represents a" +
+                        "\n certain location type.\n\nThose location types are as follows:" +
                         "\n T - Tavern" +
-                        "\n S - Shop" +
+                        "\t S - Shop" +
                         "\n E - Encampment" +
-                        "\n C - Crypt" +
+                        "\t C - Crypt" +
                         "\n L - Shallow Lake" +
-                        "\n F - Field"+
-                        "\n You are only able to rest in Taverns and Encampments");
+                        "\t F - Field"+
+                        "\n Thou mayest only slumber at Taverns and Encampments.");
     }
 
 }

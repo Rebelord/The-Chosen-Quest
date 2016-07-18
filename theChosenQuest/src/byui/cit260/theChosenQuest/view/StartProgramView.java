@@ -116,9 +116,9 @@ public class StartProgramView {
     private void displayNextView(Player player) {
         // display a custom welcome message
         console.println("\n================================================="
-                         + "\n   Welcome to Elspeth " + player.getName()
-                         + "\n   May you succeed where others have failed."
-                         + "\n================================================"
+                      + "\n\t     Welcome to Elspeth " + player.getName()
+                      + "\n    May you succeed where others have failed."
+                      + "\n================================================="
                           );
         // create MainMenuView object
         MainMenuView mainMenuView = new MainMenuView();

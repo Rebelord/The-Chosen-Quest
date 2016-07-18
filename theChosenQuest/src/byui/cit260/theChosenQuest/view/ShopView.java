@@ -5,10 +5,12 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import byui.cit260.theChosenQuest.control.GameControl;
 import static byui.cit260.theChosenQuest.control.GameControl.listShopInventory;
 import byui.cit260.theChosenQuest.model.Equipment;
-import byui.cit260.theChosenQuest.model.Game;
-import thechosenquest.TheChosenQuest;
+import java.util.List;
+import java.util.Scanner;
+import static thechosenquest.TheChosenQuest.player;
 
 /**
  *
@@ -30,7 +32,7 @@ public class ShopView extends View {
 
     @Override
     public boolean doAction(String menuOption) {
-        menuOption = menuOption.toUpperCase(); // COnvert choice to Uppercase.
+        menuOption = menuOption.toUpperCase(); // Convert choice to Uppercase.
     
         switch (menuOption) {
             case "I": // Creates Item List
@@ -53,13 +55,55 @@ public class ShopView extends View {
     }
 
     private void EquipmentList() {
-        console.println("Here is what I have to offer:");
+        console.println("\nHere's what I have to offer:\n");
         
         listShopInventory();
     }
 
     private void buyItem() {
-        console.println("buy an item");
+        console.println("\nWhich item would you like to buy?\nType in the item number:");
+        Scanner keyboard = new Scanner(System.in);
+        String input = "";
+        try {
+            input = keyboard.nextLine();
+        } catch (Exception e) {
+            //buried
+        }
+
+        int choice = 0;
+        try {
+            choice = Integer.parseInt(input);
+        } catch (NumberFormatException nfe) {
+            console.println("Bad number input.");
+        }
+        
+        List<Equipment> equipmentList = GameControl.createEquipmentList();
+        List<Equipment> playerEquipment = player.getPlayerEquipment();
+        byui.cit260.theChosenQuest.model.Inventory inventory = player.getInventory();
+        
+        choice =+ 1;
+        int gold = player.getInventory().getGold();
+        int cost = equipmentList.get(choice).getCost();
+        console.println(gold + "gold " + cost + "cost");
+        
+        // Check if player can afford item.
+        if (gold >= cost) {
+            
+            // Apply cost
+            gold -= cost;
+            inventory.setGold(gold);
+            player.setInventory(inventory);
+            
+            // Add Item to equipment
+            playerEquipment.add(equipmentList.get(choice));
+            player.setPlayerEquipment(playerEquipment);
+            
+        } else {
+            
+            console.println("\n*** You don't have enough gold for that item. ***");
+            
+        }
+        
     }
 
     private void sellItem() {
@@ -67,7 +111,7 @@ public class ShopView extends View {
     }
 
     private void resumeGame() {
-       console.println("\n*** Good Luck!");
+       console.println("\n Good Luck! *low mumble* you'll need it.");
         MovementView moveMe = new MovementView();
         moveMe.display();
     }

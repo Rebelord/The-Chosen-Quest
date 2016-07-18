@@ -22,12 +22,12 @@ public class NpcView extends View {
                       + "\n"
                       + "\n   Do you wish to..."
                       + "\n"
-                      + "\n   A. Ignore him, and continue walking by."
-                      + "\n   B. Throw a few measealy coins in his direction."
-                      + "\n   C. Intiate combat for his insolence."
-                      + "\n   D. Offer advice on breaking devilweed addiction."
-                      + "\n   M. Open your menu to see what else you can do."    
-                      + "\n   Q. Cross to the other side of the street."
+                      + "\n\tA. Ignore him, and continue walking by."
+                      + "\n\tB. Throw a few measealy coins in his direction."
+                      + "\n\tC. Intiate combat for his insolence."
+                      + "\n\tD. Offer advice on breaking devilweed addiction."
+                      + "\n\tM. Open your menu to see what else you can do."    
+                      + "\n\tQ. Cross to the other side of the street."
                       + "\n");
     }
     

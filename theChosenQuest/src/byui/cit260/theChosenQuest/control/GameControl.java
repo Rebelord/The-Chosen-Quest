@@ -239,25 +239,50 @@ public class GameControl {
 
     public static void listShopInventory() {
         List<Equipment> equipment = createEquipmentList();
-
+        Boolean armourList = false;
+        int listItem = 1;
+        
+        // Display Header for Items
+        System.out.println("--- Weapons -----------------------------------");
+        System.out.println("Item Name\t\tCost\tAttack\tDefense");
+        System.out.println("-----------------------------------------------");
+        
+        // Loop to display shop list.
         for (Equipment e : equipment) {
-            System.out.println(e.getName());
-            System.out.println("$" + e.getCost() + " Gold");
-            System.out.println("+" + e.getAttack() + " to attack");
-            System.out.println("+" + e.getDefense() + " to defense\n");
+            
+            // Display header for Armour.
+            if (e.getType() == "Armour" && armourList != true) {
+                System.out.println("--- Armour ------------------------------------");
+                System.out.println("Item Name\t\tCost\tAttack\tDefense");
+                System.out.println("-----------------------------------------------");
+                armourList = true;
+            }
+            
+            // Fix formatting for short item names and display item.
+            if (e.getName().length() < 5)
+                System.out.println(listItem + ". " + e.getName() + "\t\t\t" + e.getCost() + "G\t+" + e.getAttack() + "\t+" + e.getDefense() + "\n");
+            else if (e.getName().length() > 11 && listItem > 9)
+                System.out.println(listItem + ". " + e.getName() + "\t" + e.getCost() + "G\t+" + e.getAttack() + "\t+" + e.getDefense() + "\n");
+            else
+                System.out.println(listItem + ". " + e.getName() + "\t\t" + e.getCost() + "G\t+" + e.getAttack() + "\t+" + e.getDefense() + "\n");
+            
+            listItem++;
         }
     }
     
     public static void showPlayerEquipment() {
         List<Equipment> equipment = TheChosenQuest.player.getPlayerEquipment();
+        
+        System.out.println("\n--- Inventory ---------------------------------");
+        System.out.println("Item Name\tEquipped\tAttack\tDefense");
+        System.out.println("-----------------------------------------------");
 
-        for (Equipment e : equipment) {
-            System.out.println(e.getName());
-            System.out.println("+" + e.getAttack() + " to attack");
-            System.out.println("+" + e.getDefense() + " to defense");
-            if (e.getEquiped() == true)
-                System.out.println("Equipped\n");
-        }
+        equipment.stream().forEach((e) -> {
+            if (e.getName().length() < 7)
+                System.out.println(e.getName() + "\t\t" + e.getEquiped() + "\t\t+" + e.getAttack() + "\t+" + e.getDefense());
+            else
+                System.out.println(e.getName() + "\t" + e.getEquiped() + "\t\t+" + e.getAttack() + "\t+" + e.getDefense());
+        });
     }
 
     public static List<Equipment> createEquipmentList() {
@@ -272,6 +297,8 @@ public class GameControl {
         longSword.setAttack(8); 
         longSword.setDefense(0);
         longSword.setCost(15);
+        longSword.setType("Weapon");
+        longSword.setEquiped(false);
         equipmentList.add(longSword);
 
         Equipment shortSword = new Equipment();
@@ -279,6 +306,8 @@ public class GameControl {
         shortSword.setAttack(6);
         shortSword.setDefense(0);
         shortSword.setCost(10);
+        shortSword.setType("Weapon");
+        shortSword.setEquiped(false);
         equipmentList.add(shortSword);
         
         Equipment dagger = new Equipment();
@@ -287,6 +316,8 @@ public class GameControl {
         dagger.setAttack(4);
         dagger.setDefense(0);
         dagger.setCost(5);
+        dagger.setType("Weapon");
+        dagger.setEquiped(false);
         equipmentList.add(dagger);
 
         Equipment axe = new Equipment();
@@ -294,6 +325,8 @@ public class GameControl {
         axe.setAttack(10);
         axe.setDefense(0);
         axe.setCost(20);
+        axe.setType("Weapon");
+        axe.setEquiped(false);
         equipmentList.add(axe);
 
         Equipment longBow = new Equipment();
@@ -301,6 +334,8 @@ public class GameControl {
         longBow.setAttack(10);
         longBow.setDefense(0);
         longBow.setCost(30);
+        longBow.setType("Weapon");
+        longBow.setEquiped(false);
         equipmentList.add(longBow);
 
         Equipment shortBow = new Equipment();
@@ -308,6 +343,8 @@ public class GameControl {
         shortBow.setAttack(8);
         shortBow.setDefense(0);
         shortBow.setCost(25);
+        shortBow.setType("Weapon");
+        shortBow.setEquiped(false);
         equipmentList.add(shortBow);
 
         Equipment staff = new Equipment();
@@ -315,6 +352,8 @@ public class GameControl {
         staff.setAttack(8);
         staff.setDefense(0);
         staff.setCost(15);
+        staff.setType("Weapon");
+        staff.setEquiped(false);
         equipmentList.add(staff);
 
         Equipment mace = new Equipment();
@@ -322,47 +361,61 @@ public class GameControl {
         mace.setAttack(8);
         mace.setDefense(0);
         mace.setCost(18);
+        mace.setType("Weapon");
+        mace.setEquiped(false);
         equipmentList.add(mace);
 
-        Equipment clothArmor = new Equipment();
-        clothArmor.setName("Cloth Armour");
-        clothArmor.setAttack(0);
-        clothArmor.setDefense(1);
-        clothArmor.setCost(2);
-        equipmentList.add(clothArmor);
+        Equipment clothArmour = new Equipment();
+        clothArmour.setName("Cloth Armour");
+        clothArmour.setAttack(0);
+        clothArmour.setDefense(1);
+        clothArmour.setCost(2);
+        clothArmour.setType("Armour");
+        clothArmour.setEquiped(false);
+        equipmentList.add(clothArmour);
 
         Equipment leatherArmour = new Equipment();
-        leatherArmour.setName("Leather Armor");
+        leatherArmour.setName("Leather Armour");
         leatherArmour.setAttack(0);
         leatherArmour.setDefense(2);
         leatherArmour.setCost(15);
+        leatherArmour.setType("Armour");
+        leatherArmour.setEquiped(false);
         equipmentList.add(leatherArmour);
 
-        Equipment scaleArmor = new Equipment();
-        scaleArmor.setName("Scale Armour");
-        scaleArmor.setAttack(0);
-        scaleArmor.setDefense(3);
-        scaleArmor.setCost(25);
-        equipmentList.add(scaleArmor);
+        Equipment scaleArmour = new Equipment();
+        scaleArmour.setName("Scale Armour");
+        scaleArmour.setAttack(0);
+        scaleArmour.setDefense(3);
+        scaleArmour.setCost(25);
+        scaleArmour.setType("Armour");
+        scaleArmour.setEquiped(false);
+        equipmentList.add(scaleArmour);
 
-        Equipment chainArmor = new Equipment();
-        chainArmor.setName("Chain Armour");
-        chainArmor.setAttack(0);
-        chainArmor.setDefense(4);
-        chainArmor.setCost(35);
-        equipmentList.add(chainArmor);
+        Equipment chainArmour = new Equipment();
+        chainArmour.setName("Chain Armour");
+        chainArmour.setAttack(0);
+        chainArmour.setDefense(4);
+        chainArmour.setCost(35);
+        chainArmour.setType("Armour");
+        chainArmour.setEquiped(false);
+        equipmentList.add(chainArmour);
 
         Equipment plateArmor = new Equipment();
         plateArmor.setName("Plate Armour");
         plateArmor.setAttack(0);
         plateArmor.setDefense(5);
         plateArmor.setCost(45);
+        plateArmor.setType("Armour");
+        plateArmor.setEquiped(false);
         equipmentList.add(plateArmor);
 
         Equipment shield = new Equipment();
         shield.setName("Shield");
         shield.setDefense(2);
         shield.setCost(5);
+        shield.setType("Armour");
+        shield.setEquiped(false);
         equipmentList.add(shield);
 
         return equipmentList;

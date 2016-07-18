@@ -102,7 +102,7 @@ public class GameMenuView extends View {
     }
     private void inventory() {
         console.println("What do I have with me that will help?");
-        Inventory inventory = new Inventory();
+        InventoryView inventory = new InventoryView();
         inventory.display();
     }
 }

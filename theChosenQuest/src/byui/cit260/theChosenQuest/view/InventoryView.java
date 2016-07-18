@@ -13,9 +13,9 @@ import byui.cit260.theChosenQuest.exception.InventoryError;
  *
  * @author ryandanielwebb
  */
-public class Inventory extends View {
+public class InventoryView extends View {
     
-    public Inventory() {
+    public InventoryView() {
               super("\n"
                   + "\n--------------------------------------------------------"
                   + "\n|                     Inventory                        |"

@@ -85,7 +85,7 @@ public class CharacterClass extends View {
         Equipment shield = new Equipment();
         shield.setName("Shield");
         shield.setType("Armour");
-        chainmail.setAttack(0);
+        shield.setAttack(0);
         shield.setDefense(2);
         shield.setCost(5);
         shield.setEquiped(true);
@@ -111,7 +111,7 @@ public class CharacterClass extends View {
         TheChosenQuest.player.setPlayerClass("Mage");
         
         // Set Player Health and MaxHealth
-        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() +10);
+        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() + 10);
         TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth() + 10);
         // Give player a weapon
         List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();
