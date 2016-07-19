@@ -5,9 +5,12 @@
  */
 package byui.cit260.theChosenQuest.view;
 
+import byui.cit260.theChosenQuest.control.GameControl;
 import static byui.cit260.theChosenQuest.control.GameControl.showPlayerEquipment;
-import byui.cit260.theChosenQuest.control.InventoryController;
-import byui.cit260.theChosenQuest.exception.InventoryError;
+import byui.cit260.theChosenQuest.model.Equipment;
+import java.util.List;
+import java.util.Scanner;
+import static thechosenquest.TheChosenQuest.player;
 
 /**
  *
@@ -61,19 +64,50 @@ public class InventoryView extends View {
     }
 
     private void loadDropItem() {
+        console.println("\nWhich item would you like to drop?\nType in the item number:");
+        Scanner keyboard = new Scanner(System.in);
+        String input = "";
         try {
-            boolean addItem = false;
-            boolean subtractItem = false;
-            int itemWeight = 10;
-            int playerMaxWeight = 100;
-            int bagWeight = 50;
-            
-            // Add some real working variables.
-            InventoryController bagMule = new InventoryController();
-            bagMule.inventoryController(addItem, subtractItem, itemWeight, playerMaxWeight, bagWeight);
-        } catch (InventoryError ie) {
-            console.println("You must drop an item");
+            input = keyboard.nextLine();
+        } catch (Exception e) {
+            //buried
         }
+
+        int choice = 0;
+        try {
+            choice = Integer.parseInt(input);
+        } catch (NumberFormatException nfe) {
+            console.println("Bad number input.");
+        }
+        
+        List<Equipment> equipmentList = GameControl.createEquipmentList();
+        List<Equipment> playerEquipment = player.getPlayerEquipment();
+        byui.cit260.theChosenQuest.model.Inventory inventory = player.getInventory();
+        
+        choice =+ 1;
+        int gold = player.getInventory().getGold();
+        int cost = equipmentList.get(choice).getCost();
+        console.println(gold + "gold " + cost + "cost");
+        
+        // Check if player can afford item.
+        if (gold >= cost) {
+            
+            // Apply cost
+            gold -= cost;
+            inventory.setGold(gold);
+            player.setInventory(inventory);
+            
+            // Add Item to equipment
+            playerEquipment.add(equipmentList.get(choice));
+            player.setPlayerEquipment(playerEquipment);
+            
+        } else {
+            
+            console.println("\n*** You don't have enough gold for that item. ***");
+            
+        }
+        
+        
     }
 
     private void loadEquipItem() {

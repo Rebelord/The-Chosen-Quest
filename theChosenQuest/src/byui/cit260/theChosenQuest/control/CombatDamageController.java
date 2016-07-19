@@ -11,7 +11,7 @@ package byui.cit260.theChosenQuest.control;
  */
 public class CombatDamageController {
 
-    public boolean AttackCheck(int attack, int hit) {
+    public boolean attackCheck(int attack, int hit) {
 
         // Sanity check
         if (attack <= 0) {
@@ -33,18 +33,35 @@ public class CombatDamageController {
         return combatSuccess > 0;
     }
 
-    public int AttackRoll(int attack, int defense, boolean creatureAttack) {
+    public int attackRoll(int attack, int defense) {
 
         // Intializing variables.
         DiceFaces diceRoll = new DiceFaces();
         int damage;            
         
         // Calculate attack damage.
-        if (creatureAttack)
-            damage = diceRoll.rollTheDice(attack) - defense;
-        else 
-            damage = attack - defense;
+        damage = attack - defense;
        
+        if (damage < 0)
+            damage = 0;
+        
+        return damage;
+    }
+    
+    public int creatureAttack(int attack, int defense,int diceChoice, int rolls) {
+
+        // Intializing variables.
+        DiceFaces diceRoll = new DiceFaces();
+        int damage = 0;            
+        
+        // Calculate attack damage.
+        for (int i = 0; i < rolls; i++) {
+            damage += diceRoll.rollTheDice(diceChoice);
+        }
+        damage += attack;
+        damage -= defense;
+        
+        // Make sure damage isn't negative.
         if (damage < 0)
             damage = 0;
         

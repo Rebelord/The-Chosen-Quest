@@ -128,7 +128,9 @@ public class GameControl {
         Creatures dragon = new Creatures();
         dragon.setName("Dragon");
         dragon.setHp(200);
-        dragon.setAttack(12);
+        dragon.setAttack(4);
+        dragon.setDice(8);
+        dragon.setRolls(2);
         dragon.setHit(15);
         dragon.setDefense(4);
         dragon.setGoldDrop(1500);
@@ -138,6 +140,8 @@ public class GameControl {
         spider.setName("Spider");
         spider.setHp(27);
         spider.setAttack(6);
+        spider.setDice(8);
+        spider.setRolls(2);
         spider.setHit(10);
         spider.setDefense(1);
         spider.setGoldDrop(2);
@@ -147,6 +151,8 @@ public class GameControl {
         troll.setName("Troll");
         troll.setHp(50);
         troll.setAttack(8);
+        troll.setDice(8);
+        troll.setRolls(2);
         troll.setHit(10);
         troll.setDefense(3);
         troll.setGoldDrop(10);
@@ -156,6 +162,8 @@ public class GameControl {
         skeleton.setName("Skeleton");
         skeleton.setHp(10);
         skeleton.setAttack(4);
+        skeleton.setDice(8);
+        skeleton.setRolls(2);
         skeleton.setHit(8);
         skeleton.setDefense(1);
         skeleton.setGoldDrop(3);
@@ -165,6 +173,8 @@ public class GameControl {
         mimic.setName("Mimic");
         mimic.setHp(25);
         mimic.setAttack(6);
+        mimic.setDice(8);
+        mimic.setRolls(2);
         mimic.setHit(11);
         mimic.setDefense(1);
         mimic.setGoldDrop(15);
@@ -174,6 +184,8 @@ public class GameControl {
         beholder.setName("Beholder");
         beholder.setHp(60);
         beholder.setAttack(10);
+        beholder.setDice(8);
+        beholder.setRolls(2);
         beholder.setHit(13);
         beholder.setDefense(1);
         beholder.setGoldDrop(25);
@@ -183,6 +195,8 @@ public class GameControl {
         lich.setName("Lich");
         lich.setHp(54);
         lich.setAttack(8);
+        lich.setDice(8);
+        lich.setRolls(2);
         lich.setHit(13);
         lich.setDefense(1);
         lich.setGoldDrop(15);
@@ -192,6 +206,8 @@ public class GameControl {
         rat.setName("Rat");
         rat.setHp(19);
         rat.setAttack(4);
+        rat.setDice(4);
+        rat.setRolls(2);
         rat.setHit(7);
         rat.setDefense(1);
         rat.setGoldDrop(1);
@@ -201,6 +217,8 @@ public class GameControl {
         minotaur.setName("Minotaur");
         minotaur.setHp(53);
         minotaur.setAttack(8);
+        minotaur.setDice(4);
+        minotaur.setRolls(2);
         minotaur.setHit(11);
         minotaur.setDefense(1);
         minotaur.setGoldDrop(5);
@@ -210,6 +228,8 @@ public class GameControl {
         blob.setName("Ooze");
         blob.setHp(51);
         blob.setAttack(6);
+        blob.setDice(4);
+        blob.setRolls(2);
         blob.setHit(14);
         blob.setDefense(3);
         blob.setGoldDrop(10);
@@ -219,6 +239,8 @@ public class GameControl {
         wolf.setName("Dire Wolf");
         wolf.setHp(26);
         wolf.setAttack(6);
+        wolf.setDice(4);
+        wolf.setRolls(2);
         wolf.setHit(12);
         wolf.setDefense(3);
         wolf.setGoldDrop(5);
@@ -228,6 +250,8 @@ public class GameControl {
         goblin.setName("Hobgoblin Soldier");
         goblin.setHp(23);
         goblin.setAttack(8);
+        goblin.setDice(4);
+        goblin.setRolls(2);
         goblin.setHit(12);
         goblin.setDefense(3);
         goblin.setGoldDrop(10);

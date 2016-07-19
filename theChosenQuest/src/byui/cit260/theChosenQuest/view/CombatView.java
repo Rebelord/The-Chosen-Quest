@@ -88,13 +88,13 @@ public class CombatView extends View {
         int playerDefense = game.armourDefense(player);
 
         // Check if player attack was successful.
-        boolean attackScucces = combat.AttackCheck(playerAttack, creature.getHit());
+        boolean attackScucces = combat.attackCheck(playerAttack, creature.getHit());
 
         // Calculate damage or miss.
         if (attackScucces) {
 
             // Get damage from attack.
-            int damage = combat.AttackRoll(playerAttack, creature.getDefense(), false);
+            int damage = combat.attackRoll(playerAttack, creature.getDefense());
             console.println("\n--------- Player --------");
             console.println("\nYou hit " + creature.getName()
                     + " for " + damage + " damage.\n");
@@ -149,13 +149,14 @@ public class CombatView extends View {
         // * Creature Attack *
         // *******************
         // Check if creature attack was successful.
-        attackScucces = combat.AttackCheck(creature.getAttack(), playerDefense);
+        attackScucces = combat.attackCheck(creature.getAttack(), playerDefense);
 
         // Calculate damage or miss.
         if (attackScucces) {
-
+            
             // Get damage from attack.
-            int damage = combat.AttackRoll(creature.getAttack(), playerDefense, true);
+            int damage = combat.creatureAttack(creature.getAttack(), playerDefense, creature.getDice(), creature.getRolls());
+            
             console.println("--------- " + creature.getName() + " --------");
             console.println("\n" + creature.getName() + " attacks you for " + damage + " damage.\n");
 
