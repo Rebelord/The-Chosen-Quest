@@ -59,10 +59,18 @@ public class CharacterClass extends View {
         // Set Player Class
         TheChosenQuest.player.setPlayerClass("Fighter");
         
-        // Set Player Health and MaxHealth
-        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() + 50);
-        TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth() + 50);
+        // Set Player Stats
+        TheChosenQuest.player.setStr(TheChosenQuest.player.getStr() + 5);
+        TheChosenQuest.player.setDex(TheChosenQuest.player.getDex() + 0);
+        TheChosenQuest.player.setIq(TheChosenQuest.player.getIq() + 2);
+        TheChosenQuest.player.setCon(TheChosenQuest.player.getCon() + 50);
+        TheChosenQuest.player.setCha(TheChosenQuest.player.getCha() + 1);
         
+        // Set Player Health and MaxHealth
+        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() + TheChosenQuest.player.getCon());
+        TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth());
+        
+       
         // Give player a weapon.
         List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();
         Equipment longSword = new Equipment();
@@ -110,9 +118,18 @@ public class CharacterClass extends View {
         // Set Player Class
         TheChosenQuest.player.setPlayerClass("Mage");
         
+        // Set Player Stats
+        TheChosenQuest.player.setStr(TheChosenQuest.player.getStr() + 1);
+        TheChosenQuest.player.setDex(TheChosenQuest.player.getDex() + 3);
+        TheChosenQuest.player.setIq(TheChosenQuest.player.getIq() + 5);
+        TheChosenQuest.player.setCon(TheChosenQuest.player.getCon() + 10);
+        TheChosenQuest.player.setCha(TheChosenQuest.player.getCha() + 2);
+        
         // Set Player Health and MaxHealth
-        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() + 10);
-        TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth() + 10);
+        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() + TheChosenQuest.player.getCon());
+        TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth());
+        
+        
         // Give player a weapon
         List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();
         Equipment staff = new Equipment();
@@ -190,10 +207,18 @@ public class CharacterClass extends View {
         // Set Player Class
         TheChosenQuest.player.setPlayerClass("Rouge");
         
+        // Set Player Stats
+        TheChosenQuest.player.setStr(TheChosenQuest.player.getStr() + 3);
+        TheChosenQuest.player.setDex(TheChosenQuest.player.getDex() + 5);
+        TheChosenQuest.player.setIq(TheChosenQuest.player.getIq() + 0);
+        TheChosenQuest.player.setCon(TheChosenQuest.player.getCon() + 20);
+        TheChosenQuest.player.setCha(TheChosenQuest.player.getCha() + 3);
+        
         // Rogue health stays default values. Increased for game balance.
         // Set Player Health and MaxHealth
-        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() + 20);
-        TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth() + 20);
+        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() + TheChosenQuest.player.getCon());
+        TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth());
+       
         
         // Give player some weapons
         List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();
@@ -242,9 +267,18 @@ public class CharacterClass extends View {
         // Set Player Class
         TheChosenQuest.player.setPlayerClass("Hunter");
         
+        // Set Player Stats
+        TheChosenQuest.player.setStr(TheChosenQuest.player.getStr() + 3);
+        TheChosenQuest.player.setDex(TheChosenQuest.player.getDex() + 2);
+        TheChosenQuest.player.setIq(TheChosenQuest.player.getIq() + 1);
+        TheChosenQuest.player.setCon(TheChosenQuest.player.getCon() + 30);
+        TheChosenQuest.player.setCha(TheChosenQuest.player.getCha() + 0);
+        
         // Set Player Health and MaxHealth
-        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() + 30);
-        TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth() + 30);
+        TheChosenQuest.player.setHealth(TheChosenQuest.player.getHealth() + TheChosenQuest.player.getCon());
+        TheChosenQuest.player.setMaxHealth(TheChosenQuest.player.getHealth());
+  
+        
         
         // Give player a weapon.
         List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();

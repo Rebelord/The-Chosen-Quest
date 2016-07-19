@@ -63,7 +63,7 @@ public class CombatDamageController {
         
         // Make sure damage isn't negative.
         if (damage < 0)
-            damage = 0;
+            damage = 1;
         
         return damage;
     }

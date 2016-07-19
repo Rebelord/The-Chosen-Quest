@@ -131,8 +131,8 @@ public class GameControl {
         dragon.setAttack(8);
         dragon.setDice(12);
         dragon.setRolls(1);
-        dragon.setHit(15);
-        dragon.setDefense(4);
+        dragon.setHit(13);
+        dragon.setDefense(2);
         dragon.setGoldDrop(1500);
         creatureList.add(dragon);
         
@@ -206,7 +206,7 @@ public class GameControl {
         rat.setName("Rat");
         rat.setHp(38);
         rat.setAttack(5);
-        rat.setDice(10);
+        rat.setDice(4);
         rat.setRolls(1);
         rat.setHit(7);
         rat.setDefense(1);

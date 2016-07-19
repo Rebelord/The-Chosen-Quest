@@ -14,6 +14,9 @@ import java.io.Serializable;
  *
  * @author Ryan D Webb
  */
+
+/** during game play map seemed off. */
+
 public class Map implements Serializable {
     
     public static final int NUM_ROWS = 5;
