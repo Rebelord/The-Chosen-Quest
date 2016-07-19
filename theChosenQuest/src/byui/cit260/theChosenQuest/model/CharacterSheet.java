@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.Objects;
 import thechosenquest.TheChosenQuest;
+import static thechosenquest.TheChosenQuest.player;
 
 /**
  *
@@ -105,7 +106,13 @@ public class CharacterSheet implements Serializable{
     }
 
     public void display() {
-        console.println("This is me");
+        console.println("--------------------------------");
+        console.println("| This is me. \t \t |\n"
+                      + "| Name: " + player.getName() + "\t \t |\n"
+                      + "| Race: " + player.getPlayerRace() + "\t \t |\n" 
+                      + "| Class: " + player.getPlayerClass() + "\t \t |\n" 
+                      + "| Health: " + player.getHealth() + "/" + player.getMaxHealth() + "\t \t |");
+        console.println("--------------------------------");
     }
     
     

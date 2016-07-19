@@ -57,37 +57,37 @@ public class CharacterRace extends View {
         TheChosenQuest.player.setHealth(100);
         TheChosenQuest.player.setMaxHealth(100);
         TheChosenQuest.player.setPoison(0);
-        console.println ("Create a new dwarf hero fuction is called");
+        console.println ("You have chosen the stoutheardy Dwarf, immoveable as the mountain.");
         CharacterClass charClass = new CharacterClass();
         charClass.display();
     }
 
     private void human() {
         TheChosenQuest.player.setPlayerRace("Human");
-        TheChosenQuest.player.setHealth(80);
-        TheChosenQuest.player.setMaxHealth(80);
+        TheChosenQuest.player.setHealth(90);
+        TheChosenQuest.player.setMaxHealth(90);
         TheChosenQuest.player.setPoison(0);
-        console.println ("Create a new Human hero fuction is called");
+        console.println ("You have chosen the flexable human, as fluid as the river.");
         CharacterClass charClass = new CharacterClass();
         charClass.display();
     }
 
     private void halfling() {
         TheChosenQuest.player.setPlayerRace("Halfling");
-        TheChosenQuest.player.setHealth(60);
-        TheChosenQuest.player.setMaxHealth(60);
+        TheChosenQuest.player.setHealth(70);
+        TheChosenQuest.player.setMaxHealth(70);
         TheChosenQuest.player.setPoison(0);
-        console.println ("Create a new Halfling hero fuction is called");
+        console.println ("You have chosen the whimsical Halfling, as free as the wind.");
         CharacterClass charClass = new CharacterClass();
         charClass.display();
     }
 
     private void elf() {
         TheChosenQuest.player.setPlayerRace("Elf");
-        TheChosenQuest.player.setHealth(70);
-        TheChosenQuest.player.setMaxHealth(70);
+        TheChosenQuest.player.setHealth(80);
+        TheChosenQuest.player.setMaxHealth(80);
         TheChosenQuest.player.setPoison(0);
-        console.println ("Create a new Elf hero fuction is called");
+        console.println ("You have chosen the mystical Elf, as ever changing as the forest");
         CharacterClass charClass = new CharacterClass();
         charClass.display();
     }
