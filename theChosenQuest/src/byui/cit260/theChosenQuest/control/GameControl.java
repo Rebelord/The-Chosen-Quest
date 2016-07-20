@@ -560,4 +560,38 @@ public class GameControl {
             
         return defense;
     }
+   
+    public int weaponDice(Player player) {
+        
+        // Intialize variables.
+        int dice = 0;
+        
+        // Grab the player's inventory.
+        List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();
+        
+        // Add defense for each armour piece equiped.
+        for (Equipment e : playerEquipment) {
+            if (e.getEquiped())
+                dice += e.getDice();
+        }
+            
+        return dice;
+    }
+    
+    public int weaponRoll(Player player) {
+        
+        // Intialize variables.
+        int roll = 0;
+        
+        // Grab the player's inventory.
+        List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();
+        
+        // Add defense for each armour piece equiped.
+        for (Equipment e : playerEquipment) {
+            if (e.getEquiped())
+                roll += e.getRolls();
+        }
+            
+        return roll;
+    }
 }

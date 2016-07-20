@@ -76,7 +76,9 @@ public class CharacterClass extends View {
         Equipment longSword = new Equipment();
         longSword.setName("Long Sword");
         longSword.setType("Weapon");
-        longSword.setAttack(8);
+        longSword.setAttack(2);
+        longSword.setDice(8);
+        longSword.setRolls(1);
         longSword.setDefense(0);
         longSword.setCost(15);
         longSword.setEquiped(true);

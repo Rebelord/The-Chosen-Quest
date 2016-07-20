@@ -18,6 +18,8 @@ public class Equipment implements Serializable {
     private int attack;
     private int defense;
     private int cost;
+    private int dice;
+    private int rolls;
     private String type;
     private Boolean equiped;
 
@@ -57,6 +59,22 @@ public class Equipment implements Serializable {
         this.cost = cost;
     }
 
+    public int getDice() {
+        return dice;
+    }
+
+    public void setDice(int dice) {
+        this.dice = dice;
+    }
+
+    public int getRolls() {
+        return rolls;
+    }
+
+    public void setRolls(int rolls) {
+        this.rolls = rolls;
+    }
+
     public String getType() {
         return type;
     }
@@ -75,13 +93,15 @@ public class Equipment implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 37 * hash + Objects.hashCode(this.name);
-        hash = 37 * hash + this.attack;
-        hash = 37 * hash + this.defense;
-        hash = 37 * hash + this.cost;
-        hash = 37 * hash + Objects.hashCode(this.type);
-        hash = 37 * hash + Objects.hashCode(this.equiped);
+        int hash = 7;
+        hash = 73 * hash + Objects.hashCode(this.name);
+        hash = 73 * hash + this.attack;
+        hash = 73 * hash + this.defense;
+        hash = 73 * hash + this.cost;
+        hash = 73 * hash + this.dice;
+        hash = 73 * hash + this.rolls;
+        hash = 73 * hash + Objects.hashCode(this.type);
+        hash = 73 * hash + Objects.hashCode(this.equiped);
         return hash;
     }
 
@@ -106,6 +126,12 @@ public class Equipment implements Serializable {
         if (this.cost != other.cost) {
             return false;
         }
+        if (this.dice != other.dice) {
+            return false;
+        }
+        if (this.rolls != other.rolls) {
+            return false;
+        }
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
@@ -118,18 +144,21 @@ public class Equipment implements Serializable {
         return true;
     }
 
-    public Equipment(String name, int attack, int defense, int cost, String type, Boolean equiped) {
+    public Equipment(String name, int attack, int defense, int cost, int dice, int rolls, String type, Boolean equiped) {
         this.name = name;
         this.attack = attack;
         this.defense = defense;
         this.cost = cost;
+        this.dice = dice;
+        this.rolls = rolls;
         this.type = type;
         this.equiped = equiped;
     }
 
     @Override
     public String toString() {
-        return "Equipment{" + "name=" + name + ", attack=" + attack + ", defense=" + defense + ", cost=" + cost + ", type=" + type + ", equiped=" + equiped + '}';
+        return "Equipment{" + "name=" + name + ", attack=" + attack + ", defense=" + defense + ", cost=" + cost + ", dice=" + dice + ", rolls=" + rolls + ", type=" + type + ", equiped=" + equiped + '}';
     }
 
+   
 }

@@ -86,6 +86,9 @@ public class CombatView extends View {
         // Change hardcoded defense/attack to match armour & weapon.
         int playerAttack = game.weaponAttack(player);
         int playerDefense = game.armourDefense(player);
+        int weaponDice = game.weaponDice(player);
+        int weaponRoll = game.weaponRoll(player);
+        int playerStr = player.getStr();
 
         // Check if player attack was successful.
         boolean attackScucces = combat.attackCheck(playerAttack, creature.getHit());
@@ -94,7 +97,7 @@ public class CombatView extends View {
         if (attackScucces) {
 
             // Get damage from attack.
-            int damage = combat.attackRoll(playerAttack, creature.getDefense());
+            int damage = combat.playerAttack(playerAttack, creature.getDefense(), weaponDice, weaponRoll, playerStr);
             console.println("\n--------- Player --------");
             console.println("\nYou hit " + creature.getName()
                     + " for " + damage + " damage.\n");

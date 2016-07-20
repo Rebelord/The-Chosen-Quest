@@ -5,6 +5,8 @@
  */
 package byui.cit260.theChosenQuest.control;
 
+import static thechosenquest.TheChosenQuest.player;
+
 /**
  *
  * @author Zack Durbin
@@ -32,22 +34,48 @@ public class CombatDamageController {
         combatSuccess = attackRoll - hit;
         return combatSuccess > 0;
     }
+    
+  public int playerAttack(int attack, int defense, int diceChoice, int rolls, int playerStr){
+        
+        // Intializing variables.
+        DiceFaces diceRoll = new DiceFaces();
+        int damage = 0;            
+        playerStr = player.getStr();
+        
+        // Calculate attack damage.
+        for (int i = 0; i < rolls; i++) {
+            damage += diceRoll.rollTheDice(diceChoice);
+        }
+        damage += attack;
+        damage += playerStr;
+        damage -= defense;
+        
+        // Make sure damage isn't negative.
+        if (damage < 0)
+            damage = 1;
+        
+        return damage;
+    }
 
-    public int attackRoll(int attack, int defense) {
+  /*  public int attackRoll(int attack, int defense) {
 
         // Intializing variables.
         DiceFaces diceRoll = new DiceFaces();
         int damage;            
+        int finalDamage;
+        int playerStr = player.getStr();
         
         // Calculate attack damage.
+        
         damage = attack - defense;
-       
+        finalDamage = damage + playerStr;
+        
         if (damage < 0)
             damage = 0;
         
-        return damage;
-    }
-    
+        return finalDamage;
+    }*/
+ 
     public int creatureAttack(int attack, int defense,int diceChoice, int rolls) {
 
         // Intializing variables.
