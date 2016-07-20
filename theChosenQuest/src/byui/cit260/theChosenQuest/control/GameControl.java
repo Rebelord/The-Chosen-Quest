@@ -141,7 +141,7 @@ public class GameControl {
         spider.setHp(26);
         spider.setAttack(3);
         spider.setDice(6);
-        spider.setRolls(2);
+        spider.setRolls(1);
         spider.setHit(10);
         spider.setDefense(1);
         spider.setGoldDrop(2);
@@ -152,7 +152,7 @@ public class GameControl {
         troll.setHp(50);
         troll.setAttack(7);
         troll.setDice(6);
-        troll.setRolls(3);
+        troll.setRolls(1);
         troll.setHit(10);
         troll.setDefense(3);
         troll.setGoldDrop(10);
@@ -174,7 +174,7 @@ public class GameControl {
         mimic.setHp(36);
         mimic.setAttack(7);
         mimic.setDice(8);
-        mimic.setRolls(2);
+        mimic.setRolls(1);
         mimic.setHit(11);
         mimic.setDefense(1);
         mimic.setGoldDrop(15);
@@ -185,7 +185,7 @@ public class GameControl {
         beholder.setHp(60);
         beholder.setAttack(5);
         beholder.setDice(4);
-        beholder.setRolls(2);
+        beholder.setRolls(1);
         beholder.setHit(13);
         beholder.setDefense(1);
         beholder.setGoldDrop(25);
@@ -196,7 +196,7 @@ public class GameControl {
         lich.setHp(54);
         lich.setAttack(6);
         lich.setDice(8);
-        lich.setRolls(2);
+        lich.setRolls(1);
         lich.setHit(13);
         lich.setDefense(1);
         lich.setGoldDrop(15);
@@ -216,7 +216,7 @@ public class GameControl {
         Creatures minotaur = new Creatures();
         minotaur.setName("Minotaur");
         minotaur.setHp(53);
-        minotaur.setAttack(8);
+        minotaur.setAttack(4);
         minotaur.setDice(10);
         minotaur.setRolls(1);
         minotaur.setHit(11);
@@ -229,7 +229,7 @@ public class GameControl {
         blob.setHp(51);
         blob.setAttack(8);
         blob.setDice(6);
-        blob.setRolls(2);
+        blob.setRolls(1);
         blob.setHit(14);
         blob.setDefense(3);
         blob.setGoldDrop(10);
@@ -240,7 +240,7 @@ public class GameControl {
         wolf.setHp(38);
         wolf.setAttack(5);
         wolf.setDice(6);
-        wolf.setRolls(2);
+        wolf.setRolls(1);
         wolf.setHit(12);
         wolf.setDefense(3);
         wolf.setGoldDrop(5);

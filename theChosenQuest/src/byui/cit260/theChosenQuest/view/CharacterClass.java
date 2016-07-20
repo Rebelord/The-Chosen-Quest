@@ -88,7 +88,7 @@ public class CharacterClass extends View {
         chainmail.setName("Chainmail");
         chainmail.setType("Armour");
         chainmail.setAttack(0);
-        chainmail.setDefense(4);
+        chainmail.setDefense(14);
         chainmail.setCost(35);
         chainmail.setEquiped(true);
         
@@ -96,7 +96,7 @@ public class CharacterClass extends View {
         shield.setName("Shield");
         shield.setType("Armour");
         shield.setAttack(0);
-        shield.setDefense(2);
+        shield.setDefense(1);
         shield.setCost(5);
         shield.setEquiped(true);
 
@@ -147,7 +147,7 @@ public class CharacterClass extends View {
         clothArmor.setName("Cloth Armour");
         clothArmor.setType("Armour");
         clothArmor.setAttack(0);
-        clothArmor.setDefense(1);
+        clothArmor.setDefense(10);
         clothArmor.setCost(2);
         clothArmor.setEquiped(true);
         
@@ -245,7 +245,7 @@ public class CharacterClass extends View {
         leatherArmour.setName("Leather Armour");
         leatherArmour.setType("Armour");
         leatherArmour.setAttack(0);
-        leatherArmour.setDefense(2);
+        leatherArmour.setDefense(12);
         leatherArmour.setCost(15);
         leatherArmour.setEquiped(true);
         
@@ -297,7 +297,7 @@ public class CharacterClass extends View {
         scaleArmour.setName("Scale Armour");
         scaleArmour.setType("Armour");
         scaleArmour.setAttack(0);
-        scaleArmour.setDefense(3);
+        scaleArmour.setDefense(13);
         scaleArmour.setCost(25);
         scaleArmour.setEquiped(true);
         

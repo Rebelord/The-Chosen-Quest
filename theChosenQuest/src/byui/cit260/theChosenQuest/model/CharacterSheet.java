@@ -108,10 +108,13 @@ public class CharacterSheet implements Serializable{
     public void display() {
         console.println("--------------------------------");
         console.println("| This is me. \t \t |\n"
-                      + "| Name: " + player.getName() + "\t \t |\n"
-                      + "| Race: " + player.getPlayerRace() + "\t \t |\n" 
-                      + "| Class: " + player.getPlayerClass() + "\t \t |\n" 
-                      + "| Health: " + player.getHealth() + "/" + player.getMaxHealth() + "\t \t |");
+                      + "| Name: " + player.getName() + "\n"
+                      + "| Race: " + player.getPlayerRace() + "\n" 
+                      + "| Class: " + player.getPlayerClass() + "\n" 
+                      + "| Health: " + player.getHealth() + "/" + player.getMaxHealth()
+                      + "| Strength: " + player.getStr() + "\n" + 
+                        "| Dexterity: " + player.getDex() + "\n" +
+                        "| Con");
         console.println("--------------------------------");
     }
     

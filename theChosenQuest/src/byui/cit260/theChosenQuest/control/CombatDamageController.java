@@ -87,7 +87,7 @@ public class CombatDamageController {
             damage += diceRoll.rollTheDice(diceChoice);
         }
         damage += attack;
-        damage -= defense;
+        
         
         // Make sure damage isn't negative.
         if (damage < 0)
