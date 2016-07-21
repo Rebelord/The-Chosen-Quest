@@ -112,9 +112,11 @@ public class CharacterSheet implements Serializable{
                       + "| Race: " + player.getPlayerRace() + "\n" 
                       + "| Class: " + player.getPlayerClass() + "\n" 
                       + "| Health: " + player.getHealth() + "/" + player.getMaxHealth()
-                      + "| Strength: " + player.getStr() + "\n" + 
+                    + "\n| Strength: " + player.getStr() + "\n" + 
                         "| Dexterity: " + player.getDex() + "\n" +
-                        "| Con");
+                        "| Constitution: " + player.getCon() + "\n" +
+                        "| Intelligance: " + player.getIq() + "\n" +
+                        "| Charisma: " + player.getCha());
         console.println("--------------------------------");
     }
     

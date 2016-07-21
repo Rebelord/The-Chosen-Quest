@@ -136,10 +136,12 @@ public class CharacterClass extends View {
         List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();
         Equipment staff = new Equipment();
         staff.setName("Staff");
-        staff.setType("Weapon");
-        staff.setAttack(8);
+        staff.setAttack(3);
+        staff.setDice(8);
+        staff.setRolls(1);
         staff.setDefense(0);
         staff.setCost(15);
+        staff.setType("Weapon");
         staff.setEquiped(true);
         
         // Give player some armour.
@@ -147,7 +149,7 @@ public class CharacterClass extends View {
         clothArmor.setName("Cloth Armour");
         clothArmor.setType("Armour");
         clothArmor.setAttack(0);
-        clothArmor.setDefense(10);
+        clothArmor.setDefense(11);
         clothArmor.setCost(2);
         clothArmor.setEquiped(true);
         
@@ -226,18 +228,23 @@ public class CharacterClass extends View {
         List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();
         Equipment shortSword = new Equipment();
         shortSword.setName("Short Sword");
-        shortSword.setType("Weapon");
-        shortSword.setAttack(6);
+        shortSword.setAttack(1);
+        shortSword.setDice(6);
+        shortSword.setRolls(1);
         shortSword.setDefense(0);
         shortSword.setCost(10);
+        shortSword.setType("Weapon");
         shortSword.setEquiped(true);
         
         Equipment dagger = new Equipment();
         dagger.setName("Dagger");
         dagger.setType("Weapon");
-        dagger.setAttack(4);
+        dagger.setAttack(1);
+        dagger.setDice(4);
+        dagger.setRolls(1);
         dagger.setDefense(0);
         dagger.setCost(5);
+        dagger.setType("Weapon");
         dagger.setEquiped(true);
         
         // Give player some armour.
@@ -286,10 +293,12 @@ public class CharacterClass extends View {
         List<Equipment> playerEquipment = TheChosenQuest.player.getPlayerEquipment();
         Equipment shortBow = new Equipment();
         shortBow.setName("Short Bow");
-        shortBow.setType("Weapon");
-        shortBow.setAttack(8);
+        shortBow.setAttack(1);
+        shortBow.setDice(8);
+        shortBow.setRolls(1);
         shortBow.setDefense(0);
         shortBow.setCost(25);
+        shortBow.setType("Weapon");
         shortBow.setEquiped(true);
         
         // Give player some armour.

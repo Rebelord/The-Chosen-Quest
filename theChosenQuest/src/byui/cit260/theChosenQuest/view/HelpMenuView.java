@@ -79,13 +79,12 @@ public class HelpMenuView extends View{
     }
 
     private void loadCombatInfo() {
-        console.println("\n*** This option will display an explination of"+
-                "\n how to attack, defend, use a potion, or run away. To attack" +
-                "\n the enemy, press 'A', to defend yourself and heal a small" +
-                "\n amount of your health press 'D'. To use a potion if you have" +
-                "\n any, press 'P'. To flee from combat because you are about to" +
-                "\n die, press 'R'. Please note that you can only rest at Taverns" +
-                "\n and Encampments***");
+        console.println("\n*** As you transverse the map you will come across" +
+                "\n monsters that will engage you in combat. To attack press 'A'" +
+                "\n to defend press 'D', to use a potion press 'P' and to run " +
+                "\n press 'R'. Hitting your enemy and them hitting you is randomly" +
+                "\n determined. Damage done is based a predetermined dice roll added" +
+                "\n to your strength and attack bonus (displayed).***");
     }
 
     private void loadNpcInfo() {
